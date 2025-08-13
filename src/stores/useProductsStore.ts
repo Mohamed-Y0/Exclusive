@@ -3,15 +3,6 @@ import { devtools } from "zustand/middleware";
 import { getProductById, getProducts } from "@/services/productsApi";
 import type { ProductTypes } from "@/types/products";
 
-/**
- * useProductsStore.ts To Fetch The Data From productsApi.
- *    fetchProducts @param limit - To Get All Proudcts (30 By Default) or Pass limit 0 To Get All of Them.
- *    fetchProductById @param id - To Get Specific Product
- *
- *
- *  @returns Promise<void>
- */
-
 type ProductState = {
   products: ProductTypes[];
   selectedProduct: ProductTypes | null;
@@ -29,6 +20,7 @@ export const useProductsStore = create<ProductState>()(
       loading: false,
       error: null,
 
+      // To Get All Proudcts (30 By Default) or Pass limit 0 To Get All of Them.
       fetchProducts: async (limit) => {
         set({ loading: true, error: null });
         try {
@@ -41,6 +33,7 @@ export const useProductsStore = create<ProductState>()(
         }
       },
 
+      // To Get Specific Product By ID
       fetchProductById: async (id) => {
         set({ loading: true, error: null });
         try {
