@@ -6,7 +6,7 @@ import { Link, NavLink } from "react-router-dom";
 
 function Header() {
   return (
-    <header className="bg-neutral-50 px-5 py-5 lg:px-0">
+    <header className="bg-neutral-50 px-5 py-5">
       <div className="container m-auto flex items-center justify-between">
         <div>
           <Link to="/">
