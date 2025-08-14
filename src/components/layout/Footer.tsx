@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="bg-black py-16 text-neutral-200">
-      <div className="container m-auto grid items-start gap-10 px-10 sm:grid-cols-3 sm:px-0 lg:grid-cols-4">
+    <footer className="bg-black pt-16 text-neutral-200">
+      <div className="container m-auto grid items-start gap-10 px-10 pb-16 sm:grid-cols-3 sm:px-0 lg:grid-cols-4">
         <div className="col-span-full flex flex-col justify-center gap-2.5 justify-self-center lg:col-span-1">
           <Logo color="white" />
           <p>Get 10% off your first order</p>
@@ -37,10 +37,14 @@ function Footer() {
         </div>
       </div>
 
-      <div>
-        <p className="mt-14 text-center text-neutral-200 capitalize">
+      <div className="border-t">
+        <p className="py-10 text-center text-lg font-light text-neutral-300 capitalize">
           made with love by{" "}
-          <Link to="" className="text-blue-500">
+          <Link
+            target="_blank"
+            to="https://github.com/Mohamed-A-Yehia"
+            className="text-blue-500"
+          >
             Mohamed Ahmed
           </Link>
         </p>
