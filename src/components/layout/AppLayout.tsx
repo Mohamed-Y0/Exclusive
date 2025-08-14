@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 
 function AppLayout() {
   return (
-    <div className="text-[15px] lg:text-lg">
+    <div className="font-inter text-[15px] font-medium lg:text-[20px]">
       <TopHeader />
       <Header />
 
