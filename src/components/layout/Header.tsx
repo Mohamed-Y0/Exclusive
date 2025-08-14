@@ -1,4 +1,5 @@
 import Input from "@/components/ui/Input";
+import Logo from "@/components/ui/Logo";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoCartOutline } from "react-icons/io5";
 import { Link, NavLink } from "react-router-dom";
@@ -9,9 +10,7 @@ function Header() {
       <div className="container m-auto flex items-center justify-between">
         <div>
           <Link to="/">
-            <p className="text-lg font-bold tracking-wider text-black lg:text-2xl">
-              Exclusive
-            </p>
+            <Logo color="black" />
           </Link>
         </div>
 
