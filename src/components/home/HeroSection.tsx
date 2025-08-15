@@ -1,9 +1,11 @@
+import ImageSlider from "@/components/home/ImageSlider";
 import LeftMenu from "@/components/home/LeftMenu";
 
 function HeroSection() {
   return (
-    <section>
+    <section className="grid grid-cols-1 py-5 sm:py-10 lg:grid-cols-5">
       <LeftMenu />
+      <ImageSlider />
     </section>
   );
 }

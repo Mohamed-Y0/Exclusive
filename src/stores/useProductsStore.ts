@@ -6,6 +6,7 @@ import type { ProductTypes } from "@/types/products";
 type ProductState = {
   products: ProductTypes[];
   selectedProduct: ProductTypes | null;
+
   loading: boolean;
   error: string | null;
   fetchProducts: (limit?: number) => Promise<void>;
@@ -17,6 +18,7 @@ export const useProductsStore = create<ProductState>()(
     (set) => ({
       products: [],
       selectedProduct: null,
+
       loading: false,
       error: null,
 
