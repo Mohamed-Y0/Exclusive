@@ -1,5 +1,11 @@
+import HeroSection from "@/components/home/HeroSection";
+
 function Home() {
-  return;
+  return (
+    <>
+      <HeroSection />
+    </>
+  );
 }
 
 export default Home;
