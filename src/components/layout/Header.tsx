@@ -6,7 +6,7 @@ import { Link, NavLink } from "react-router-dom";
 
 function Header() {
   return (
-    <header className="bg-neutral-50 px-5 py-5">
+    <header className="border-b border-neutral-200 bg-neutral-50 px-5 py-5">
       <div className="container m-auto flex items-center justify-between">
         <div>
           <Link to="/">
@@ -14,7 +14,7 @@ function Header() {
           </Link>
         </div>
 
-        <nav className="hidden md:block">
+        <nav className="hidden sm:block">
           <ul className="flex items-center gap-5 lg:gap-10">
             <li>
               <NavLink
