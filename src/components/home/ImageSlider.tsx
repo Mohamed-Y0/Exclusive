@@ -20,7 +20,7 @@ function ImageSlider() {
     arrows: false,
   };
   return (
-    <div className="slider-container col-span-full w-full self-center justify-self-center p-5 sm:p-10 lg:col-span-full lg:col-start-2 lg:w-[90%] lg:justify-self-end">
+    <div className="slider-container col-span-full w-full self-center justify-self-center px-5 pt-0 sm:px-10 lg:col-span-full lg:col-start-2 lg:w-[90%] lg:justify-self-end">
       <Slider {...settings}>
         <div>
           <img src={sliderOne} alt="" />
