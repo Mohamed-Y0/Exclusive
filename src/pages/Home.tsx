@@ -5,7 +5,6 @@ function Home() {
   return (
     <div className="container m-auto">
       <HeroSection />
-      <FlashSales />
     </div>
   );
 }

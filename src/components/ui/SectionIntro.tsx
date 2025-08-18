@@ -4,7 +4,6 @@ type SectionIntroProps = {
 };
 
 function SectionIntro({ title, info }: SectionIntroProps) {
-  console.log(title, info);
   return (
     <div className="flex flex-col gap-10 px-5 py-16 text-lg md:px-0 md:text-[20px]">
       <div className="flex gap-10">
