@@ -37,6 +37,7 @@ function DisplayData({ limit, skip }: Props) {
               <IoEyeOutline className="size-7 rounded-full bg-neutral-50 p-1 lg:size-10" />
             </button>
           </div>
+
           <img
             src={product.thumbnail}
             alt={product.title}
