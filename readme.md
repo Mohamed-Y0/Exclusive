@@ -3,6 +3,18 @@
 high-performance, fully responsive E-Commerce web application built with a modern frontend tech stack to deliver a seamless and engaging shopping experience.
 It combines state-of-the-art UI design with efficient state management and optimized API handling.
 
+> Last Update (readme.md): 20/08/2025
+
+---
+
+## Docs List
+
+**Note: My English is a bit bad, I'm trying my best here**
+
+[Custom Hooks Docs hooks/HooksDocs.md](./src/hooks/HooksDocs.md)
+
+[Stores Docs stores/StoresDocs.md](./src/stores/StoresDocs.md)
+
 ---
 
 ## Tech Stack
@@ -31,24 +43,3 @@ It combines state-of-the-art UI design with efficient state management and optim
 - **Prettier 3.6.2** – Opinionated code formatter
 - **TypeScript ESLint 8.39.0** – ESLint support for TypeScript
 - **Prettier Plugin TailwindCSS 0.6.14** – TailwindCSS class sorting for Prettier
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
