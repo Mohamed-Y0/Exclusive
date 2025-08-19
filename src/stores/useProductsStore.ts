@@ -9,7 +9,7 @@ type ProductState = {
 
   loading: boolean;
   error: string | null;
-  fetchProducts: (limit?: number, skip?: number) => Promise<void>;
+  fetchProducts: (limit?: number, skip?: number) => Promise<ProductTypes[]>;
   fetchProductById: (id: number) => Promise<void>;
 };
 
@@ -28,6 +28,7 @@ export const useProductsStore = create<ProductState>()(
         try {
           const data = await getProducts(limit, skip);
           set({ products: data.products });
+          return data.products;
         } catch (err) {
           set({ error: `Failed To Fetch Products ${(err as Error).message}` });
         } finally {

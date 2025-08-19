@@ -1,6 +1,5 @@
-import { useProductsStore } from "@/stores/useProductsStore";
+import { useProducts } from "@/components/hooks/useProducts";
 import { formatCurrency, getDiscountedPrice } from "@/utils/helpers";
-import { useEffect } from "react";
 import { FaStar } from "react-icons/fa";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoEyeOutline } from "react-icons/io5";
@@ -12,11 +11,7 @@ type Props = {
 };
 
 function DisplayData({ limit, skip }: Props) {
-  const { fetchProducts, products, loading, error } = useProductsStore();
-
-  useEffect(() => {
-    fetchProducts(limit, skip);
-  }, [fetchProducts, limit, skip]);
+  const { products, loading, error } = useProducts(limit, skip);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error...</p>;
