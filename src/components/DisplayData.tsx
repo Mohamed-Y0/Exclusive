@@ -1,4 +1,4 @@
-import { useProducts } from "@/components/hooks/useProducts";
+import { useProducts } from "@/hooks/useProducts";
 import { formatCurrency, getDiscountedPrice } from "@/utils/helpers";
 import { FaStar } from "react-icons/fa";
 import { IoMdHeartEmpty } from "react-icons/io";

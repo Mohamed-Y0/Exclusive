@@ -11,6 +11,7 @@ type ProductState = {
   error: string | null;
   fetchProducts: (limit?: number, skip?: number) => Promise<ProductTypes[]>;
   fetchProductById: (id: number) => Promise<void>;
+  setProducts: (products: ProductTypes[]) => void;
 };
 
 export const useProductsStore = create<ProductState>()(
@@ -35,6 +36,9 @@ export const useProductsStore = create<ProductState>()(
           set({ loading: false });
         }
       },
+
+      // Set Data that are coming from the custom hook to prevent duplicates
+      setProducts: (products) => set({ products }),
 
       // To Get Specific Product By ID
       fetchProductById: async (id) => {
