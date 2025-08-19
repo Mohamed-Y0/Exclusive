@@ -35,11 +35,11 @@ function DisplayData({ limit, skip }: Props) {
               </button>
             </div>
 
-            <div className="relative overflow-hidden">
+            <div className="relative overflow-hidden rounded-lg">
               <img
                 src={product.thumbnail}
                 alt={product.title}
-                className="w-full rounded-lg bg-neutral-100 group-hover:scale-110 group-hover:rotate-2"
+                className="w-full bg-neutral-100 group-hover:scale-110 group-hover:rotate-2"
               />
               <button
                 onClick={(e) => {
