@@ -1,18 +1,21 @@
 # Stores Docs/Notes
 
-Here i write things like docs about the code and why i did that with this way and explanations, I'll try to focus in important tings.
+Here I write things like docs about the code and why I did it this way, focusing on the important points.
 
 ---
 
 ## useProductsStore.ts
 
-- fetchProducts: Takes to aruments (limit, skip) and they are coming from `useProducts` custom hook, to fetch custom data or the whole data
-- fetchProductById: Well, for fetching product bt id ? xd
+- **fetchProducts(limit?, skip?)** → Used to fetch products (customized with `limit` and `skip`) from the API.
+- **fetchProductById(id)** → For fetching a single product by its ID.
 
 **Important:**
 
-- setProducts: In [hooks/useProducts.ts](../hooks/useProducts.ts) I will fetch custom data to prevent duplicate data, or in other words, when I rely on `fetchProducts` in the store, the data will be in the Products property and it will be the same in wthe whole app!, so I create `setProducts`, I'll get the data from the custom hook (`useProducts`) and set it using `setProducts` ,and it's specialy for future use when i display the whole data in products page.
+- **setProducts** → In [hooks/useProducts.ts](../hooks/useProducts.ts) I fetch custom data to avoid duplicated results.
+  If I relied only on `fetchProducts` inside the store, the data would always be stored in the global `products` property → meaning _all_ components would show the same products across the app.
+  So I created `setProducts` to manually update products when needed.
+  This is especially useful later when displaying the **full products list** in the Products Page.
 
-feel free to read [hooks/HooksDocs.md](../hooks//HooksDocs.md).
+Feel free to read [hooks/HooksDocs.md](../hooks/HooksDocs.md).
 
-> Last Update : 19/08/2025.
+> Last Update : 20/08/2025.
