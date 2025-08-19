@@ -9,7 +9,7 @@ export function generateRandomIds(count: number): number[] {
   const ids: number[] = [];
 
   while (ids.length < count) {
-    const randomId = Math.floor(Math.random() * 194) + 1; // من 1 لـ 194
+    const randomId = Math.floor(Math.random() * 194) + 1;
     if (!ids.includes(randomId)) {
       ids.push(randomId);
     }
