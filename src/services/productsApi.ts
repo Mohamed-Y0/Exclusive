@@ -8,10 +8,14 @@ const axiosClient = axios.create({
 // There A Limit From The API Creator, Only 30 Product - You Can Fetch Them All With {params: { limit: 0 For All } }.
 export const getProducts = async function (
   limit?: number,
+  skip?: number,
 ): Promise<ProductApiResponse> {
-  const res = await axiosClient.get("/products", {
-    params: limit ? { limit } : {},
-  });
+  const params: Record<string, number> = {};
+
+  if (limit !== undefined) params.limit = limit;
+  if (skip !== undefined) params.skip = skip;
+
+  const res = await axiosClient.get("/products", { params });
 
   return res.data;
 };

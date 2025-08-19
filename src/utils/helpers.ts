@@ -5,15 +5,13 @@ export function formatCurrency(value: number) {
   }).format(value);
 }
 
-export function generateRandomIds(count: number): number[] {
-  const ids: number[] = [];
+export function getDiscountedPrice(
+  price: number,
+  discountPercentage: number,
+): number {
+  if (discountPercentage <= 0) return price;
+  if (discountPercentage >= 100) return 0;
 
-  while (ids.length < count) {
-    const randomId = Math.floor(Math.random() * 194) + 1;
-    if (!ids.includes(randomId)) {
-      ids.push(randomId);
-    }
-  }
-
-  return ids;
+  const discount = (price * discountPercentage) / 100;
+  return +(price - discount).toFixed(2);
 }

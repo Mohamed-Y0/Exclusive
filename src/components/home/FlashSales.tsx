@@ -5,7 +5,7 @@ function FlashSales() {
   return (
     <>
       <SectionIntro title="Flash Sales" info="Today's" />
-      <DisplayData />
+      <DisplayData limit={4} skip={100} />
     </>
   );
 }

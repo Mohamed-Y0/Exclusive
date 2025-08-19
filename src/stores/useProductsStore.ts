@@ -9,7 +9,7 @@ type ProductState = {
 
   loading: boolean;
   error: string | null;
-  fetchProducts: (limit?: number) => Promise<void>;
+  fetchProducts: (limit?: number, skip?: number) => Promise<void>;
   fetchProductById: (id: number) => Promise<void>;
 };
 
@@ -23,10 +23,10 @@ export const useProductsStore = create<ProductState>()(
       error: null,
 
       // To Get All Proudcts (30 By Default) or Pass limit 0 To Get All of Them.
-      fetchProducts: async (limit) => {
+      fetchProducts: async (limit, skip) => {
         set({ loading: true, error: null });
         try {
-          const data = await getProducts(limit);
+          const data = await getProducts(limit, skip);
           set({ products: data.products });
         } catch (err) {
           set({ error: `Failed To Fetch Products ${(err as Error).message}` });
