@@ -21,16 +21,11 @@ function DisplayData({ limit, skip }: Props) {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error...</p>;
 
-  console.log(products);
-
   return (
     <div className="grid grid-cols-1 gap-5 p-5 md:grid-cols-2 md:gap-10 md:p-0 lg:grid-cols-4">
       {products.map((product) => (
-        <Link to="">
-          <div
-            key={product.id}
-            className="group relative flex flex-col justify-between gap-2.5 p-1"
-          >
+        <Link to="" key={product.id}>
+          <div className="group relative flex flex-col justify-between gap-2.5 p-1">
             <div className="absolute top-3 right-4 z-10 flex flex-col gap-2.5">
               <button className="cursor-pointer">
                 <IoMdHeartEmpty className="size-7 rounded-full bg-neutral-50 p-1 lg:size-10" />
