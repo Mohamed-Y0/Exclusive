@@ -8,7 +8,7 @@ Here i write things like docs about the code and why i did that with this way an
 
 1. `useProducts` Hook: takes 2 arguments (limit, skip):
 
-   The hook is to make sure the data is not duplicated (without it, the data will be the same in the small section 'e.g. FlashSales, BestSelling Sections'),
+   The hook is to make sure the data is not duplicated (without it, the data will be the same in the sections 'e.g. FlashSales, BestSelling Sections'),
 
 Some FAQ's:
 
