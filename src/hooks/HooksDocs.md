@@ -14,6 +14,6 @@ Some FAQ's:
 
 Q: Why i didn't rely on the `loading`, `error` that are returned from `seProductsStore`.
 
-A: well, if the data is fethcing in another component in the same page, that will delay other data that are should be displayed, its like i'm making every component has it's own loading, error .. in the store this values are globals, maybe i'll use them in products page bc I'll need to fetc the whole data, better ux and error handling.
+A: well, if the data is fethcing in another component in the same page, that will delay other data that are should be displayed, its like i'm making every component has it's own loading, error .. in the store this values are globals, maybe i'll use them in products page bc I'll need to fetch the whole data, better ux and error handling.
 
 > Last Update : 20/08/2025.
