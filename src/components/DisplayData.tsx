@@ -23,13 +23,13 @@ function DisplayData({ limit, skip }: Props) {
   console.log(products);
 
   return (
-    <div className="grid grid-cols-1 gap-10 p-5 md:grid-cols-2 md:p-0 lg:grid-cols-4">
+    <div className="grid grid-cols-1 gap-5 p-5 md:grid-cols-2 md:gap-10 md:p-0 lg:grid-cols-4">
       {products.map((product) => (
         <div
           key={product.id}
-          className="relative flex flex-col justify-between gap-2.5 p-1"
+          className="relative flex flex-col justify-between gap-2.5 p-2.5"
         >
-          <div className="absolute top-5 right-5 flex flex-col gap-2.5">
+          <div className="absolute top-[8%] right-[10%] flex flex-col gap-2.5">
             <button className="cursor-pointer">
               <IoMdHeartEmpty className="size-7 rounded-full bg-neutral-50 p-1 lg:size-10" />
             </button>
