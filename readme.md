@@ -43,3 +43,30 @@ It combines state-of-the-art UI design with efficient state management and optim
 - **Prettier 3.6.2** – Opinionated code formatter
 - **TypeScript ESLint 8.39.0** – ESLint support for TypeScript
 - **Prettier Plugin TailwindCSS 0.6.14** – TailwindCSS class sorting for Prettier
+
+---
+
+### **Project Sturcture**
+
+```
+public/
+├── fonts/              # Project fonts
+├── imgs/               # Public images (logos, favicons, etc.)
+src/
+├── assets/             # Static assets (images, icons, fonts used internally)
+├── components/         # Reusable UI components
+│   ├── home/           # Components specific to the Home page
+│   ├── layout/         # Layout components (Header, Footer, Sidebar, etc.)
+│   └── ui/             # Small UI building blocks (buttons, cards, modals, etc.)
+│       └── DisplayData.tsx
+├── hooks/              # Custom React hooks
+├── pages/              # Application pages (used in routing, e.g., ProductsPage, CartPage)
+├── services/           # API calls or external service integrations
+├── stores/             # State management (Zustand Stores)
+├── types/              # TypeScript types and interfaces
+├── utils/              # Helper/utility functions (e.g., formatCurrency, calcDiscount)
+├── App.css             # Global styles
+├── App.tsx             # Root component
+└── main.tsx            # Entry point
+
+```
