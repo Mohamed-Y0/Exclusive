@@ -18,4 +18,4 @@ A: well, if the data is fethcing in another component in the same page, that wil
 
 📖 See also: [hooks/HooksDocs.md](../stores//StoresDocs.md)
 
-> Last Update : 20/08/2025.
+> Last Update : 21/08/2025.
