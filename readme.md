@@ -51,20 +51,19 @@ It combines state-of-the-art UI design with efficient state management and optim
 ```
 public/
 ├── fonts/              # Project fonts
-├── imgs/               # Public images (logos, favicons, etc.)
+├── imgs/               # Public images
 src/
 ├── assets/             # Static assets (images, icons, fonts used internally)
 ├── components/         # Reusable UI components
 │   ├── home/           # Components specific to the Home page
-│   ├── layout/         # Layout components (Header, Footer, Sidebar, etc.)
-│   └── ui/             # Small UI building blocks (buttons, cards, modals, etc.)
-│       └── DisplayData.tsx
+│   ├── layout/         # Layout components
+│   └── ui/             # Small UI building blocks
 ├── hooks/              # Custom React hooks
-├── pages/              # Application pages (used in routing, e.g., ProductsPage, CartPage)
+├── pages/              # Application pages
 ├── services/           # API calls or external service integrations
-├── stores/             # State management (Zustand Stores)
+├── stores/             # State management (Zustand)
 ├── types/              # TypeScript types and interfaces
-├── utils/              # Helper/utility functions (e.g., formatCurrency, calcDiscount)
+├── utils/              # Helper/utility functions
 ├── App.css             # Global styles
 ├── App.tsx             # Root component
 └── main.tsx            # Entry point
