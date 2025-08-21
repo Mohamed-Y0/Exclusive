@@ -1,25 +1,21 @@
-## useProductsStore.ts
+# CustomHooks Docs/Notes
 
-### API Functions
+Here i write things like docs about the code and why i did that with this way and explanations, I'll try to focus in important tings.
 
-- **fetchProducts(limit?, skip?)**  
-  Fetches products globally. Accepts two optional arguments (`limit`, `skip`) to control pagination or data size. Often used in combination with the `useProducts` hook for custom fetching.
+---
 
-- **fetchProductById(id)**  
-  Fetches a single product by its unique ID.
+## useCutstomProducts.ts
 
-### State Management
+1. `useProducts` Hook: takes 2 arguments (limit, skip):
 
-- **setProducts**  
-  Updates the global `products` state directly.  
-  Useful when fetching custom data via `useProducts` hook but want to sync or override the global store (e.g., on the Products Page).  
-  This prevents duplicated or conflicting data across different sections of the app.
+   The hook is to make sure the data is not duplicated (without it, the data will be the same in the small section 'e.g. FlashSales, BestSelling Sections'),
 
-### Notes
+Some FAQ's:
 
-For isolated sections (FlashSales, BestSelling, etc.), use the `useProducts` hook instead of the global store.  
-For full pages (like the Products Page), prefer fetching via the store to ensure a unified global state.
+Q: Why i didn't rely on the `loading`, `error` that are returned from `seProductsStore`.
 
-📖 See also: [hooks/HooksDocs.md](../hooks/HooksDocs.md)
+A: well, if the data is fethcing in another component in the same page, that will delay other data that are should be displayed, its like i'm making every component has it's own loading, error .. in the store this values are globals, maybe i'll use them in products page bc I'll need to fetc the whole data, better ux and error handling.
+
+📖 See also: [hooks/HooksDocs.md](../stores//StoresDocs.md)
 
 > Last Update : 20/08/2025.

@@ -1,4 +1,4 @@
-import { useProducts } from "@/hooks/useProducts";
+import { useCutstomProducts } from "@/hooks/useCutstomProducts";
 import { formatCurrency, getDiscountedPrice } from "@/utils/helpers";
 import { FaStar } from "react-icons/fa";
 import { IoMdHeartEmpty } from "react-icons/io";
@@ -11,7 +11,7 @@ type Props = {
 };
 
 function DisplayData({ limit, skip }: Props) {
-  const { products, loading, error } = useProducts(limit, skip);
+  const { products, loading, error } = useCutstomProducts(limit, skip);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error...</p>;

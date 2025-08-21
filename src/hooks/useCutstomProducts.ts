@@ -8,7 +8,7 @@ type HooksReturn = {
   error: string | null;
 };
 
-export function useProducts(limit?: number, skip?: number): HooksReturn {
+export function useCutstomProducts(limit?: number, skip?: number): HooksReturn {
   const { fetchProducts } = useProductsStore();
 
   const [products, setProducts] = useState<ProductTypes[]>([]);
