@@ -42,7 +42,7 @@ function Footer() {
           made with love by{" "}
           <Link
             target="_blank"
-            to="https://github.com/Mohamed-A-Yehia"
+            to="https://github.com/Mohamed-Y0"
             className="text-blue-500"
           >
             Mohamed Ahmed
