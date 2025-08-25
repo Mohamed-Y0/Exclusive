@@ -48,9 +48,11 @@ function DisplayData({ limit, skip }: Props) {
             </div>
             <p>{product.title}</p>
             <div className="flex items-center gap-5">
-              <p className="text-red-600">{formatCurrency(product.price)}</p>
-              <p className="text-[15px] text-neutral-400 line-through">
+              <p className="text-red-600">
                 {getDiscountedPrice(product.price, product.discountPercentage)}
+              </p>
+              <p className="text-[15px] text-neutral-400 line-through">
+                {formatCurrency(product.price)}
               </p>
             </div>
             <div className="flex gap-2.5">
