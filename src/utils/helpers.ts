@@ -8,10 +8,12 @@ export function formatCurrency(value: number) {
 export function getDiscountedPrice(
   price: number,
   discountPercentage: number,
-): number {
-  if (discountPercentage <= 0) return price;
-  if (discountPercentage >= 100) return 0;
+): string {
+  if (discountPercentage <= 0) return formatCurrency(price);
+  if (discountPercentage >= 100) return formatCurrency(0);
 
   const discount = (price * discountPercentage) / 100;
-  return +(price - discount).toFixed(2);
+  const finalPrice = price - discount;
+
+  return formatCurrency(parseFloat(finalPrice.toFixed(2)));
 }
