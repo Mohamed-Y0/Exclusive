@@ -15,5 +15,5 @@ export function getDiscountedPrice(
   const discount = (price * discountPercentage) / 100;
   const finalPrice = price - discount;
 
-  return formatCurrency(parseFloat(finalPrice.toFixed(2)));
+  return formatCurrency(+finalPrice.toFixed(2));
 }
