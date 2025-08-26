@@ -1,4 +1,5 @@
 import DisplayData from "@/components/DisplayData";
+import LimitedOffer from "@/components/home/LimitedOffer";
 import SectionIntro from "@/components/ui/SectionIntro";
 
 function BestSelling() {
@@ -7,6 +8,8 @@ function BestSelling() {
       <SectionIntro title="Best Selling Products" info="This Month" />
 
       <DisplayData limit={4} skip={90} />
+
+      <LimitedOffer />
     </section>
   );
 }
