@@ -17,7 +17,7 @@ function DisplayData({ limit, skip }: Props) {
   if (error) return <p>Error...</p>;
 
   return (
-    <div className="grid grid-cols-1 gap-5 p-5 md:grid-cols-2 md:gap-10 md:p-0 lg:grid-cols-4">
+    <div className="grid grid-cols-1 gap-5 px-5 pb-16 md:grid-cols-2 md:gap-10 md:px-0 lg:grid-cols-4">
       {products.map((product) => (
         <Link to="" key={product.id}>
           <div className="group relative flex flex-col justify-between gap-2.5 p-1">
