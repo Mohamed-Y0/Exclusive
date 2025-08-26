@@ -20,7 +20,7 @@ function DisplayData({ limit, skip }: Props) {
     <div className="grid grid-cols-1 gap-5 px-5 pb-16 md:grid-cols-2 md:gap-10 md:px-0 lg:grid-cols-4">
       {products.map((product) => (
         <Link to="" key={product.id}>
-          <div className="group relative flex flex-col justify-between gap-2.5 p-1">
+          <div className="group relative flex h-full flex-col justify-between gap-2.5 p-1">
             <div className="absolute top-3 right-4 z-10 flex flex-col gap-2.5">
               <button className="cursor-pointer">
                 <IoMdHeartEmpty className="size-7 rounded-full bg-neutral-50 p-1 lg:size-10" />
@@ -55,7 +55,7 @@ function DisplayData({ limit, skip }: Props) {
                 {formatCurrency(product.price)}
               </p>
             </div>
-            <div className="flex gap-2.5">
+            <div className="flex gap-2.5 pb-2">
               {Array.from({ length: product.rating }, (_, i) => (
                 <FaStar
                   key={i}
