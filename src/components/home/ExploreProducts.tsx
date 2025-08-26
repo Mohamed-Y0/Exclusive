@@ -1,4 +1,5 @@
 import DisplayData from "@/components/DisplayData";
+import LinkButton from "@/components/ui/LinkButton";
 import SectionIntro from "@/components/ui/SectionIntro";
 
 function ExploreProducts() {
@@ -7,6 +8,10 @@ function ExploreProducts() {
       <SectionIntro title="Explore Our Products" info="Our Products" />
 
       <DisplayData skip={8} limit={8} />
+
+      <div className="py-10 text-center">
+        <LinkButton to="">View All Products</LinkButton>
+      </div>
     </section>
   );
 }
