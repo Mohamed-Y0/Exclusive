@@ -133,7 +133,7 @@
   transition: 0.3s;
 }
 
-.scroll-animition {
+.page-animation {
   animation: show-up 1s ease-out;
 }
 
