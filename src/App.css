@@ -132,3 +132,19 @@
 * {
   transition: 0.3s;
 }
+
+.scroll-animition {
+  animation: show-up 1s ease-out;
+}
+
+@keyframes show-up {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
