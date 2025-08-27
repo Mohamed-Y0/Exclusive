@@ -128,23 +128,3 @@
   font-weight: 900;
   src: url("/fonts/inter-v19-latin-900.woff2") format("woff2");
 }
-
-* {
-  transition: 0.3s;
-}
-
-.page-animation {
-  animation: show-up 1s ease-out;
-}
-
-@keyframes show-up {
-  from {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate(0);
-  }
-}

@@ -3,6 +3,7 @@ import { formatCurrency, getDiscountedPrice } from "@/utils/helpers";
 import { FaStar } from "react-icons/fa";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoEyeOutline } from "react-icons/io5";
+import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 
 type Props = {
@@ -12,12 +13,16 @@ type Props = {
 
 function DisplayData({ limit, skip }: Props) {
   const { products, loading, error } = useCutstomProducts(limit, skip);
+  const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error...</p>;
 
   return (
-    <div className="grid grid-cols-1 gap-5 px-5 pb-16 md:grid-cols-2 md:gap-10 md:px-0 lg:grid-cols-4">
+    <div
+      ref={ref}
+      className={`${inView ? "page-animation duration-200" : "translate-y-24 opacity-0"} grid grid-cols-1 gap-5 px-5 pb-16 duration-1000 md:grid-cols-2 md:gap-10 md:px-0 lg:grid-cols-4`}
+    >
       {products.map((product) => (
         <Link to="" key={product.id}>
           <div className="group relative flex h-full flex-col justify-between gap-2.5 p-1">

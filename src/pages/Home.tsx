@@ -5,7 +5,7 @@ import NewArrival from "@/components/home/NewArrival";
 
 function Home() {
   return (
-    <div className={`page-animation container m-auto`}>
+    <div className={`container m-auto`}>
       <HeroSection />
       <BestSelling />
       <ExploreProducts />
