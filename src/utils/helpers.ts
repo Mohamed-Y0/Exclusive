@@ -17,3 +17,8 @@ export function getDiscountedPrice(
 
   return formatCurrency(+finalPrice.toFixed(2));
 }
+
+export function getWindowSize() {
+  const windowSize = window.innerWidth;
+  return windowSize;
+}
