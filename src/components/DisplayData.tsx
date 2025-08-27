@@ -1,5 +1,9 @@
 import { useCutstomProducts } from "@/hooks/useCutstomProducts";
-import { formatCurrency, getDiscountedPrice } from "@/utils/helpers";
+import {
+  formatCurrency,
+  getDiscountedPrice,
+  getWindowSize,
+} from "@/utils/helpers";
 import { FaStar } from "react-icons/fa";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoEyeOutline } from "react-icons/io5";
@@ -12,8 +16,13 @@ type Props = {
 };
 
 function DisplayData({ limit, skip }: Props) {
+  const windowSize = getWindowSize();
+
   const { products, loading, error } = useCutstomProducts(limit, skip);
-  const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
+  const { ref, inView } = useInView({
+    threshold: windowSize >= 400 ? 0.2 : 0,
+    triggerOnce: true,
+  });
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error...</p>;
@@ -21,7 +30,7 @@ function DisplayData({ limit, skip }: Props) {
   return (
     <div
       ref={ref}
-      className={`${inView ? "page-animation duration-200" : "translate-y-24 opacity-0"} grid grid-cols-1 gap-5 px-5 pb-16 duration-1000 md:grid-cols-2 md:gap-10 md:px-0 lg:grid-cols-4`}
+      className={` ${inView ? "duration-200" : "translate-y-24 opacity-0"} grid grid-cols-1 gap-5 px-5 pb-16 duration-1000 md:grid-cols-2 md:gap-10 md:px-0 lg:grid-cols-4`}
     >
       {products.map((product) => (
         <Link to="" key={product.id}>

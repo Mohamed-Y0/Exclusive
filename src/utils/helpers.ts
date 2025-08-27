@@ -20,5 +20,6 @@ export function getDiscountedPrice(
 
 export function getWindowSize() {
   const windowSize = window.innerWidth;
+
   return windowSize;
 }
