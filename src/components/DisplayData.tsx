@@ -13,7 +13,7 @@ type Props = {
 
 function DisplayData({ limit, skip }: Props) {
   const { products, loading, error } = useCutstomProducts(limit, skip);
-  const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
+  const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error...</p>;
