@@ -1,6 +1,6 @@
 import Input from "@/components/ui/Input";
 import Logo from "@/components/ui/Logo";
-import { IoMdHeartEmpty } from "react-icons/io";
+import { IoMdHeartEmpty, IoMdMenu } from "react-icons/io";
 import { IoCartOutline } from "react-icons/io5";
 import { Link, NavLink } from "react-router-dom";
 
@@ -38,9 +38,15 @@ function Header() {
           </ul>
         </nav>
 
-        <div className="hidden md:block">
-          <div className="md:flex md:items-center md:gap-5">
-            <Input type="search" placeholder="Search.." id="products-search" />
+        <div className="sm:hidden md:block">
+          <div className="flex flex-row-reverse items-center gap-5 sm:flex-row">
+            <IoMdMenu className="size-6 sm:hidden lg:size-8" />
+            <Input
+              hidden={true}
+              type="search"
+              placeholder="Search.."
+              id="products-search"
+            />
             <Link to="">
               <IoMdHeartEmpty className="size-6 lg:size-8" />
             </Link>
