@@ -48,14 +48,14 @@ function DisplayData({ limit, skip }: Props) {
               <img
                 src={product.thumbnail}
                 alt={product.title}
-                className="w-full bg-neutral-100 group-hover:scale-110 group-hover:rotate-2"
+                className="w-full bg-neutral-100 duration-300 group-hover:scale-105 group-hover:rotate-1"
               />
               <button
                 onClick={(e) => {
                   e.stopPropagation();
                   e.preventDefault();
                 }}
-                className="absolute bottom-0 w-full cursor-pointer bg-black py-2.5 text-white opacity-0 transition duration-700 group-hover:opacity-100"
+                className="absolute bottom-0 w-full cursor-pointer bg-black py-2.5 text-white opacity-0 duration-300 group-hover:opacity-100"
               >
                 Add To Cart
               </button>
