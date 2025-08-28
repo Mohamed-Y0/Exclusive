@@ -6,7 +6,7 @@ import StoreBenefits from "@/components/home/StoreBenefits";
 
 function Home() {
   return (
-    <div className={`container m-auto`}>
+    <div className={`container m-auto p-5`}>
       <HeroSection />
       <BestSelling />
       <ExploreProducts />

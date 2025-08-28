@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer className="bg-black pt-16 font-light text-neutral-200">
-      <div className="container m-auto grid items-start gap-10 px-10 pb-16 sm:grid-cols-3 sm:px-0 lg:grid-cols-4">
+      <div className="container m-auto grid items-start gap-10 px-5 pb-16 sm:grid-cols-3 lg:grid-cols-4">
         <div className="col-span-full flex flex-col justify-center gap-2.5 justify-self-center lg:col-span-1">
           <Logo color="white" />
           <p>Get 10% off your first order</p>
