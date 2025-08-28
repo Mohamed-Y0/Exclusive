@@ -5,14 +5,14 @@ import { VscWorkspaceTrusted } from "react-icons/vsc";
 function StoreBenefits() {
   return (
     <section className="py-20">
-      <div className="flex items-center justify-evenly gap-15">
+      <div className="flex flex-col items-center justify-evenly gap-15 text-center md:flex-row">
         <div className="flex flex-col items-center gap-10">
           <MdOutlineLocalShipping
             color="white"
             className="size-20 rounded-full bg-black p-2.5 outline-15 outline-neutral-200"
           />
           <div className="flex flex-col items-center gap-2.5">
-            <p className="text-2xl font-bold uppercase">
+            <p className="text-lg font-bold uppercase xl:text-2xl">
               free and fast delivery
             </p>
             <p className="font-light capitalize">
@@ -27,7 +27,7 @@ function StoreBenefits() {
             className="size-20 rounded-full bg-black p-2.5 outline-15 outline-neutral-200"
           />
           <div className="flex flex-col items-center gap-2.5">
-            <p className="text-2xl font-bold uppercase">
+            <p className="text-lg font-bold uppercase xl:text-2xl">
               24/7 customer service
             </p>
             <p className="font-light capitalize">
@@ -42,7 +42,9 @@ function StoreBenefits() {
             className="size-20 rounded-full bg-black p-2.5 outline-15 outline-neutral-200"
           />
           <div className="flex flex-col items-center gap-2.5">
-            <p className="text-2xl font-bold uppercase">money back guarantee</p>
+            <p className="text-lg font-bold uppercase xl:text-2xl">
+              money back guarantee
+            </p>
             <p className="font-light capitalize">
               we return money within 30 days
             </p>

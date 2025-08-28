@@ -11,7 +11,7 @@ function NewArrival() {
       <SectionIntro title="New Arrival" info="Featured" />
 
       <div className="text-neutral-50">
-        <div className="grid grid-cols-2 gap-5 text-shadow-lg/50">
+        <div className="grid gap-5 text-shadow-lg/50 md:grid-cols-2">
           <div className="relative w-full justify-self-center bg-black">
             <img
               className="h-full w-full self-center justify-self-center"
@@ -25,7 +25,8 @@ function NewArrival() {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-2.5">
+
+          <div className="grid gap-2.5 md:grid-cols-2">
             <div className="relative col-span-full">
               <img
                 className="h-full w-full"
@@ -39,6 +40,7 @@ function NewArrival() {
                 </p>
               </div>
             </div>
+
             <div className="relative bg-black p-3">
               <img
                 className="justify-self-center"

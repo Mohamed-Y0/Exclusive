@@ -2,7 +2,7 @@ import limitedOffer from "/imgs/limited-offer.webp";
 
 function LimitedOffer() {
   return (
-    <div className="px-5 py-8 text-neutral-50 md:px-0 md:py-16">
+    <div className="px-5 py-8 text-center text-neutral-50 md:px-0 md:py-16 md:text-left">
       <div className="flex flex-col items-center justify-center gap-8 bg-black p-7 md:flex-row md:justify-between md:p-16">
         <div>
           <h4 className="text-3xl md:text-6xl">Enhance Your Music Experince</h4>
