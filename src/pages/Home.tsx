@@ -2,6 +2,7 @@ import BestSelling from "@/components/home/BestSelling";
 import ExploreProducts from "@/components/home/ExploreProducts";
 import HeroSection from "@/components/home/HeroSection";
 import NewArrival from "@/components/home/NewArrival";
+import StoreBenefits from "@/components/home/StoreBenefits";
 
 function Home() {
   return (
@@ -10,6 +11,7 @@ function Home() {
       <BestSelling />
       <ExploreProducts />
       <NewArrival />
+      <StoreBenefits />
     </div>
   );
 }
