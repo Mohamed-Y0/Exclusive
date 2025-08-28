@@ -11,23 +11,51 @@ function NewArrival() {
       <SectionIntro title="New Arrival" info="Featured" />
 
       <div className="text-neutral-50">
-        <div className="grid grid-cols-2 gap-5">
-          <div className="w-full justify-self-center bg-black">
+        <div className="grid grid-cols-2 gap-5 text-shadow-lg/50">
+          <div className="relative w-full justify-self-center bg-black">
             <img
               className="h-full w-full self-center justify-self-center"
               src={playstation}
-              alt=""
+              alt="PlayStation 5"
             />
+            <div className="absolute bottom-0 flex flex-col gap-5 p-8">
+              <p className="text-3xl">PlayStation 5</p>
+              <p className="max-w-10/12 font-light">
+                Black and White Verstion of the PS5 coming out on sale.
+              </p>
+            </div>
           </div>
-          <div className="grid grid-cols-2 gap-5">
-            <div className="col-span-full">
-              <img src={fashion} alt="" />
+          <div className="grid grid-cols-2 gap-2.5">
+            <div className="relative col-span-full">
+              <img
+                className="h-full w-full"
+                src={fashion}
+                alt="Fashion Collections"
+              />
+              <div className="absolute bottom-0 flex flex-col gap-5 p-8">
+                <p className="text-3xl">Fashion Collections</p>
+                <p className="max-w-10/12 font-light">
+                  Feaured Fashion Collections that give you another vibe.
+                </p>
+              </div>
             </div>
-            <div className="bg-black p-3">
-              <img className="justify-self-center" src={speakers} alt="" />
+            <div className="relative bg-black p-3">
+              <img
+                className="justify-self-center"
+                src={speakers}
+                alt="Speakers"
+              />
+              <div className="absolute bottom-0 flex flex-col gap-2.5 p-5">
+                <p className="text-3xl">Speakers</p>
+                <p className="font-light">Amazon Wireless Speakers</p>
+              </div>
             </div>
-            <div className="bg-black p-3">
-              <img className="justify-self-center" src={perf} alt="" />
+            <div className="relative bg-black p-3">
+              <img className="justify-self-center" src={perf} alt="Perfume" />
+              <div className="absolute bottom-0 flex flex-col gap-2.5 p-5">
+                <p className="text-3xl">Perfume</p>
+                <p className="font-light">GUCCI INTENSE OUD EDP </p>
+              </div>
             </div>
           </div>
         </div>
