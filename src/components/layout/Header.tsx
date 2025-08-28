@@ -40,7 +40,7 @@ function Header() {
 
         <div className="sm:hidden md:block">
           <div className="flex flex-row-reverse items-center gap-5 sm:flex-row">
-            <IoMdMenu className="size-6 sm:hidden lg:size-8" />
+            <IoMdMenu className="size-6 cursor-pointer sm:hidden lg:size-8" />
             <Input
               hidden={true}
               type="search"
