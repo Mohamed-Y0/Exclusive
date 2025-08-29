@@ -13,6 +13,7 @@ function Footer() {
             placeholder="Enter Your Email"
             type="email"
             id="discout-email"
+            aria-label="Enter Your Email For 10% Discount"
           />
         </div>
         <div className="flex flex-col justify-center gap-2.5 sm:justify-self-center">
@@ -38,12 +39,12 @@ function Footer() {
       </div>
 
       <div className="border-t">
-        <p className="py-10 text-center text-lg font-light text-neutral-300 capitalize">
+        <p className="py-10 text-center text-lg font-light text-neutral-200 capitalize">
           made with love by{" "}
           <Link
             target="_blank"
             to="https://github.com/Mohamed-Y0"
-            className="text-blue-500"
+            className="text-red-500"
           >
             Mohamed Ahmed
           </Link>

@@ -41,11 +41,12 @@ function Header() {
               type="search"
               placeholder="Search.."
               id="products-search"
+              aria-label="Search Products"
             />
-            <Link to="">
+            <Link to="" aria-label="Go To Your Wishlist">
               <IoMdHeartEmpty className="size-6 lg:size-8" />
             </Link>
-            <Link to="">
+            <Link to="" aria-label="Go To Your Cart">
               <IoCartOutline className="size-6 lg:size-8" />
             </Link>
           </div>
