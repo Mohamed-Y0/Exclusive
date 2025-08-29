@@ -15,13 +15,13 @@ function HeaderNav() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/">Contact</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
         </li>
         <li>
-          <NavLink to="/">About</NavLink>
+          <NavLink to="/about">About</NavLink>
         </li>
         <li>
-          <NavLink to="/">Sign Up</NavLink>
+          <NavLink to="/sign-up">Sign Up</NavLink>
         </li>
       </ul>
     </nav>
