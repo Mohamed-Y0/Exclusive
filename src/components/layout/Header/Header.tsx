@@ -1,12 +1,21 @@
+import HeaderNav from "@/components/layout/Header/HeaderNav";
+import HeaderPhone from "@/components/layout/Header/HeaderPhone";
 import Input from "@/components/ui/Input";
 import Logo from "@/components/ui/Logo";
+import { useState } from "react";
 import { IoMdHeartEmpty, IoMdMenu } from "react-icons/io";
 import { IoCartOutline } from "react-icons/io5";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Header() {
+  const [showMenu, setShowMenu] = useState<boolean>(false);
+
+  function handleMenuToggle(): void {
+    setShowMenu((show) => !show);
+  }
+
   return (
-    <header className="border-b border-neutral-200 bg-neutral-50 px-5 py-5">
+    <header className="relative border-b border-neutral-200 bg-neutral-50 px-5 py-5">
       <div className="container m-auto flex items-center justify-between">
         <div>
           <Link to="/">
@@ -14,33 +23,19 @@ function Header() {
           </Link>
         </div>
 
-        <nav className="hidden sm:block">
-          <ul className="flex items-center gap-5 lg:gap-10">
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "border-b border-neutral-400" : ""
-                }
-                to="/"
-              >
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/">Contact</NavLink>
-            </li>
-            <li>
-              <NavLink to="/">About</NavLink>
-            </li>
-            <li>
-              <NavLink to="/">Sign Up</NavLink>
-            </li>
-          </ul>
-        </nav>
+        {showMenu ? (
+          <HeaderPhone handleMenuToggle={handleMenuToggle} />
+        ) : (
+          <HeaderNav />
+        )}
 
         <div className="sm:hidden md:block">
           <div className="flex flex-row-reverse items-center gap-5 sm:flex-row">
-            <IoMdMenu className="size-6 cursor-pointer sm:hidden lg:size-8" />
+            <IoMdMenu
+              className="size-6 cursor-pointer sm:hidden"
+              onClick={handleMenuToggle}
+            />
+
             <Input
               hidden={true}
               type="search"
