@@ -57,6 +57,7 @@ src/
 ├── components/         # Reusable UI components
 │   ├── home/           # Components specific to the Home page
 │   ├── layout/         # Layout components
+|   |── Header/
 │   └── ui/             # Small UI building blocks
 ├── hooks/              # Custom React hooks
 ├── pages/              # Application pages
