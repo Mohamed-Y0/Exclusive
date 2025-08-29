@@ -1,3 +1,4 @@
+import LeftMenu from "@/components/home/LeftMenu";
 import { IoClose } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 
@@ -13,7 +14,7 @@ function HeaderPhone({ handleMenuToggle }: Props) {
       </div>
 
       <div>
-        <ul className="flex flex-col gap-2.5">
+        <ul className="flex flex-col gap-4">
           <li>
             <NavLink
               className={({ isActive }) =>
@@ -36,6 +37,8 @@ function HeaderPhone({ handleMenuToggle }: Props) {
         </ul>
 
         <p className="py-5 text-lg text-neutral-400">Browse By Categories:</p>
+
+        <LeftMenu />
       </div>
     </nav>
   );
