@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer className="bg-black pt-16 font-light text-neutral-200">
-      <div className="container m-auto grid items-start gap-10 px-5 pb-16 sm:grid-cols-3 lg:grid-cols-4">
+      <div className="container m-auto grid items-start gap-10 px-5 pb-16 sm:grid-cols-3 sm:px-0 lg:grid-cols-4">
         <div className="col-span-full flex flex-col justify-center gap-2.5 justify-self-center lg:col-span-1">
           <Logo color="white" />
           <p>Get 10% off your first order</p>
@@ -16,20 +16,20 @@ function Footer() {
             aria-label="Enter Your Email For 10% Discount"
           />
         </div>
-        <div className="flex flex-col justify-center gap-2.5 sm:justify-self-center">
+        <div className="flex flex-col justify-center gap-2.5 sm:justify-self-end">
           <p className="mb-2.5 font-semibold text-white">Support</p>
           <p>221B Baker Street, London</p>
           <p>exclusive@gmail.com</p>
           <p>+(858) 361-5983</p>
         </div>
-        <div className="flex flex-col justify-center gap-2.5 sm:justify-self-center">
+        <div className="flex flex-col justify-center gap-2.5 sm:justify-self-end">
           <p className="mb-2.5 font-semibold text-white">Account</p>
           <Link to="">Login / Register</Link>
           <Link to="">Cart</Link>
           <Link to="">Wishlist</Link>
           <Link to="">Shop</Link>
         </div>
-        <div className="flex flex-col justify-center gap-2.5 sm:justify-self-center">
+        <div className="flex flex-col justify-center gap-2.5 sm:justify-self-end">
           <p className="mb-2.5 font-semibold text-white">Quick Link</p>
           <Link to="">Privacy Policy</Link>
           <Link to="">Terms Of Use</Link>
