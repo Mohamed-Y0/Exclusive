@@ -6,11 +6,13 @@ type InputProps = {
 
 function Input({ label, hidden, id, ...props }: InputProps) {
   return (
-    <div className={`${hidden && "hidden sm:block"}`}>
+    <div
+      className={`${hidden && "hidden sm:block"} ${label && "flex flex-col gap-2.5"}`}
+    >
       {label && <label htmlFor={id}>{label}</label>}
       <input
         id={id}
-        className={`w-full rounded-lg bg-white px-2.5 py-1 text-black focus:outline-1 focus:outline-neutral-200 lg:px-5 lg:py-2.5`}
+        className={`w-full rounded-lg bg-white px-2.5 py-1 text-black focus:outline-1 focus:outline-neutral-300 lg:px-5 lg:py-2.5`}
         {...props}
       />
     </div>
