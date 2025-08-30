@@ -1,6 +1,6 @@
 import { NavLink, useLocation } from "react-router-dom";
 
-function Path() {
+function PageLocation() {
   const location = useLocation();
   const path = location.pathname.slice(1);
 
@@ -11,4 +11,4 @@ function Path() {
   );
 }
 
-export default Path;
+export default PageLocation;
