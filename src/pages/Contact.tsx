@@ -7,7 +7,7 @@ function Contact() {
     <div className={`container m-auto p-5`}>
       <Path />
 
-      <section className="flex gap-10 py-16">
+      <section className="flex flex-col gap-10 py-16 lg:flex-row">
         <ContactInfo />
         <ContactForm />
       </section>

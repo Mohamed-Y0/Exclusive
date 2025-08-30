@@ -1,11 +1,10 @@
 import Input from "@/components/ui/Input";
-import LinkButton from "@/components/ui/LinkButton";
 
 function ContactForm() {
   return (
-    <div className="w-full bg-neutral-100 p-10 text-neutral-500">
+    <div className="w-full bg-neutral-100 p-5 text-neutral-500 md:p-10">
       <form action="" className="flex flex-col gap-10">
-        <div className="flex gap-8">
+        <div className="flex flex-col gap-8 lg:flex-row">
           <Input
             label="Your Name *"
             required
@@ -30,7 +29,7 @@ function ContactForm() {
         <div className="flex flex-col gap-2.5">
           <label htmlFor="contact-message">Write Your Message *</label>
           <textarea
-            className="h-[300px] w-full rounded-sm bg-white p-2.5 focus:outline-1 focus:outline-neutral-300"
+            className="w-full rounded-sm bg-white p-2.5 focus:outline-1 focus:outline-neutral-300 md:h-[300px]"
             name="contact-message"
             aria-label="Write Your Message"
             required
@@ -39,7 +38,12 @@ function ContactForm() {
           ></textarea>
         </div>
         <div className="text-end">
-          <LinkButton to="">Send Message</LinkButton>
+          <button
+            type="submit"
+            className="w-full cursor-pointer rounded-sm bg-red-600 py-3 text-neutral-50 md:w-fit md:py-6"
+          >
+            Send Message
+          </button>
         </div>
       </form>
     </div>
