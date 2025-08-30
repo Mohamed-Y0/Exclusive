@@ -5,7 +5,7 @@ function Path() {
   const path = location.pathname.slice(1);
 
   return (
-    <div className="py-16">
+    <div className="pt-16">
       <NavLink to="">Home</NavLink> / {path}
     </div>
   );
