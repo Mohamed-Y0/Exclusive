@@ -40,7 +40,7 @@ function ContactForm() {
         <div className="text-end">
           <button
             type="submit"
-            className="w-full cursor-pointer rounded-sm bg-red-600 py-3 text-neutral-50 md:w-fit md:py-6"
+            className="w-full cursor-pointer rounded-sm bg-red-600 py-3 text-neutral-50 md:w-fit md:px-10 md:py-6"
           >
             Send Message
           </button>
