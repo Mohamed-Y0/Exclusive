@@ -15,13 +15,34 @@ function HeaderNav() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/contact">Contact</NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "border-b border-neutral-400" : ""
+            }
+            to="/contact"
+          >
+            Contact
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/about">About</NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "border-b border-neutral-400" : ""
+            }
+            to="/about"
+          >
+            About
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/sign-up">Sign Up</NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "border-b border-neutral-400" : ""
+            }
+            to="/sign-up"
+          >
+            Sign Up
+          </NavLink>
         </li>
       </ul>
     </nav>
