@@ -1,4 +1,4 @@
-import workspaceImg from "/public/imgs/workspace.webp";
+import workspaceImg from "/imgs/workspace.webp";
 
 function AboutHero() {
   return (
