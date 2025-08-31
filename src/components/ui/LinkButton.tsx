@@ -7,7 +7,7 @@ type Props = {
 
 function LinkButton({ to, children }: Props) {
   return (
-    <Link className="rounded-sm bg-red-600 px-16 py-6 text-neutral-50" to={to}>
+    <Link className="rounded-sm bg-red-600 px-16 py-4 text-neutral-50" to={to}>
       {children}
     </Link>
   );
