@@ -3,7 +3,7 @@ import workspaceImg from "/imgs/workspace.webp";
 function AboutHero() {
   return (
     <section className="py-16">
-      <div className="flex items-center gap-12">
+      <div className="flex flex-col items-center gap-12 lg:flex-row">
         <div className="flex flex-col gap-8 font-light">
           <h4 className="text-5xl font-bold">Our Story</h4>
           <p>
