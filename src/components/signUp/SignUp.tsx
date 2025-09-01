@@ -1,14 +1,12 @@
 import InputForm from "@/components/ui/InputForm";
-import signPoster from "/imgs/signPoster.webp";
+import SignPoaster from "@/components/ui/SignPoaster";
 import { NavLink } from "react-router-dom";
 
 function SignUp() {
   return (
     <section className="py-16">
       <div className="flex justify-between">
-        <div>
-          <img src={signPoster} alt="Poster" className="h-full w-full" />
-        </div>
+        <SignPoaster />
         <div>
           <div className="flex flex-col gap-8 py-10">
             <h1 className="text-5xl">Create an account</h1>
