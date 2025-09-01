@@ -1,5 +1,5 @@
 import InputForm from "@/components/ui/InputForm";
-import SignPoaster from "@/components/ui/SignPoaster";
+import SignPoaster from "@/components/ui/SignPoster";
 import { NavLink } from "react-router-dom";
 
 function SignUp() {
