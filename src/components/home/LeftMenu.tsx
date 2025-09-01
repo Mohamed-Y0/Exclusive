@@ -43,7 +43,7 @@ type Props = {
 function LeftMenu({ hide }: Props) {
   return (
     <div className={`md:block ${hide && "hidden"} capitalize`}>
-      <ul className="sm:flex-wrap sm:justify-center sm:px-5 md:flex lg:flex-col lg:border-r lg:border-neutral-200 lg:px-0 lg:pr-2.5">
+      <ul className="sm:flex-wrap sm:justify-center sm:px-5 md:flex lg:flex-col lg:border-r lg:border-neutral-200 lg:px-0">
         {categories.map((item) => (
           <li
             key={item.title}
