@@ -5,11 +5,11 @@ import { NavLink } from "react-router-dom";
 function SignUp() {
   return (
     <section className="py-16">
-      <div className="flex justify-between">
+      <div className="flex flex-col justify-between gap-10 lg:flex-row">
         <SignPoaster />
         <div>
           <div className="flex flex-col gap-8 py-10">
-            <h1 className="text-5xl">Create an account</h1>
+            <h1 className="text-3xl md:text-5xl">Create an account</h1>
             <p className="font-light">Enter your details below</p>
           </div>
           <form action="">
