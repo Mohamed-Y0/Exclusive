@@ -1,4 +1,4 @@
-import DisplayData from "@/components/DisplayData";
+import DisplayData from "@/components/DisplayCustomData";
 import LinkButton from "@/components/ui/LinkButton";
 import SectionIntro from "@/components/ui/SectionIntro";
 
