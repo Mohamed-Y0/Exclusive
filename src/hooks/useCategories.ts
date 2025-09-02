@@ -1,8 +1,17 @@
 import { getCategoryProducts } from "@/services/productsApi";
-import { useQuery } from "@tanstack/react-query";
+import type { ProductTypes } from "@/types/products";
+import { useQuery, type UseQueryResult } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 
-const categories = [
+// Category type
+export type CategoryItem = string;
+
+export interface Category {
+  name: string;
+  items: CategoryItem[];
+}
+
+const categories: Category[] = [
   {
     name: "beauty",
     items: ["beauty", "skin-care", "fragrances"],
@@ -36,18 +45,25 @@ const categories = [
   },
 ];
 
-function useCategories() {
+function useCategories(): {
+  isLoading: boolean;
+  error: unknown;
+  data: ProductTypes[] | undefined;
+} {
   const { category } = useParams();
 
-  const categoryName = categories.find((c) => c.name === category);
+  const categoryName: Category | undefined = categories.find(
+    (c) => c.name === category,
+  );
 
   console.log(categoryName);
 
-  const { isLoading, data, error } = useQuery({
-    queryKey: [`${category}`],
-    queryFn: () => getCategoryProducts([...(categoryName?.items ?? [])]),
-    enabled: !!categoryName,
-  });
+  const { isLoading, data, error }: UseQueryResult<ProductTypes[], unknown> =
+    useQuery({
+      queryKey: ["category", category],
+      queryFn: () => getCategoryProducts([...(categoryName?.items ?? [])]),
+      enabled: !!categoryName,
+    });
 
   return { isLoading, error, data };
 }
