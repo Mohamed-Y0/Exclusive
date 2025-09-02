@@ -16,23 +16,15 @@ const categories = [
   },
   {
     title: "home",
-    items: ["furniture", "decoration", "kitchen"],
+    items: ["furniture", "decoration", "kitchen", "groceries"],
   },
   {
     title: "beauty",
     items: ["skin care", "beauty", "fragrances"],
   },
   {
-    title: "sports",
-    items: ["sports-accessories"],
-  },
-  {
     title: "automotive",
-    items: ["motorcycle", "vehicle"],
-  },
-  {
-    title: "groceries & Pets",
-    items: ["groceries"],
+    items: ["motorcycle", "vehicle", "sports accessories"],
   },
 ];
 
