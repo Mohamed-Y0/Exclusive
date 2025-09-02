@@ -1,9 +1,11 @@
-import { useParams } from "react-router-dom";
+import Category from "@/components/category/DisplayCategory";
 
 function CategoryProducts() {
-  const { category } = useParams();
-
-  return <div>hello {category}</div>;
+  return (
+    <div>
+      <Category />
+    </div>
+  );
 }
 
 export default CategoryProducts;
