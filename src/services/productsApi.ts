@@ -27,3 +27,13 @@ export const getProductById = async function (
 
   return res.data;
 };
+
+export const getCategoryProducts = async function (urls: string[]) {
+  const responses = await Promise.all(
+    urls.map((url) => axiosClient.get(`products/category/${url}`)),
+  );
+
+  const products = responses.flatMap((r) => r.data.products);
+
+  return products;
+};
