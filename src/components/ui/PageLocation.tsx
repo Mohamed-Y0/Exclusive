@@ -1,13 +1,11 @@
-import { capitalizeFirstLetter } from "@/utils/helpers";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 function PageLocation() {
-  const location = useLocation();
-  const path = location.pathname.slice(1);
+  const { category } = useParams();
 
   return (
-    <div className="pt-16">
-      <NavLink to="">Home</NavLink> / {capitalizeFirstLetter(path)}
+    <div className="pt-16 capitalize">
+      <NavLink to="">Home</NavLink> / {category}
     </div>
   );
 }
