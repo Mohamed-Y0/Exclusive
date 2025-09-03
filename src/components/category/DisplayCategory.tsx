@@ -12,7 +12,7 @@ function Category() {
   if (isLoading) return <p>Loading</p>;
 
   return (
-    <div className={`col-start-2 -col-end-1 container m-auto p-5 lg:p-0`}>
+    <div className={`col-start-1 -col-end-2 container m-auto p-5 lg:p-0`}>
       <div
         ref={ref}
         className={` ${inView ? "duration-200" : "translate-y-24 opacity-0"} grid grid-cols-1 gap-5 px-5 pb-16 duration-1000 md:grid-cols-2 md:gap-10 md:px-0 lg:grid-cols-4`}

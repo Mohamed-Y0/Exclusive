@@ -7,9 +7,9 @@ function CategoryProducts() {
     <>
       <div className="container m-auto p-5 lg:p-0">
         <PageLocation />
-        <div className="grid grid-cols-5 gap-5 py-16">
-          <ProductsMethods />
+        <div className="grid grid-cols-5 justify-between gap-5 py-16">
           <Category />
+          <ProductsMethods />
         </div>
       </div>
     </>
