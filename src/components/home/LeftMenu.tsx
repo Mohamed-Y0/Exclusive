@@ -24,7 +24,11 @@ const categories = [
   },
   {
     title: "sports",
-    items: ["motorcycle", "vehicle", "sports accessories"],
+    items: ["motorcycle"],
+  },
+  {
+    title: "motors",
+    items: ["motorcycle", "vehicle"],
   },
 ];
 

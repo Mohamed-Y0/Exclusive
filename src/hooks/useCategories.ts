@@ -41,7 +41,11 @@ const categories: Category[] = [
   },
   {
     name: "sports",
-    items: ["sports-accessories", "motorcycle", "vehicle"],
+    items: ["sports-accessories"],
+  },
+  {
+    name: "motors",
+    items: ["motorcycle", "vehicle"],
   },
 ];
 
