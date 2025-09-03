@@ -1,12 +1,26 @@
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 function PageLocation() {
-  const { category } = useParams();
+  const location = useLocation();
+
+  const pages = location.pathname.split("/").filter(Boolean);
+
+  let path = "";
+  const pagesNames = pages.map((n) => {
+    path += `/${n}`;
+    return { name: n, href: path };
+  });
 
   return (
-    <div className="pt-16 capitalize">
-      <NavLink to="">Home</NavLink> / {category}
-    </div>
+    <nav className="pt-16 capitalize">
+      <NavLink to="/">Home</NavLink>
+      {pagesNames.map((c, idx) => (
+        <span key={idx}>
+          {" / "}
+          <NavLink to={c.href}>{c.name}</NavLink>
+        </span>
+      ))}
+    </nav>
   );
 }
 
