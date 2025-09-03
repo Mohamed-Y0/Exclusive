@@ -56,8 +56,6 @@ function useCategories(): {
     (c) => c.name === category,
   );
 
-  console.log(categoryName);
-
   const { isLoading, data, error }: UseQueryResult<ProductTypes[], unknown> =
     useQuery({
       queryKey: ["category", category],
