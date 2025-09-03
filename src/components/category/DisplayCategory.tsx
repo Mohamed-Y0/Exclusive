@@ -13,7 +13,7 @@ function Category() {
   if (error) return <p>Something Went Wrong</p>;
 
   return (
-    <div className={`col-start-1 -col-end-2 container m-auto p-5 lg:p-0`}>
+    <div className={`col-start-1 -col-end-2 container m-auto lg:p-0`}>
       {isLoading ? (
         <Loading />
       ) : (

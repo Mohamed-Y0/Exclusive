@@ -12,7 +12,7 @@ function PageLocation() {
   });
 
   return (
-    <nav className="pt-16 capitalize">
+    <nav className="p-5 pt-16 capitalize">
       <NavLink to="/">Home</NavLink>
       {pagesNames.map((c, idx) => (
         <span key={idx}>
