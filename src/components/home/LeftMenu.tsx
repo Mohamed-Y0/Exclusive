@@ -23,7 +23,7 @@ const categories = [
     items: ["skin care", "beauty", "fragrances"],
   },
   {
-    title: "automotive",
+    title: "sports",
     items: ["motorcycle", "vehicle", "sports accessories"],
   },
 ];
