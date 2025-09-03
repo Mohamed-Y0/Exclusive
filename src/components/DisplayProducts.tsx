@@ -37,7 +37,7 @@ function DisplayProducts({ data }: { data: ProductTypes[] }) {
               </button>
             </div>
             <p>{item.title}</p>
-            <div className="flex items-center gap-5">
+            <div className="flex flex-wrap items-center gap-5">
               <p className="text-red-600">
                 {getDiscountedPrice(item.price, item.discountPercentage)}
               </p>
