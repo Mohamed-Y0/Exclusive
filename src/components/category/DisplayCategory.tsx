@@ -4,11 +4,13 @@ import useCategories from "@/hooks/useCategories";
 import { useInView } from "react-intersection-observer";
 
 function Category() {
-  const { data, isLoading } = useCategories();
+  const { data, isLoading, error } = useCategories();
   const { ref, inView } = useInView({
     threshold: 0,
     triggerOnce: true,
   });
+
+  if (error) return <p>Something Went Wrong</p>;
 
   return (
     <div className={`col-start-1 -col-end-2 container m-auto p-5 lg:p-0`}>
