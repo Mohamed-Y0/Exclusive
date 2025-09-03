@@ -1,3 +1,4 @@
+import ProductsMethods from "@/components/category/ProductsMethods";
 import DisplayProducts from "@/components/DisplayProducts";
 import Loading from "@/components/ui/Loading";
 import useCategories from "@/hooks/useCategories";
@@ -13,7 +14,8 @@ function Category() {
   if (error) return <p>Something Went Wrong</p>;
 
   return (
-    <div className={`col-start-1 -col-end-2 container m-auto lg:p-0`}>
+    <div className="flex flex-row-reverse gap-5 py-10 lg:py-16">
+      <ProductsMethods />
       {isLoading ? (
         <Loading />
       ) : (
