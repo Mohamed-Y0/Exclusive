@@ -1,4 +1,5 @@
 import DisplayProducts from "@/components/DisplayProducts";
+import Loading from "@/components/ui/Loading";
 import { useCutstomProducts } from "@/hooks/useCutstomProducts";
 import { getWindowSize } from "@/utils/helpers";
 import { useInView } from "react-intersection-observer";
@@ -17,16 +18,21 @@ function DisplayData({ limit, skip }: Props) {
     triggerOnce: true,
   });
 
-  if (loading) return <p>Loading...</p>;
   if (error) return <p>Error...</p>;
 
   return (
-    <div
-      ref={ref}
-      className={` ${inView ? "duration-200" : "translate-y-24 opacity-0"} grid grid-cols-1 gap-5 px-5 pb-16 duration-1000 md:grid-cols-2 md:gap-10 md:px-0 lg:grid-cols-4`}
-    >
-      <DisplayProducts data={products} />
-    </div>
+    <>
+      {loading ? (
+        <Loading />
+      ) : (
+        <div
+          ref={ref}
+          className={` ${inView ? "duration-200" : "translate-y-24 opacity-0"} grid grid-cols-1 gap-5 px-5 pb-16 duration-1000 md:grid-cols-2 md:gap-10 md:px-0 lg:grid-cols-4`}
+        >
+          <DisplayProducts data={products} />
+        </div>
+      )}
+    </>
   );
 }
 
