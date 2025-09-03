@@ -1,13 +1,11 @@
 import DisplayProducts from "@/components/DisplayProducts";
 import useCategories from "@/hooks/useCategories";
-import { getWindowSize } from "@/utils/helpers";
 import { useInView } from "react-intersection-observer";
 
 function Category() {
   const { data, isLoading } = useCategories();
-  const windowSize = getWindowSize();
   const { ref, inView } = useInView({
-    threshold: windowSize >= 400 ? 0.2 : 0,
+    threshold: 0,
     triggerOnce: true,
   });
 
