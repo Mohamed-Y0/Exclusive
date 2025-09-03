@@ -56,7 +56,6 @@ function DisplayProducts({ data }: { data: ProductTypes[] }) {
           </div>
         </Link>
       ))}
-      ;
     </>
   );
 }
