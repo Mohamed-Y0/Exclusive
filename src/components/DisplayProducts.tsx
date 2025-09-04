@@ -3,13 +3,17 @@ import { getDiscountedPrice, formatCurrency } from "@/utils/helpers";
 import { FaStar } from "react-icons/fa";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoEyeOutline } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function DisplayProducts({ data }: { data: ProductTypes[] }) {
+  const { category } = useParams();
   return (
     <>
       {data?.map((item) => (
-        <Link to="" key={item.id}>
+        <Link
+          to={`/products/${category ?? item.category}/${item.id}`}
+          key={item.id}
+        >
           <div className="group relative flex h-full flex-col justify-between gap-2.5 p-1">
             <div className="absolute top-3 right-4 z-10 flex flex-col gap-2.5">
               <button className="cursor-pointer">
