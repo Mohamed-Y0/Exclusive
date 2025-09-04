@@ -33,31 +33,29 @@ export default function ProductsMethods() {
   const { category } = useParams(); // param اللى فى الـ route
   const [searchParams, setSearchParams] = useSearchParams();
 
-  // هات الكاتيجوري اللى اتحدد من الـ route
   const categoryObj = categories.find((c) => c.name === category);
 
-  // القيم المختارة حالياً من الـ URL
   const selected = searchParams.getAll("c");
 
   function handleCheck(e: React.ChangeEvent<HTMLInputElement>) {
     const next = new URLSearchParams(searchParams);
-    const key = "c";
+    const filterKey = "c";
     const value = e.target.name;
 
     if (e.target.checked) {
-      next.append(key, value);
+      next.append(filterKey, value);
     } else {
-      // شيل القيمة دى وخلى الباقى
-      const all = next.getAll(key).filter((v) => v !== value);
-      next.delete(key);
-      all.forEach((v) => next.append(key, v));
+      const remaining = next.getAll(filterKey).filter((v) => v !== value);
+      next.delete(filterKey);
+      remaining.forEach((v) => next.append(filterKey, v));
     }
+
     setSearchParams(next);
   }
 
   return (
-    <div className="col-start-1 -col-end-2 min-w-[250px] pt-1 font-light capitalize">
-      <div className="h-fit rounded-sm p-2.5 shadow shadow-neutral-300">
+    <div className="min-w-[250px] pt-1 font-light capitalize">
+      <div className="fixed h-fit rounded-sm p-2.5 shadow shadow-neutral-300">
         <fieldset>
           <legend className="w-full border-b border-neutral-200">Filter</legend>
           {categoryObj?.items.map((item) => (
