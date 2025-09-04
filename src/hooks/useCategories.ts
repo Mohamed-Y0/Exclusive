@@ -49,7 +49,7 @@ const categories: Category[] = [
   },
 ];
 
-function useCategories(): {
+function useCategories(filterType?: string): {
   isLoading: boolean;
   error: unknown;
   data: ProductTypes[] | undefined;
@@ -67,7 +67,11 @@ function useCategories(): {
       enabled: !!categoryName,
     });
 
-  return { isLoading, error, data };
+  const filteredData = filterType
+    ? data?.filter((p) => p.category === filterType)
+    : data;
+
+  return { isLoading, error, data: filteredData };
 }
 
 export default useCategories;
