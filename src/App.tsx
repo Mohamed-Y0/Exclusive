@@ -8,10 +8,10 @@ import About from "@/pages/About";
 import CategoryProducts from "@/pages/CategoryProducts";
 import Contact from "@/pages/Contact";
 import Home from "@/pages/Home";
-import ProductsType from "@/pages/ProductsType";
 // import Products from "@/pages/Products";
 import SignInPage from "@/pages/SignInPage";
 import SignUpPage from "@/pages/SignUpPage";
+import ProductDetails from "@/pages/ProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       { path: "/sign-in", element: <SignInPage /> },
       // { path: "/products/:category", element: <Products /> },
       { path: "/products/:category", element: <CategoryProducts /> },
-      { path: "/products/:category/:type", element: <ProductsType /> },
+      { path: "/products/:category/:id", element: <ProductDetails /> },
       { path: "*", element: <PageNotFound /> },
     ],
   },
