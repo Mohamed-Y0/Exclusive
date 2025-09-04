@@ -1,6 +1,5 @@
 import axios from "axios";
 import type { ProductApiResponse, ProductTypes } from "@/types/products";
-import { useParams } from "react-router-dom";
 
 const axiosClient = axios.create({
   baseURL: "https://dummyjson.com",

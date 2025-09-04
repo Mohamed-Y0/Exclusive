@@ -1,6 +1,5 @@
 import { getCategoryProducts } from "@/services/productsApi";
-import type { ProductTypes } from "@/types/products";
-import { useQuery, type UseQueryResult } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { useParams, useSearchParams } from "react-router-dom";
 
 // Category type

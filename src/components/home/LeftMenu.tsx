@@ -1,5 +1,4 @@
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const categories = [
   {
