@@ -56,7 +56,7 @@ export default function ProductsMethods() {
   }
 
   return (
-    <div className="col-start-1 -col-end-2 min-w-[20%] pt-1 font-light capitalize">
+    <div className="col-start-1 -col-end-2 min-w-[250px] pt-1 font-light capitalize">
       <div className="h-fit rounded-sm p-2.5 shadow shadow-neutral-300">
         <fieldset>
           <legend className="w-full border-b border-neutral-200">Filter</legend>
