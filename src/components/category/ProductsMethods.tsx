@@ -82,8 +82,8 @@ export default function ProductsMethods() {
   }
 
   return (
-    <div className="min-w-[250px] pt-1 font-light capitalize">
-      <div className="flex h-fit flex-col gap-5 justify-self-end rounded-sm p-2.5 shadow shadow-neutral-300">
+    <div className="min-w-[250px] px-5 pt-1 pb-5 font-light capitalize">
+      <div className="flex h-fit flex-col gap-5 rounded-sm p-2.5 shadow shadow-neutral-300 md:justify-self-end">
         <fieldset>
           <legend className="w-full border-b border-neutral-200 text-neutral-500">
             Filter
