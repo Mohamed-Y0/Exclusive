@@ -1,7 +1,7 @@
 import { getCategoryProducts } from "@/services/productsApi";
 import type { ProductTypes } from "@/types/products";
 import { useQuery, type UseQueryResult } from "@tanstack/react-query";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 
 // Category type
 export type CategoryItem = string;
@@ -12,10 +12,7 @@ export interface Category {
 }
 
 const categories: Category[] = [
-  {
-    name: "beauty",
-    items: ["beauty", "skin-care", "fragrances"],
-  },
+  { name: "beauty", items: ["beauty", "skin-care", "fragrances"] },
   {
     name: "womens",
     items: [
@@ -39,22 +36,13 @@ const categories: Category[] = [
     name: "home",
     items: ["furniture", "home-decoration", "kitchen-accessories", "groceries"],
   },
-  {
-    name: "sports",
-    items: ["sports-accessories"],
-  },
-  {
-    name: "motors",
-    items: ["motorcycle", "vehicle"],
-  },
+  { name: "sports", items: ["sports-accessories"] },
+  { name: "motors", items: ["motorcycle", "vehicle"] },
 ];
 
-function useCategories(filterType?: string): {
-  isLoading: boolean;
-  error: unknown;
-  data: ProductTypes[] | undefined;
-} {
+function useCategories() {
   const { category } = useParams();
+  const [searchParams] = useSearchParams();
 
   const categoryName: Category | undefined = categories.find(
     (c) => c.name === category,
@@ -67,8 +55,11 @@ function useCategories(filterType?: string): {
       enabled: !!categoryName,
     });
 
-  const filteredData = filterType
-    ? data?.filter((p) => p.category === filterType)
+  // اقرأ كل الفلاتر الموجودة في الـ URL
+  const filters = searchParams.getAll("c"); // هيجيب Array
+  // فلترة محلية بناء على القيم اللي في URL
+  const filteredData = filters.length
+    ? data?.filter((p) => filters.includes(p.category))
     : data;
 
   return { isLoading, error, data: filteredData };
