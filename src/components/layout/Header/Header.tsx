@@ -3,7 +3,7 @@ import HeaderPhone from "@/components/layout/Header/HeaderPhone";
 import Input from "@/components/ui/Input";
 import Logo from "@/components/ui/Logo";
 import { useState } from "react";
-import { IoMdHeartEmpty, IoMdMenu } from "react-icons/io";
+import { IoMdMenu } from "react-icons/io";
 import { IoCartOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
@@ -43,9 +43,9 @@ function Header() {
               id="products-search"
               aria-label="Search Products"
             />
-            <Link to="" aria-label="Go To Your Wishlist" role="link">
+            {/* <Link to="" aria-label="Go To Your Wishlist" role="link">
               <IoMdHeartEmpty className="size-6 lg:size-8" />
-            </Link>
+            </Link> */}
             <Link to="" aria-label="Go To Your Cart" role="link">
               <IoCartOutline className="size-6 lg:size-8" />
             </Link>
