@@ -30,7 +30,7 @@ const categories = [
 ];
 
 export default function ProductsMethods() {
-  const { category } = useParams(); // param اللى فى الـ route
+  const { category } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const categoryObj = categories.find((c) => c.name === category);
@@ -53,11 +53,41 @@ export default function ProductsMethods() {
     setSearchParams(next);
   }
 
+  function handleSort(e: React.ChangeEvent<HTMLInputElement>) {
+    // copy the current query params so we can edit safely
+    const next = new URLSearchParams(searchParams);
+
+    // key for ascending/descending order
+    const sortOrderKey = "order";
+
+    // checkbox value (e.g. "asc" or "desc")
+    const value = e.target.name;
+
+    if (e.target.checked) {
+      // when checked → set sorting by price and desired order
+      next.set("sortBy", "price"); // use set (only one value for sortBy)
+      next.set(sortOrderKey, value); // replace order if it exists
+    } else {
+      // when unchecked → remove only this order value, keep others
+      const remaining = next.getAll(sortOrderKey).filter((v) => v !== value);
+      next.delete(sortOrderKey); // clear old order values
+      remaining.forEach((v) => next.append(sortOrderKey, v)); // re-add remaining if any
+
+      // optional: clear sortBy too if no order remains
+      if (remaining.length === 0) next.delete("sortBy");
+    }
+
+    // write updated params back to the URL
+    setSearchParams(next);
+  }
+
   return (
     <div className="min-w-[250px] pt-1 font-light capitalize">
-      <div className="fixed h-fit rounded-sm p-2.5 shadow shadow-neutral-300">
+      <div className="flex h-fit flex-col gap-5 justify-self-end rounded-sm p-2.5 shadow shadow-neutral-300">
         <fieldset>
-          <legend className="w-full border-b border-neutral-200">Filter</legend>
+          <legend className="w-full border-b border-neutral-200 text-neutral-500">
+            Filter
+          </legend>
           {categoryObj?.items.map((item) => (
             <div key={item} className="flex items-center gap-2 pt-2.5">
               <input
@@ -71,6 +101,31 @@ export default function ProductsMethods() {
               <label htmlFor={item}>{item}</label>
             </div>
           ))}
+        </fieldset>
+        <fieldset>
+          <legend className="w-full border-b border-neutral-200 text-neutral-500">
+            Sort By Price
+          </legend>
+          <div className="flex items-center gap-2 pt-2.5">
+            <input
+              className="size-5 accent-red-500"
+              type="checkbox"
+              name="asc"
+              id="asc"
+              onChange={handleSort}
+            />
+            <label htmlFor="asc">Lowest</label>
+          </div>
+          <div className="flex items-center gap-2 pt-2.5">
+            <input
+              className="size-5 accent-red-500"
+              type="checkbox"
+              name="desc"
+              id="desc"
+              onChange={handleSort}
+            />
+            <label htmlFor="desc">highest</label>
+          </div>
         </fieldset>
       </div>
     </div>

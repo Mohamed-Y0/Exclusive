@@ -14,7 +14,7 @@ function Category() {
   if (error) return <p>Something Went Wrong</p>;
 
   return (
-    <div className="flex flex-row-reverse gap-5 py-10 lg:py-16">
+    <div className="flex flex-row-reverse py-10 lg:py-16">
       <ProductsMethods />
       {isLoading ? (
         <Loading />
