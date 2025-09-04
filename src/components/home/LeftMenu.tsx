@@ -38,24 +38,7 @@ function LeftMenu({ hide }: Props) {
           >
             <div className="flex items-center justify-between">
               <Link to={`/products/${item.name}`}>{item.name}</Link>
-              {item.items.length > 1 && (
-                <MdOutlineKeyboardArrowRight className="" />
-              )}
             </div>
-
-            <ul className="absolute top-0 right-0 z-10 flex translate-x-full flex-col rounded-br-sm bg-neutral-100">
-              {item.items.length > 1 &&
-                item.items.map((category) => (
-                  <NavLink
-                    to={`/products/${item.name}/${category}`}
-                    key={category}
-                  >
-                    <li className="hidden px-2.5 py-2.5 group-hover:block hover:text-neutral-500 sm:px-5 lg:pr-2.5">
-                      {category}
-                    </li>
-                  </NavLink>
-                ))}
-            </ul>
           </li>
         ))}
       </ul>
