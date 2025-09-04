@@ -40,29 +40,40 @@ const categories: Category[] = [
   { name: "motors", items: ["motorcycle", "vehicle"] },
 ];
 
+// Custom hook to fetch and filter products by category
 function useCategories() {
-  const { category } = useParams();
-  const [searchParams] = useSearchParams();
+  const { category } = useParams(); // current category slug from the URL
+  const [searchParams] = useSearchParams(); // current query params (?sortBy=...&order=...)
 
-  const categoryName: Category | undefined = categories.find(
+  const categoryName = categories.find(
+    // find the category object from our list
     (c) => c.name === category,
   );
 
-  const { isLoading, data, error }: UseQueryResult<ProductTypes[], unknown> =
-    useQuery({
-      queryKey: ["category", category],
-      queryFn: () => getCategoryProducts([...(categoryName?.items ?? [])]),
-      enabled: !!categoryName,
-    });
+  const sortBy = searchParams.get("sortBy"); // e.g. "price"
+  const order = searchParams.get("order"); // e.g. "asc" | "desc"
 
-  // اقرأ كل الفلاتر الموجودة في الـ URL
-  const filters = searchParams.getAll("c"); // هيجيب Array
-  // فلترة محلية بناء على القيم اللي في URL
-  const filteredData = filters.length
+  // TanStack Query: fetch products whenever category, sortBy or order changes
+  const { isLoading, data, error } = useQuery({
+    // queryKey acts like a unique cache ID → changing any value triggers a refetch
+    queryKey: ["category", category, sortBy, order],
+
+    // queryFn is called when queryKey changes or cache is stale
+    queryFn: () =>
+      getCategoryProducts([...(categoryName?.items ?? [])], { sortBy, order }),
+
+    // avoid running until we actually have a category object
+    enabled: !!categoryName,
+  });
+
+  const filters = searchParams.getAll("c"); // all selected category filters
+
+  // filter the fetched products client-side by selected sub-categories (if any)
+  const filtered = filters.length
     ? data?.filter((p) => filters.includes(p.category))
     : data;
 
-  return { isLoading, error, data: filteredData };
+  return { isLoading, error, data: filtered }; // expose only filtered list
 }
 
 export default useCategories;
