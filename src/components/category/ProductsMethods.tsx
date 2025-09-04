@@ -54,30 +54,21 @@ export default function ProductsMethods() {
   }
 
   function handleSort(e: React.ChangeEvent<HTMLInputElement>) {
-    // copy the current query params so we can edit safely
     const next = new URLSearchParams(searchParams);
-
-    // key for ascending/descending order
     const sortOrderKey = "order";
-
-    // checkbox value (e.g. "asc" or "desc")
     const value = e.target.name;
 
     if (e.target.checked) {
-      // when checked → set sorting by price and desired order
-      next.set("sortBy", "price"); // use set (only one value for sortBy)
-      next.set(sortOrderKey, value); // replace order if it exists
+      next.set("sortBy", "price");
+      next.set(sortOrderKey, value);
     } else {
-      // when unchecked → remove only this order value, keep others
       const remaining = next.getAll(sortOrderKey).filter((v) => v !== value);
-      next.delete(sortOrderKey); // clear old order values
-      remaining.forEach((v) => next.append(sortOrderKey, v)); // re-add remaining if any
+      next.delete(sortOrderKey);
+      remaining.forEach((v) => next.append(sortOrderKey, v));
 
-      // optional: clear sortBy too if no order remains
       if (remaining.length === 0) next.delete("sortBy");
     }
 
-    // write updated params back to the URL
     setSearchParams(next);
   }
 
