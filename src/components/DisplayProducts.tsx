@@ -1,17 +1,20 @@
 import type { ProductTypes } from "@/types/products";
-import { getDiscountedPrice, formatCurrency } from "@/utils/helpers";
+import {
+  getDiscountedPrice,
+  formatCurrency,
+  getGroupSlug,
+} from "@/utils/helpers";
 import { FaStar } from "react-icons/fa";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoEyeOutline } from "react-icons/io5";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function DisplayProducts({ data }: { data: ProductTypes[] }) {
-  const { category } = useParams();
   return (
     <>
       {data?.map((item) => (
         <Link
-          to={`/products/${category ?? item.category}/${item.id}`}
+          to={`/products/${getGroupSlug(item.category)}/${item.id}`}
           key={item.id}
         >
           <div className="group relative flex h-full flex-col justify-between gap-2.5 p-1">
