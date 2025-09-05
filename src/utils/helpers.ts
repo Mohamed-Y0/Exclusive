@@ -1,3 +1,5 @@
+import { categoryGroups } from "@/types/products";
+
 export function formatCurrency(value: number) {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -22,4 +24,9 @@ export function getWindowSize() {
   const windowSize = window.innerWidth;
 
   return windowSize;
+}
+
+export function getGroupSlug(apiCategory: string): string {
+  const group = categoryGroups.find((g) => g.items.includes(apiCategory));
+  return group?.slug ?? apiCategory;
 }
