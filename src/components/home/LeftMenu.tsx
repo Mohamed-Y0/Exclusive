@@ -28,17 +28,14 @@ type Props = {
 
 function LeftMenu({ hide }: Props) {
   return (
-    <div className={`md:block ${hide && "hidden"} capitalize`}>
-      <ul className="sm:flex-wrap sm:justify-center sm:px-5 md:flex lg:flex-col lg:border-r lg:border-neutral-200 lg:px-0">
+    <div className={`sm:block ${hide && "hidden"} capitalize`}>
+      <ul className="sm:flex sm:flex-wrap sm:justify-center lg:flex-col lg:border-r lg:border-neutral-200">
         {categories.map((item) => (
-          <li
-            key={item.name}
-            className="group relative rounded-sm px-2.5 py-2.5 duration-300 hover:bg-neutral-100 sm:px-5 lg:pr-2.5"
-          >
-            <div className="flex items-center justify-between">
-              <Link to={`/products/${item.name}`}>{item.name}</Link>
-            </div>
-          </li>
+          <Link key={item.name} to={`/products/${item.name}`}>
+            <li className="rounded-sm py-2.5 hover:bg-neutral-100 sm:px-5">
+              {item.name}
+            </li>
+          </Link>
         ))}
       </ul>
     </div>

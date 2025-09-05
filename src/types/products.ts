@@ -44,3 +44,40 @@ export type ProductTypes = {
   thumbnail: string;
   images: string[];
 };
+
+export const categoryGroups = [
+  {
+    slug: "mens",
+    label: "Men",
+    items: ["mens-shirts", "mens-shoes", "mens-watches", "sunglasses"],
+  },
+  {
+    slug: "womens",
+    label: "Women",
+    items: [
+      "womens-dresses",
+      "womens-bags",
+      "womens-shoes",
+      "womens-watches",
+      "womens-jewellery",
+      "tops",
+    ],
+  },
+  {
+    slug: "beauty",
+    label: "Beauty",
+    items: ["beauty", "skin-care", "fragrances"],
+  },
+  {
+    slug: "electronics",
+    label: "Electronics",
+    items: ["smartphones", "laptops", "tablets", "mobile-accessories"],
+  },
+  {
+    slug: "home",
+    label: "Home",
+    items: ["furniture", "home-decoration", "kitchen-accessories", "groceries"],
+  },
+  { slug: "sports", label: "Sports", items: ["sports-accessories"] },
+  { slug: "motors", label: "Motors", items: ["motorcycle", "vehicle"] },
+];

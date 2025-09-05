@@ -1,43 +1,7 @@
 import { getCategoryProducts } from "@/services/productsApi";
 import { useQuery } from "@tanstack/react-query";
 import { useParams, useSearchParams } from "react-router-dom";
-
-// Category type
-export type CategoryItem = string;
-
-export interface Category {
-  name: string;
-  items: CategoryItem[];
-}
-
-const categories: Category[] = [
-  { name: "beauty", items: ["beauty", "skin-care", "fragrances"] },
-  {
-    name: "womens",
-    items: [
-      "womens-dresses",
-      "womens-bags",
-      "womens-shoes",
-      "womens-watches",
-      "womens-jewellery",
-      "tops",
-    ],
-  },
-  {
-    name: "mens",
-    items: ["mens-shirts", "mens-shoes", "mens-watches", "sunglasses"],
-  },
-  {
-    name: "electronics",
-    items: ["smartphones", "laptops", "tablets", "mobile-accessories"],
-  },
-  {
-    name: "home",
-    items: ["furniture", "home-decoration", "kitchen-accessories", "groceries"],
-  },
-  { name: "sports", items: ["sports-accessories"] },
-  { name: "motors", items: ["motorcycle", "vehicle"] },
-];
+import { categoryGroups as categories } from "@/types/products";
 
 // Custom hook to fetch and filter products by category
 function useCategories() {
@@ -46,7 +10,7 @@ function useCategories() {
 
   const categoryName = categories.find(
     // find the category object from our list
-    (c) => c.name === category,
+    (c) => c.slug === category,
   );
 
   const sortBy = searchParams.get("sortBy"); // e.g. "price"
