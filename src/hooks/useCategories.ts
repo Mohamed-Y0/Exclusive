@@ -3,43 +3,6 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams, useSearchParams } from "react-router-dom";
 import { categoryGroups as categories } from "@/types/products";
 
-// Category type
-type CategoryItem = string;
-
-interface Category {
-  name: string;
-  items: CategoryItem[];
-}
-
-// const categories: Category[] = [
-//   { name: "beauty", items: ["beauty", "skin-care", "fragrances"] },
-//   {
-//     name: "womens",
-//     items: [
-//       "womens-dresses",
-//       "womens-bags",
-//       "womens-shoes",
-//       "womens-watches",
-//       "womens-jewellery",
-//       "tops",
-//     ],
-//   },
-//   {
-//     name: "mens",
-//     items: ["mens-shirts", "mens-shoes", "mens-watches", "sunglasses"],
-//   },
-//   {
-//     name: "electronics",
-//     items: ["smartphones", "laptops", "tablets", "mobile-accessories"],
-//   },
-//   {
-//     name: "home",
-//     items: ["furniture", "home-decoration", "kitchen-accessories", "groceries"],
-//   },
-//   { name: "sports", items: ["sports-accessories"] },
-//   { name: "motors", items: ["motorcycle", "vehicle"] },
-// ];
-
 // Custom hook to fetch and filter products by category
 function useCategories() {
   const { category } = useParams(); // current category slug from the URL

@@ -4,10 +4,10 @@ import { useQuery } from "@tanstack/react-query";
 
 function useProducts(limit?: number, skip?: number) {
   return useQuery<ProductTypes[], Error>({
-    queryKey: ["products", limit, skip], // cache key فريد
+    queryKey: ["products", limit, skip],
     queryFn: async () => {
       const data = await getProducts(limit, skip);
-      return data.products; // TanStack هيخزنها فى الكاش
+      return data.products;
     },
   });
 }
