@@ -1,14 +1,31 @@
 import LeftMenu from "@/components/home/LeftMenu";
+import { useEffect } from "react";
 import { IoClose } from "react-icons/io5";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 type Props = {
   handleMenuToggle: () => void;
+  isOpen: boolean;
 };
 
-function HeaderPhone({ handleMenuToggle }: Props) {
+function HeaderPhone({ handleMenuToggle, isOpen }: Props) {
+  const location = useLocation();
+
+  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.currentTarget === e.target) {
+      handleMenuToggle();
+    }
+  };
+
+  useEffect(() => {
+    if (isOpen) handleMenuToggle();
+  }, [location.pathname, handleMenuToggle, isOpen]);
+
   return (
-    <nav className="absolute top-0 left-0 z-50 flex h-dvh w-full flex-row-reverse justify-between bg-neutral-200 p-5">
+    <nav
+      className="absolute top-0 left-0 z-50 flex h-dvh w-full flex-row-reverse justify-between bg-neutral-200 p-5"
+      onClick={handleOverlayClick}
+    >
       <div>
         <IoClose className="size-8 cursor-pointer" onClick={handleMenuToggle} />
       </div>

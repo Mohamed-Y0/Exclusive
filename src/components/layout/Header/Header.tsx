@@ -8,10 +8,10 @@ import { IoCartOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 function Header() {
-  const [showMenu, setShowMenu] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   function handleMenuToggle(): void {
-    setShowMenu((show) => !show);
+    setIsOpen((isOpen) => !isOpen);
   }
 
   return (
@@ -23,8 +23,8 @@ function Header() {
           </Link>
         </div>
 
-        {showMenu ? (
-          <HeaderPhone handleMenuToggle={handleMenuToggle} />
+        {isOpen ? (
+          <HeaderPhone handleMenuToggle={handleMenuToggle} isOpen={isOpen} />
         ) : (
           <HeaderNav />
         )}
