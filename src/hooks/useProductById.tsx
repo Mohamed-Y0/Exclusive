@@ -9,7 +9,6 @@ function useProductById() {
   return useQuery<ProductTypes, Error>({
     queryKey: ["product", id],
     queryFn: () => getProductById(Number(id)),
-
     enabled: !!id,
   });
 }
