@@ -1,17 +1,19 @@
 import Details from "@/components/products/Details";
 import Loading from "@/components/ui/Loading";
+import PageLocation from "@/components/ui/PageLocation";
 import ProductNotFound from "@/components/ui/ProductNotFound";
 import useProductById from "@/hooks/useProductById";
 
 function ProductDetails() {
-  const { data, isLoading, error } = useProductById();
+  const { data, isLoading } = useProductById();
 
   if (!data) return <ProductNotFound />;
   if (isLoading) return <Loading />;
-  if (error) throw new Error("Somthing Went Wrong");
+  // if (error) throw new Error("Somthing Went Wrong");
 
   return (
-    <div>
+    <div className={`container m-auto p-5 lg:p-0`}>
+      <PageLocation />
       <Details data={data} />
     </div>
   );
@@ -19,5 +21,5 @@ function ProductDetails() {
 
 export default ProductDetails;
 
-// If Not Data <ProductNotFound />
+// If Not Data <ProductNotFound /> [Done]
 // title, description, category, price, rating, stock, brand, warrantyInformation, shippingInformation, availabilityStatus, returnPolicy, thumbnail, images
