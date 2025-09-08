@@ -7,8 +7,8 @@ import useProductById from "@/hooks/useProductById";
 function ProductDetails() {
   const { data, isLoading } = useProductById();
 
-  if (!data) return <ProductNotFound />;
   if (isLoading) return <Loading />;
+  if (!data) return <ProductNotFound />;
   // if (error) throw new Error("Somthing Went Wrong");
 
   return (
