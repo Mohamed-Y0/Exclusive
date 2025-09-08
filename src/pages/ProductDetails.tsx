@@ -12,7 +12,7 @@ function ProductDetails() {
   // if (error) throw new Error("Somthing Went Wrong");
 
   return (
-    <div className={`container m-auto p-5 lg:p-0`}>
+    <div className={`container m-auto px-5 2xl:p-0`}>
       <PageLocation />
       <Details data={data} />
     </div>
