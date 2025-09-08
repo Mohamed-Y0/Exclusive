@@ -20,6 +20,3 @@ function ProductDetails() {
 }
 
 export default ProductDetails;
-
-// If Not Data <ProductNotFound /> [Done]
-// title, description, category, price, rating, stock, brand, warrantyInformation, shippingInformation, availabilityStatus, returnPolicy, thumbnail, images
