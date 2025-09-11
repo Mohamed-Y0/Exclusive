@@ -39,3 +39,5 @@ function ProductInfo({ data }: { data: ProductTypes }) {
 }
 
 export default ProductInfo;
+
+// title, description, category, price, rating, stock, brand, warrantyInformation, shippingInformation, availabilityStatus, returnPolicy, thumbnail, images
