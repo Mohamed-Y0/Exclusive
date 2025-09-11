@@ -1,4 +1,5 @@
-import Details from "@/components/products/Details";
+import Details from "@/components/productDetails/Details";
+import RelatedProducts from "@/components/productDetails/RelatedProducts";
 import Loading from "@/components/ui/Loading";
 import PageLocation from "@/components/ui/PageLocation";
 import ProductNotFound from "@/components/ui/ProductNotFound";
@@ -15,6 +16,7 @@ function ProductDetails() {
     <div className={`container m-auto px-5 2xl:p-0`}>
       <PageLocation />
       <Details data={data} />
+      <RelatedProducts />
     </div>
   );
 }

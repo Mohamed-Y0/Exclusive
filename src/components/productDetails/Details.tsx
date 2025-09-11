@@ -1,5 +1,5 @@
-import ProductImages from "@/components/products/ProductImages";
-import ProductInfo from "@/components/products/ProductInfo";
+import ProductImages from "@/components/productDetails/ProductImages";
+import ProductInfo from "@/components/productDetails/ProductInfo";
 import type { ProductTypes } from "@/types/products";
 
 function Details({ data }: { data: ProductTypes }) {
