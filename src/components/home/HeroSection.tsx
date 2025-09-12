@@ -1,15 +1,16 @@
-import FlashSales from "@/components/home/FlashSales";
-import ImageSlider from "@/components/home/ImageSlider";
-import LeftMenu from "@/components/home/LeftMenu";
-
 function HeroSection() {
   return (
     <section className="border-b-3 border-neutral-200 py-5 sm:py-8 lg:py-16">
-      <div className="grid grid-cols-1 gap-5 pb-10 lg:grid-cols-5 lg:gap-0">
-        <LeftMenu hide={true} />
-        <ImageSlider />
+      <div className="flex flex-col items-center justify-center gap-8 py-20">
+        <h1 className="text-5xl">
+          <span className="text-red-500">Exclusive</span> - Your Online
+          Marketplace
+        </h1>
+        <p className="font-light tracking-wide">
+          A diverse selection of fashion, beauty, electronics, home décor, and
+          everyday essentials — all in one seamless shopping experience.
+        </p>
       </div>
-      <FlashSales />
     </section>
   );
 }
