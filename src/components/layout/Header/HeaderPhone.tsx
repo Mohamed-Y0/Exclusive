@@ -1,4 +1,3 @@
-import LeftMenu from "@/components/home/LeftMenu";
 import { useEffect } from "react";
 import { IoClose } from "react-icons/io5";
 import { NavLink, useLocation } from "react-router-dom";
@@ -75,8 +74,6 @@ function HeaderPhone({ handleMenuToggle, isOpen }: Props) {
         </ul>
 
         <p className="py-5 text-lg text-neutral-400">Browse By Categories:</p>
-
-        <LeftMenu />
       </div>
     </nav>
   );
