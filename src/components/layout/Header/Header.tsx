@@ -1,6 +1,5 @@
 import HeaderNav from "@/components/layout/Header/HeaderNav";
 import HeaderPhone from "@/components/layout/Header/HeaderPhone";
-import Input from "@/components/ui/Input";
 import Logo from "@/components/ui/Logo";
 import { useState } from "react";
 import { IoMdMenu } from "react-icons/io";
@@ -15,7 +14,7 @@ function Header() {
   }
 
   return (
-    <header className="relative border-b border-neutral-200 bg-neutral-50 px-5 py-5">
+    <header className="relative border-b border-neutral-200 bg-neutral-50 px-5 py-5 md:px-0">
       <div className="container m-auto flex items-center justify-between">
         <div>
           <Link to="/">
