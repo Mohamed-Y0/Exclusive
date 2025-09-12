@@ -6,7 +6,7 @@ function ProductReviews() {
   console.log(data);
 
   return (
-    <div className="py-14 capitalize">
+    <section className="py-14 capitalize">
       <p className="text-4xl font-semibold text-red-500">reviews</p>
       <div className="flex flex-col gap-5 pt-14">
         {data?.reviews.map((review) => (
@@ -28,7 +28,7 @@ function ProductReviews() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 
