@@ -3,8 +3,6 @@ import useProductById from "@/hooks/useProductById";
 function ProductReviews() {
   const { data } = useProductById();
 
-  console.log(data);
-
   return (
     <section className="py-14 capitalize">
       <p className="text-4xl font-semibold text-red-500">reviews</p>
