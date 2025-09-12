@@ -36,13 +36,6 @@ function Header() {
               onClick={handleMenuToggle}
             />
 
-            <Input
-              hidden={true}
-              type="search"
-              placeholder="Search.."
-              id="products-search"
-              aria-label="Search Products"
-            />
             {/* <Link to="" aria-label="Go To Your Wishlist" role="link">
               <IoMdHeartEmpty className="size-6 lg:size-8" />
             </Link> */}
