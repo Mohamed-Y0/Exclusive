@@ -4,10 +4,9 @@ import { NavLink, useLocation } from "react-router-dom";
 
 type Props = {
   handleMenuToggle: () => void;
-  isOpen: boolean;
 };
 
-function HeaderPhone({ handleMenuToggle, isOpen }: Props) {
+function HeaderPhone({ handleMenuToggle }: Props) {
   const location = useLocation();
 
   const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -17,8 +16,8 @@ function HeaderPhone({ handleMenuToggle, isOpen }: Props) {
   };
 
   useEffect(() => {
-    if (isOpen) handleMenuToggle();
-  }, [location.pathname, handleMenuToggle, isOpen]);
+    handleMenuToggle();
+  }, [handleMenuToggle, location.pathname]);
 
   return (
     <nav
@@ -72,8 +71,6 @@ function HeaderPhone({ handleMenuToggle, isOpen }: Props) {
             </NavLink>
           </li>
         </ul>
-
-        <p className="py-5 text-lg text-neutral-400">Browse By Categories:</p>
       </div>
     </nav>
   );
