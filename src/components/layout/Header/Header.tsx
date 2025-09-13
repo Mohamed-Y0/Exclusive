@@ -14,7 +14,7 @@ function Header() {
   }
 
   return (
-    <header className="relative border-b border-neutral-200 bg-neutral-50 px-5 py-5 md:px-0">
+    <header className="relative border-b border-neutral-200 bg-neutral-50 px-5 py-5 lg:px-0">
       <div className="container m-auto flex items-center justify-between">
         <div>
           <Link to="/">
