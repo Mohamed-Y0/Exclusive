@@ -1,3 +1,4 @@
+import Categories from "@/components/layout/Header/Categories";
 import { IoClose } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 
@@ -68,6 +69,9 @@ function HeaderPhone({ handleMenuToggle }: Props) {
             </NavLink>
           </li>
         </ul>
+
+        <p className="py-5 text-lg text-neutral-400">Browse By Categories:</p>
+        <Categories col={true} />
       </div>
     </nav>
   );

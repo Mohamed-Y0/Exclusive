@@ -22,13 +22,19 @@ const categories = [
   { name: "motors", items: ["motorcycle", "vehicle"] },
 ];
 
-function Categories() {
+type Props = {
+  col?: boolean;
+};
+
+function Categories({ col }: Props) {
   return (
     <div>
-      <ul className="flex flex-wrap items-center justify-center gap-2.5 bg-neutral-50 py-5">
+      <ul
+        className={`${col ? "flex-col" : "flex-wrap items-center py-5"} flex justify-center gap-2.5`}
+      >
         {categories.map((item) => (
           <Link key={item.name} to={`/${item.name}`}>
-            <li className="rounded-lg border border-neutral-200 px-2.5 py-2.5 capitalize hover:bg-neutral-100 sm:px-5">
+            <li className="rounded-lg border border-neutral-200 px-2.5 py-1 capitalize duration-200 hover:bg-neutral-100 sm:px-5 sm:py-2.5">
               {item.name}
             </li>
           </Link>
