@@ -71,7 +71,7 @@ function HeaderPhone({ handleMenuToggle }: Props) {
         </ul>
 
         <p className="py-5 text-lg text-neutral-400">Browse By Categories:</p>
-        <Categories col={true} />
+        <Categories col={true} handleMenuToggle={handleMenuToggle} />
       </div>
     </nav>
   );

@@ -1,3 +1,4 @@
+import type { Dispatch } from "react";
 import { Link } from "react-router-dom";
 
 const categories = [
@@ -24,16 +25,17 @@ const categories = [
 
 type Props = {
   col?: boolean;
+  handleMenuToggle: () => void;
 };
 
-function Categories({ col }: Props) {
+function Categories({ col, handleMenuToggle }: Props) {
   return (
     <div>
       <ul
         className={`${col ? "flex-col" : "flex-wrap items-center py-5"} flex justify-center gap-2.5`}
       >
         {categories.map((item) => (
-          <Link key={item.name} to={`/${item.name}`}>
+          <Link key={item.name} to={`/${item.name}`} onClick={handleMenuToggle}>
             <li className="rounded-lg border border-neutral-200 px-2.5 py-1 capitalize duration-200 hover:bg-neutral-100 sm:px-5 sm:py-2.5">
               {item.name}
             </li>
