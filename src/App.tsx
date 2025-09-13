@@ -8,10 +8,10 @@ import About from "@/pages/About";
 import CategoryProducts from "@/pages/CategoryProducts";
 import Contact from "@/pages/Contact";
 import Home from "@/pages/Home";
-// import Products from "@/pages/Products";
 import SignInPage from "@/pages/SignInPage";
 import SignUpPage from "@/pages/SignUpPage";
 import ProductDetails from "@/pages/ProductDetails";
+import Cart from "@/pages/Cart";
 
 const router = createBrowserRouter([
   {
@@ -23,9 +23,9 @@ const router = createBrowserRouter([
       { path: "/about", element: <About /> },
       { path: "/sign-up", element: <SignUpPage /> },
       { path: "/sign-in", element: <SignInPage /> },
-      // { path: "/products/:category", element: <Products /> },
       { path: "/:category", element: <CategoryProducts /> },
       { path: "/:category/:id", element: <ProductDetails /> },
+      { path: "/cart", element: <Cart /> },
       { path: "*", element: <PageNotFound /> },
     ],
   },

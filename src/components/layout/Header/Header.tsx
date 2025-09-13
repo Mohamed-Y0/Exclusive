@@ -38,7 +38,7 @@ function Header() {
             {/* <Link to="" aria-label="Go To Your Wishlist" role="link">
               <IoMdHeartEmpty className="size-6 lg:size-8" />
             </Link> */}
-            <Link to="" aria-label="Go To Your Cart" role="link">
+            <Link to="/cart" aria-label="Go To Your Cart" role="link">
               <IoCartOutline className="size-6 lg:size-8" />
             </Link>
           </div>
