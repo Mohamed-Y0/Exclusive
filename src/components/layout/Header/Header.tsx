@@ -1,7 +1,7 @@
 import HeaderNav from "@/components/layout/Header/HeaderNav";
 import HeaderPhone from "@/components/layout/Header/HeaderPhone";
 import Logo from "@/components/ui/Logo";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { IoMdMenu } from "react-icons/io";
 import { IoCartOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
@@ -9,12 +9,12 @@ import { Link } from "react-router-dom";
 function Header() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const handleMenuToggle = useCallback(function handleMenuToggle(): void {
-    setIsOpen((prev) => !prev);
-  }, []);
+  function handleMenuToggle(): void {
+    setIsOpen((isOpen) => !isOpen);
+  }
 
   return (
-    <header className="relative border-b border-neutral-200 bg-neutral-50 px-5 py-5 lg:px-0">
+    <header className="relative border-b border-neutral-200 bg-neutral-50 px-5 py-5 md:px-0">
       <div className="container m-auto flex items-center justify-between">
         <div>
           <Link to="/">
@@ -23,7 +23,7 @@ function Header() {
         </div>
 
         {isOpen ? (
-          <HeaderPhone handleMenuToggle={handleMenuToggle} isOpen={isOpen} />
+          <HeaderPhone handleMenuToggle={handleMenuToggle} />
         ) : (
           <HeaderNav />
         )}

@@ -1,25 +1,16 @@
-import { useEffect } from "react";
 import { IoClose } from "react-icons/io5";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 type Props = {
   handleMenuToggle: () => void;
-  isOpen: boolean;
 };
 
-function HeaderPhone({ handleMenuToggle, isOpen }: Props) {
-  const location = useLocation();
-
+function HeaderPhone({ handleMenuToggle }: Props) {
   const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.currentTarget === e.target) {
       handleMenuToggle();
     }
   };
-
-  useEffect(() => {
-    if (isOpen) handleMenuToggle();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location.pathname]);
 
   return (
     <nav
@@ -38,6 +29,7 @@ function HeaderPhone({ handleMenuToggle, isOpen }: Props) {
                 isActive ? "border-b border-neutral-400" : ""
               }
               to="/"
+              onClick={handleMenuToggle}
             >
               Home
             </NavLink>
@@ -48,6 +40,7 @@ function HeaderPhone({ handleMenuToggle, isOpen }: Props) {
                 isActive ? "border-b border-neutral-400" : ""
               }
               to="/contact"
+              onClick={handleMenuToggle}
             >
               Contact
             </NavLink>
@@ -58,6 +51,7 @@ function HeaderPhone({ handleMenuToggle, isOpen }: Props) {
                 isActive ? "border-b border-neutral-400" : ""
               }
               to="/about"
+              onClick={handleMenuToggle}
             >
               About
             </NavLink>
@@ -68,6 +62,7 @@ function HeaderPhone({ handleMenuToggle, isOpen }: Props) {
                 isActive ? "border-b border-neutral-400" : ""
               }
               to="/sign-up"
+              onClick={handleMenuToggle}
             >
               Sign Up
             </NavLink>
