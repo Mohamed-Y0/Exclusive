@@ -1,6 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { Provider } from "react-redux";
 
 import AppLayout from "@/components/layout/AppLayout";
 import PageNotFound from "@/components/ui/PageNotFound";
@@ -12,6 +13,7 @@ import SignInPage from "@/pages/SignInPage";
 import SignUpPage from "@/pages/SignUpPage";
 import ProductDetails from "@/pages/ProductDetails";
 import Cart from "@/pages/Cart";
+import { store } from "@/store/store";
 
 const router = createBrowserRouter([
   {
@@ -42,8 +44,10 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <ReactQueryDevtools initialIsOpen={false} />
-      <RouterProvider router={router} />
+      <Provider store={store}>
+        <ReactQueryDevtools initialIsOpen={false} />
+        <RouterProvider router={router} />
+      </Provider>
     </QueryClientProvider>
   );
 }
