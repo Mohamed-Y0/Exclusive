@@ -13,10 +13,7 @@ function DisplayProducts({ data }: { data: ProductTypes[] }) {
   return (
     <>
       {data?.map((item) => (
-        <Link
-          to={`/products/${getGroupSlug(item.category)}/${item.id}`}
-          key={item.id}
-        >
+        <Link to={`/${getGroupSlug(item.category)}/${item.id}`} key={item.id}>
           <div className="group relative flex h-full flex-col justify-between gap-2.5 p-1">
             <div className="absolute top-3 right-4 z-10 flex flex-col gap-2.5">
               <button className="cursor-pointer">

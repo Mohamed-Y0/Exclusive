@@ -42,7 +42,7 @@ function HeaderNav() {
           <FaAngleDown />
           <ul className="invisible absolute top-0 left-4 -z-10 translate-x-1/2 overflow-hidden rounded-lg bg-neutral-50 pt-13 group-hover:visible">
             {categories.map((item) => (
-              <Link key={item.name} to={`/products/${item.name}`}>
+              <Link key={item.name} to={`/${item.name}`}>
                 <li className="border-t border-neutral-200 py-2.5 capitalize hover:bg-neutral-200 sm:px-5">
                   {item.name}
                 </li>
