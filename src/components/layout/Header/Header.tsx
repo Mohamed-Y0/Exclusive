@@ -23,7 +23,7 @@ function Header() {
         </div>
 
         {isOpen ? (
-          <HeaderPhone handleMenuToggle={handleMenuToggle} />
+          <HeaderPhone handleMenuToggle={handleMenuToggle} isOpen={isOpen} />
         ) : (
           <HeaderNav />
         )}
