@@ -7,16 +7,6 @@ It combines state-of-the-art UI design with efficient state management and optim
 
 ---
 
-## Docs List
-
-**Note: My English is a bit bad, I'm trying my best here**
-
-[Custom Hooks Docs hooks/HooksDocs.md](./src/hooks/HooksDocs.md)
-
-[Stores Docs stores/StoresDocs.md](./src/stores/StoresDocs.md)
-
----
-
 ## Tech Stack
 
 ### **Core Technologies**
