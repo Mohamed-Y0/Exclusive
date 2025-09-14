@@ -1,3 +1,6 @@
+import { addToCart } from "@/components/cart/cartSlice";
+import { useAppDispatch } from "@/store/hooks";
+import type { AddToCartHandler } from "@/types/functions";
 import type { ProductTypes } from "@/types/products";
 import {
   getDiscountedPrice,
@@ -10,6 +13,14 @@ import { IoEyeOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 function DisplayProducts({ data }: { data: ProductTypes[] }) {
+  const dispatch = useAppDispatch();
+
+  const handleAddToCart: AddToCartHandler = function (e, id) {
+    e.stopPropagation();
+    e.preventDefault();
+    dispatch(addToCart(id));
+  };
+
   return (
     <>
       {data?.map((item) => (
@@ -31,10 +42,7 @@ function DisplayProducts({ data }: { data: ProductTypes[] }) {
                 className="w-full bg-neutral-100 duration-300 group-hover:scale-105 group-hover:rotate-1"
               />
               <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  e.preventDefault();
-                }}
+                onClick={(e) => handleAddToCart(e, item)}
                 className="absolute bottom-0 w-full cursor-pointer bg-black py-2.5 text-white opacity-0 duration-300 group-hover:opacity-100"
               >
                 Add To Cart
