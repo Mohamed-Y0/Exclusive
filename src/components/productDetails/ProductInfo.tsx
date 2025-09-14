@@ -1,9 +1,20 @@
-import LinkButton from "@/components/ui/LinkButton";
+import type { AddToCartHandler } from "@/types/functions";
 import type { ProductTypes } from "@/types/products";
+import { addToCart } from "@/components/cart/cartSlice";
+import LinkButton from "@/components/ui/LinkButton";
 import { formatCurrency } from "@/utils/helpers";
 import { IoCartOutline } from "react-icons/io5";
+import { useDispatch } from "react-redux";
 
 function ProductInfo({ data }: { data: ProductTypes }) {
+  const dispatch = useDispatch();
+
+  const handleAddToCart: AddToCartHandler = function (e, id) {
+    e.stopPropagation();
+    e.preventDefault();
+    dispatch(addToCart(id));
+  };
+
   return (
     <div className="flex w-full flex-col gap-12 capitalize lg:px-10">
       <div className="flex flex-col gap-5 border-b border-b-neutral-300 py-5 md:py-10">
@@ -21,7 +32,10 @@ function ProductInfo({ data }: { data: ProductTypes }) {
       <div className="flex flex-col gap-10">
         <div className="flex flex-wrap items-center gap-8">
           <LinkButton to="">Buy Now</LinkButton>
-          <button className="cursor-pointer rounded-lg border border-neutral-300 px-5 py-2">
+          <button
+            onClick={(e) => handleAddToCart(e, data)}
+            className="cursor-pointer rounded-lg border border-neutral-300 px-5 py-2"
+          >
             <IoCartOutline size={40} />
           </button>
         </div>
