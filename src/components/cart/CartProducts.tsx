@@ -1,6 +1,10 @@
 import PageLocation from "@/components/ui/PageLocation";
+import { useAppSelector } from "@/store/hooks";
 
 function CartProducts() {
+  const cart = useAppSelector((state) => state.cart.cartItems);
+  console.log(cart);
+
   return (
     <section>
       <div>

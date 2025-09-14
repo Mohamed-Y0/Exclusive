@@ -2,11 +2,11 @@ import type { ProductTypes } from "@/types/products";
 import { createSlice } from "@reduxjs/toolkit";
 
 type InitialState = {
-  cart: ProductTypes[];
+  cartItems: ProductTypes[];
 };
 
 const initialState: InitialState = {
-  cart: [],
+  cartItems: [],
 };
 
 const cartSlice = createSlice({
