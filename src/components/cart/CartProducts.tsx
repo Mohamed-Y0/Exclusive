@@ -1,12 +1,14 @@
-import { updateQuantity } from "@/components/cart/cartSlice";
+import { removeCartItem, updateQuantity } from "@/components/cart/cartSlice";
 import PageLocation from "@/components/ui/PageLocation";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import type { CartItem } from "@/types/products";
 import { formatCurrency } from "@/utils/helpers";
+import { FaRegTrashAlt } from "react-icons/fa";
 
 function CartProducts() {
   const cart = useAppSelector((state) => state.cart.cartItems);
   const dispatch = useAppDispatch();
+  let totalPrice = 0;
 
   const decrement = (item: CartItem) => {
     dispatch(
@@ -42,7 +44,7 @@ function CartProducts() {
           {cart.map((item) => (
             <div
               key={item.id}
-              className="grid grid-cols-4 items-center rounded-2xl bg-neutral-100 px-5 shadow-lg"
+              className="relative grid grid-cols-4 items-center rounded-2xl bg-neutral-100 px-5 shadow-lg"
             >
               <img
                 src={item.thumbnail}
@@ -67,7 +69,17 @@ function CartProducts() {
                   +
                 </button>
               </div>
-              <p className="justify-self-center"></p>
+              <div>
+                <p className="justify-self-center">
+                  {formatCurrency((totalPrice += item.price * item.quantity))}
+                </p>
+              </div>
+              <button
+                onClick={() => dispatch(removeCartItem(item.id))}
+                className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 cursor-pointer rounded-full bg-white p-2.5 duration-200 hover:bg-red-500 hover:text-white"
+              >
+                <FaRegTrashAlt size={30} />
+              </button>
             </div>
           ))}
         </div>
