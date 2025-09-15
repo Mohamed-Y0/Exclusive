@@ -8,7 +8,6 @@ import {
   getGroupSlug,
 } from "@/utils/helpers";
 import { FaStar } from "react-icons/fa";
-import { IoMdHeartEmpty } from "react-icons/io";
 import { IoEyeOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
