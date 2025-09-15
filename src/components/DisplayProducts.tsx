@@ -27,9 +27,9 @@ function DisplayProducts({ data }: { data: ProductTypes[] }) {
         <Link to={`/${getGroupSlug(item.category)}/${item.id}`} key={item.id}>
           <div className="group relative flex h-full flex-col justify-between gap-2.5 p-1">
             <div className="absolute top-3 right-4 z-10 flex flex-col gap-2.5">
-              <button className="cursor-pointer">
+              {/* <button className="cursor-pointer">
                 <IoMdHeartEmpty className="size-7 rounded-full bg-neutral-50 p-1 lg:size-10" />
-              </button>
+              </button> */}
               <button className="cursor-pointer">
                 <IoEyeOutline className="size-7 rounded-full bg-neutral-50 p-1 lg:size-10" />
               </button>
