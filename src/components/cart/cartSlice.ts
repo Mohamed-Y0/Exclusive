@@ -5,8 +5,10 @@ type InitialState = {
   cartItems: CartItem[];
 };
 
+const savedCart = localStorage.getItem("cart");
+
 const initialState: InitialState = {
-  cartItems: [],
+  cartItems: savedCart ? JSON.parse(savedCart) : [],
 };
 
 const cartSlice = createSlice({
