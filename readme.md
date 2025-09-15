@@ -7,19 +7,19 @@ It combines state-of-the-art UI design with efficient state management and optim
 
 ## 🚀 Core Tech
 
-- **Frontend Framework:** [React 19](https://react.dev/) + [React DOM](https://react.dev/reference/react-dom)
-- **State Management:** [Redux Toolkit](https://redux-toolkit.js.org/) + [React Redux](https://react-redux.js.org/)
-- **Data Fetching & Caching:** [TanStack Query (React Query)](https://tanstack.com/query/latest) + Devtools
-- **Styling:** [TailwindCSS 4](https://tailwindcss.com/) + [Slick Carousel](https://kenwheeler.github.io/slick/) + [React Icons](https://react-icons.github.io/react-icons/) + [React Spinners](https://www.davidhu.io/react-spinners/)
-- **Routing:** [React Router v7](https://reactrouter.com/)
-- **Utilities:** [Axios](https://axios-http.com/) · [React Intersection Observer](https://github.com/thebuilder/react-intersection-observer)
-- **Build Tool:** [Vite 7](https://vitejs.dev/)
-- **Language:** [TypeScript 5](https://www.typescriptlang.org/)
-- **Code Quality:** [ESLint 9](https://eslint.org/) + [Prettier](https://prettier.io/) + [Prettier Tailwind Plugin](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)
+- **Frontend Framework:** React 19 + React DOM
+- **State Management:** Redux Toolkit + React Redux
+- **Data Fetching & Caching:** TanStack Query (React Query)
+- **Styling:** TailwindCSS 4 + Slick Carousel + React Icons + React Spinners
+- **Routing:** React Router v7
+- **Utilities:** Axios · React Intersection Observer
+- **Build Tool:** Vite 7
+- **Language:** TypeScript 5
+- **Code Quality:** ESLint 9 + Prettier + Prettier Tailwind Plugin
 
 ---
 
-### **Project Sturcture**
+## 📁 Project Sturcture
 
 ```
 public/
