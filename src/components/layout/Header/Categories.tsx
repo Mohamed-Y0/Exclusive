@@ -24,7 +24,7 @@ const categories = [
 
 type Props = {
   col?: boolean;
-  handleMenuToggle: () => void;
+  handleMenuToggle?: () => void;
 };
 
 function Categories({ col, handleMenuToggle }: Props) {
