@@ -26,12 +26,15 @@ public/
 ├── fonts/              # Project fonts
 ├── imgs/               # Public images
 src/
-├── assets/             # Static assets (images, icons, fonts used internally)
+├── assets/             # Static assets
 ├── components/         # Reusable UI components
-│   ├── home/           # Components specific to the Home page
 │   ├── layout/         # Layout components
+│   ├── home/
 |   |── Header/
 |   |── about/
+|   |── ProductDetails/
+|   |── cart/
+|   |── Category/
 |   |── contact/
 |   |── signIn/
 |   |── signUp/
@@ -39,7 +42,7 @@ src/
 ├── hooks/              # Custom React hooks
 ├── pages/              # Application pages
 ├── services/           # API calls or external service integrations
-├── stores/             # State management (Zustand)
+├── stores/             # State management (Redux)
 ├── types/              # TypeScript types and interfaces
 ├── utils/              # Helper/utility functions
 ├── App.css             # Global styles
