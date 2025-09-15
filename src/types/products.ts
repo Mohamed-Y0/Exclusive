@@ -5,7 +5,7 @@ export type ProductApiResponse = {
   limit: number;
 };
 
-export type ProductTypes = {
+export interface ProductTypes {
   id: number;
   title: string;
   description: string;
@@ -43,7 +43,11 @@ export type ProductTypes = {
   };
   thumbnail: string;
   images: string[];
-};
+}
+
+export interface CartItem extends ProductTypes {
+  quantity: number;
+}
 
 export const categoryGroups = [
   {
