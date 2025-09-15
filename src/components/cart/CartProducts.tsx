@@ -1,8 +1,30 @@
+import { updateQuantity } from "@/components/cart/cartSlice";
 import PageLocation from "@/components/ui/PageLocation";
-import { useAppSelector } from "@/store/hooks";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import type { CartItem } from "@/types/products";
+import { formatCurrency } from "@/utils/helpers";
 
 function CartProducts() {
   const cart = useAppSelector((state) => state.cart.cartItems);
+  const dispatch = useAppDispatch();
+
+  const decrement = (item: CartItem) => {
+    dispatch(
+      updateQuantity({
+        id: item.id,
+        amount: item.quantity - 1,
+      }),
+    );
+  };
+
+  const increment = (item: CartItem) => {
+    dispatch(
+      updateQuantity({
+        id: item.id,
+        amount: item.quantity + 1,
+      }),
+    );
+  };
 
   return (
     <section>
@@ -10,21 +32,42 @@ function CartProducts() {
         <PageLocation />
       </div>
       <div className="flex flex-col gap-5 py-16">
-        <div className="flex items-center justify-between rounded-lg bg-neutral-100 p-5 shadow-lg">
-          <p>Product</p>
-          <p>Price</p>
-          <p>Quantity</p>
-          <p>Subtotal</p>
+        <div className="grid grid-cols-4 items-center rounded-lg bg-neutral-100 p-5 shadow-lg">
+          <p className="justify-self-center">Product</p>
+          <p className="justify-self-center">Price</p>
+          <p className="justify-self-center">Quantity</p>
+          <p className="justify-self-center">Subtotal</p>
         </div>
         <div className="flex flex-col gap-5">
           {cart.map((item) => (
             <div
               key={item.id}
-              className="flex items-center justify-between rounded-2xl bg-neutral-100 pr-5 shadow-lg"
+              className="grid grid-cols-4 items-center rounded-2xl bg-neutral-100 px-5 shadow-lg"
             >
-              <img src={item.thumbnail} alt={item.title} className="w-1/10" />
-              <p>{item.price}</p>
-              {/* <p>{item.price}</p> */}
+              <img
+                src={item.thumbnail}
+                alt={item.title}
+                className="w-1/3 justify-self-center"
+              />
+              <p className="justify-self-center">
+                {formatCurrency(item.quantity * item.price)}
+              </p>
+              <div className="flex items-center justify-center gap-5">
+                <button
+                  className="cursor-pointer rounded-lg bg-white px-2.5 py-1 font-bold"
+                  onClick={() => decrement(item)}
+                >
+                  -
+                </button>
+                <p className="justify-self-center">{item.quantity}</p>
+                <button
+                  className="cursor-pointer rounded-lg bg-white px-2.5 py-1 font-bold"
+                  onClick={() => increment(item)}
+                >
+                  +
+                </button>
+              </div>
+              <p className="justify-self-center"></p>
             </div>
           ))}
         </div>
