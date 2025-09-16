@@ -5,7 +5,21 @@ It combines state-of-the-art UI design with efficient state management and optim
 
 ---
 
-## 🚀 Core Tech
+## 🚀 Features
+
+- 🛍️ Product listing and filtering
+- 🗂️ Categories with dynamic routing
+- 🛒 Cart management (add, remove, update quantities)
+- 💾 LocalStorage persistence for cart
+- 📱 Fully responsive design (desktop, tablet, mobile)
+- ⚡ Fast builds and development with **Vite**
+- 🧩 Reusable components
+- 🛡️ Type-safe codebase using **TypeScript**
+- ✅ Linting and formatting with **ESLint + Prettier**
+
+---
+
+## 🛠️ Core Tech
 
 - **Frontend Framework:** React 19 + React DOM
 - **State Management:** Redux Toolkit + React Redux
