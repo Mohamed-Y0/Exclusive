@@ -6,7 +6,7 @@ type Props = {
 
 function CartDetails({ subtotal }: Props) {
   const afterDiscount = +getDiscountedPrice(subtotal, 10);
-  const delivery = 15;
+  const delivery = subtotal && 15;
   const total = afterDiscount + delivery;
 
   return (
