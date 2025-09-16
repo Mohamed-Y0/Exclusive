@@ -17,7 +17,7 @@ export function getDiscountedPrice(
   const discount = (price * discountPercentage) / 100;
   const finalPrice = price - discount;
 
-  return formatCurrency(+finalPrice.toFixed(2));
+  return finalPrice.toFixed(2);
 }
 
 export function getWindowSize() {

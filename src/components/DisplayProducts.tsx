@@ -50,7 +50,7 @@ function DisplayProducts({ data }: { data: ProductTypes[] }) {
             <p>{item.title}</p>
             <div className="flex flex-wrap items-center gap-5">
               <p className="text-red-600">
-                {getDiscountedPrice(item.price, item.discountPercentage)}
+                ${getDiscountedPrice(item.price, item.discountPercentage)}
               </p>
               <p className="text-[15px] text-neutral-400 line-through">
                 {formatCurrency(item.price)}
