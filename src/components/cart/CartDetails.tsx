@@ -1,4 +1,6 @@
 import { formatCurrency, getDiscountedPrice } from "@/utils/helpers";
+import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 type Props = {
   subtotal: number;
@@ -31,6 +33,15 @@ function CartDetails({ subtotal }: Props) {
       <div className="flex items-center justify-between">
         <p className="text-[20px]">Total</p>
         <p className="font-semibold">{formatCurrency(total)}</p>
+      </div>
+      <div className="pt-2.5">
+        <Link
+          to=""
+          className="flex w-full items-center justify-center gap-2.5 rounded-full bg-red-500 p-2.5 text-[20px] font-semibold tracking-wide text-white"
+        >
+          Go To Checkout
+          <FaArrowRight />
+        </Link>
       </div>
     </div>
   );
