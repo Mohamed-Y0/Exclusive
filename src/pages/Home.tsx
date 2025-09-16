@@ -8,7 +8,7 @@ import Categories from "@/components/layout/Header/Categories";
 
 function Home() {
   return (
-    <div className={`container m-auto px-5 2xl:p-0`}>
+    <div className={`container m-auto px-5`}>
       <Categories />
       <HeroSection />
       <FlashSales />
