@@ -36,7 +36,7 @@ function CartProducts() {
       <div className="pb-8">
         <PageLocation />
       </div>
-      <section className="flex gap-5 py-8 md:text-lg lg:pb-16">
+      <section className="flex flex-col gap-5 py-8 md:text-lg lg:flex-row lg:pb-16">
         <div className="w-full rounded-lg border border-neutral-200">
           {cart.map((item) => (
             <div
@@ -50,7 +50,7 @@ function CartProducts() {
                   className="max-w-1/7"
                 />
                 <div className="flex w-full flex-col gap-5">
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between gap-5">
                     <p>{item.title}</p>
                     <button
                       onClick={() => dispatch(removeCartItem(item.id))}
