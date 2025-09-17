@@ -8,7 +8,6 @@ import {
   getGroupSlug,
 } from "@/utils/helpers";
 import { FaStar } from "react-icons/fa";
-import { IoEyeOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 function DisplayProducts({ data }: { data: ProductTypes[] }) {
