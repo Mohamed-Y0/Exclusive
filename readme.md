@@ -214,20 +214,20 @@ The application integrates with **DummyJSON API** for product data:
 
 ### ✅ Completed Features
 
-[x] Product catalog with categories
-[x] Shopping cart functionality
-[x] Responsive design implementation
-[x] Product detail pages
-[x] Category-based navigation
-[x] Lazy Loading
-[x] React Suspense
+- [x] Product catalog with categories
+- [x] Shopping cart functionality
+- [x] Responsive design implementation
+- [x] Product detail pages
+- [x] Category-based navigation
+- [x] Lazy Loading
+- [x] React Suspense
 
 ### 🔮 Future Enhancements
 
-[ ] Fake user authentication system
-[ ] Wishlist functionality
-[ ] Product reviews and ratings
-[ ] Admin dashboard
+- [ ] Fake user authentication system
+- [ ] Wishlist functionality
+- [ ] Product reviews and ratings
+- [ ] Admin dashboard
 
 ---
 
