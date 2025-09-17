@@ -1,4 +1,5 @@
 import DisplayProducts from "@/components/DisplayProducts";
+import Error from "@/components/ui/Error";
 import Loading from "@/components/ui/Loading";
 import useProducts from "@/hooks/useProducts";
 import { getWindowSize } from "@/utils/helpers";
@@ -19,7 +20,7 @@ function DisplayData({ limit, skip }: Props) {
   });
 
   if (isLoading) return <Loading />;
-  if (error) return <p>Error...</p>;
+  if (error) return <Error err={error} />;
 
   return (
     <div

@@ -3,6 +3,7 @@ import DisplayProducts from "@/components/DisplayProducts";
 import Loading from "@/components/ui/Loading";
 import useCategories from "@/hooks/useCategories";
 import { useInView } from "react-intersection-observer";
+import Error from "@/components/ui/Error";
 
 function Category() {
   const { data, isLoading, error } = useCategories();
@@ -11,7 +12,7 @@ function Category() {
     triggerOnce: true,
   });
 
-  if (error) return <p>Something Went Wrong</p>;
+  if (error) return <Error err={error} />;
 
   return (
     <div className="py-10 md:flex md:flex-row-reverse lg:py-16">

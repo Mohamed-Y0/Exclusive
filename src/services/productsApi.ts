@@ -14,23 +14,18 @@ export const getProducts = async function (
 
   if (limit !== undefined) params.limit = limit;
   if (skip !== undefined) params.skip = skip;
-  try {
-    const res = await axiosClient.get("/products", { params });
-    return res.data;
-  } catch (err) {
-    throw err;
-  }
+
+  const res = await axiosClient.get("/products", { params });
+
+  return res.data;
 };
 
 export const getProductById = async function (
   id: number,
 ): Promise<ProductTypes> {
-  try {
-    const res = await axiosClient.get(`/products/${id}`);
-    return res.data;
-  } catch (err) {
-    throw err;
-  }
+  const res = await axiosClient.get(`/products/${id}`);
+
+  return res.data;
 };
 
 // Function to fetch products for a list of categories (with optional sorting)
@@ -39,23 +34,22 @@ export const getCategoryProducts = async (
   opts?: { sortBy?: string | null; order?: string | null }, // optional sorting params
 ) => {
   const { sortBy, order } = opts || {};
-  try {
-    const responses = await Promise.all(
-      urls.map((url) => {
-        // Build query string if sortBy + order are provided
-        const query =
-          sortBy && order
-            ? `?sortBy=${encodeURIComponent(sortBy)}&order=${encodeURIComponent(order)}`
-            : "";
 
-        // Make the API call for each category
-        return axiosClient.get(`products/category/${url}${query}`);
-      }),
-    );
+  const responses = await Promise.allSettled(
+    urls.map((url) => {
+      // Build query string if sortBy + order are provided
+      const query =
+        sortBy && order
+          ? `?sortBy=${encodeURIComponent(sortBy)}&order=${encodeURIComponent(order)}`
+          : "";
 
-    // Flatten all category responses into a single array of products
-    return responses.flatMap((r) => r.data.products);
-  } catch (err) {
-    throw err;
-  }
+      // Make the API call for each category
+      return axiosClient.get(`products/category/${url}${query}`);
+    }),
+  );
+
+  // Flatten all category responses into a single array of products
+  return responses
+    .map((r) => (r.status === "fulfilled" ? r.value?.data.products : []))
+    .flat();
 };
