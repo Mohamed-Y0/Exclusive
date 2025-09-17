@@ -222,13 +222,6 @@ The application integrates with **DummyJSON API** for product data:
 - [x] Lazy Loading
 - [x] React Suspense
 
-### 🔮 Future Enhancements
-
-- [ ] Fake user authentication system
-- [ ] Wishlist functionality
-- [ ] Product reviews and ratings
-- [ ] Admin dashboard
-
 ---
 
 ## 👨‍💻 Author
