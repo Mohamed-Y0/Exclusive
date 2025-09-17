@@ -7,47 +7,41 @@ import {
 } from "@/types/products";
 import { useMemo } from "react";
 
-// Custom hook to fetch and filter products by category
 function useCategories() {
-  const { category } = useParams(); // current category slug from the URL
-  const [searchParams] = useSearchParams(); // current query params (?c=...&order=...)
+  const { category } = useParams();
+  const [searchParams] = useSearchParams();
 
-  const categoryName = categories.find(
-    // find the category object from our list
-    (c) => c.slug === category,
-  );
+  const categoryName = categories.find((c) => c.slug === category);
 
-  // TanStack Query: fetch products whenever category changes (sorting handled client-side)
   const { isLoading, data, error } = useQuery<ProductTypes[], Error>({
-    // queryKey acts like a unique cache ID → changing any value triggers a refetch
     queryKey: ["category", category],
 
-    // queryFn is called when queryKey changes or cache is stale
     queryFn: () => getCategoryProducts([...(categoryName?.items ?? [])]),
 
-    // avoid running until we actually have a category object
     enabled: !!categoryName,
   });
 
-  const filters = useMemo(() => searchParams.getAll("c"), [searchParams]); // all selected category filters
-  const order = useMemo(() => searchParams.get("order"), [searchParams]); // "asc" | "desc" | null
+  const filters = useMemo(() => searchParams.getAll("c"), [searchParams]);
+  const order = useMemo(() => searchParams.get("order"), [searchParams]);
 
-  // filter the fetched products client-side by selected sub-categories (if any)
   const filtered = useMemo<ProductTypes[]>(() => {
     const list: ProductTypes[] = data ?? [];
     if (!filters.length) return list;
     return list.filter((p) => filters.includes(p.category));
   }, [data, filters]);
 
-  // Client-side sort by price, direction driven by URL param 'order' if provided
-  const sorted = useMemo<ProductTypes[]>(() => {
-    const copy = [...filtered];
-    const isDesc = order === "desc";
-    copy.sort((a, b) => (isDesc ? b.price - a.price : a.price - b.price));
-    return copy;
+  const computed = useMemo<ProductTypes[]>(() => {
+    if (order === "asc" || order === "desc") {
+      const copy = [...filtered];
+      const isDesc = order === "desc";
+      copy.sort((a, b) => (isDesc ? b.price - a.price : a.price - b.price));
+      return copy;
+    }
+
+    return filtered;
   }, [filtered, order]);
 
-  return { isLoading, error, data: sorted }; // expose filtered + sorted list
+  return { isLoading, error, data: computed };
 }
 
 export default useCategories;

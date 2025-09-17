@@ -5,7 +5,6 @@ const axiosClient = axios.create({
   baseURL: "https://dummyjson.com",
 });
 
-// There A Limit From The API Creator, Only 30 Product - You Can Fetch Them All With {params: { limit: 0 For All } }.
 export const getProducts = async function (
   limit?: number,
   skip?: number,
@@ -28,28 +27,22 @@ export const getProductById = async function (
   return res.data;
 };
 
-// Function to fetch products for a list of categories (with optional sorting)
-export const getCategoryProducts = async (
-  urls: string[], // category slugs (beauty, laptops, ...)
-  opts?: { sortBy?: string | null; order?: string | null }, // optional sorting params
-) => {
+export const getCategoryProducts = async function (
+  urls: string[],
+  opts?: { sortBy?: string | null; order?: string | null },
+) {
   const { sortBy, order } = opts || {};
 
-  const responses = await Promise.allSettled(
+  const responses = await Promise.all(
     urls.map((url) => {
-      // Build query string if sortBy + order are provided
       const query =
         sortBy && order
           ? `?sortBy=${encodeURIComponent(sortBy)}&order=${encodeURIComponent(order)}`
           : "";
 
-      // Make the API call for each category
       return axiosClient.get(`products/category/${url}${query}`);
     }),
   );
 
-  // Flatten all category responses into a single array of products
-  return responses
-    .map((r) => (r.status === "fulfilled" ? r.value?.data.products : []))
-    .flat();
+  return responses.flatMap((r) => r.data.products);
 };
