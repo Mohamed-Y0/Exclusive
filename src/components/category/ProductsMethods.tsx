@@ -53,20 +53,27 @@ export default function ProductsMethods() {
     setSearchParams(next);
   }
 
+  function handleClearAll() {
+    const next = new URLSearchParams(searchParams);
+    next.delete("c");
+    next.delete("order");
+    next.delete("sortBy");
+    setSearchParams(next);
+  }
+
   function handleSort(e: React.ChangeEvent<HTMLInputElement>) {
     const next = new URLSearchParams(searchParams);
     const sortOrderKey = "order";
-    const value = e.target.name;
+    const value = e.target.value; // "asc" | "desc"
 
     if (e.target.checked) {
-      next.set("sortBy", "price");
-      next.set(sortOrderKey, value);
-    } else {
-      const remaining = next.getAll(sortOrderKey).filter((v) => v !== value);
       next.delete(sortOrderKey);
-      remaining.forEach((v) => next.append(sortOrderKey, v));
-
-      if (remaining.length === 0) next.delete("sortBy");
+      next.set(sortOrderKey, value);
+      next.set("sortBy", "price");
+    } else {
+      // If unchecked, remove sort completely
+      next.delete(sortOrderKey);
+      next.delete("sortBy");
     }
 
     setSearchParams(next);
@@ -75,6 +82,9 @@ export default function ProductsMethods() {
   return (
     <div className="min-w-fit px-5 pt-1 pb-5 font-light capitalize">
       <div className="flex h-fit flex-col gap-5 rounded-sm p-2.5 shadow shadow-neutral-300 md:justify-self-end">
+        <div className="flex items-center justify-between">
+          <span className="text-neutral-600">Filters & Sort</span>
+        </div>
         <fieldset>
           <legend className="w-full border-b border-neutral-200 text-neutral-500">
             Filter
@@ -97,26 +107,52 @@ export default function ProductsMethods() {
           <legend className="w-full border-b border-neutral-200 text-neutral-500">
             Sort By Price
           </legend>
-          <div className="flex items-center gap-2 pt-2.5">
-            <input
-              className="size-5 accent-red-500"
-              type="checkbox"
-              name="asc"
-              id="asc"
-              onChange={handleSort}
-            />
-            <label htmlFor="asc">Lowest</label>
-          </div>
-          <div className="flex items-center gap-2 pt-2.5">
-            <input
-              className="size-5 accent-red-500"
-              type="checkbox"
-              name="desc"
-              id="desc"
-              onChange={handleSort}
-            />
-            <label htmlFor="desc">highest</label>
-          </div>
+          {(() => {
+            const currentOrder = searchParams.get("order");
+            const selectedFilters = searchParams.getAll("c");
+            return (
+              <>
+                <div className="flex items-center gap-2 pt-2.5">
+                  <input
+                    className="size-5 accent-red-500"
+                    type="radio"
+                    name="order"
+                    id="all"
+                    value="all"
+                    checked={!currentOrder && selectedFilters.length === 0}
+                    onChange={(e) => {
+                      if (e.target.checked) handleClearAll();
+                    }}
+                  />
+                  <label htmlFor="all">All</label>
+                </div>
+                <div className="flex items-center gap-2 pt-2.5">
+                  <input
+                    className="size-5 accent-red-500"
+                    type="radio"
+                    name="order"
+                    id="asc"
+                    value="asc"
+                    checked={currentOrder === "asc"}
+                    onChange={handleSort}
+                  />
+                  <label htmlFor="asc">Lowest</label>
+                </div>
+                <div className="flex items-center gap-2 pt-2.5">
+                  <input
+                    className="size-5 accent-red-500"
+                    type="radio"
+                    name="order"
+                    id="desc"
+                    value="desc"
+                    checked={currentOrder === "desc"}
+                    onChange={handleSort}
+                  />
+                  <label htmlFor="desc">Highest</label>
+                </div>
+              </>
+            );
+          })()}
         </fieldset>
       </div>
     </div>
