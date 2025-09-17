@@ -4,6 +4,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Provider } from "react-redux";
 import { store } from "@/store/store";
 import { lazy } from "react";
+import Error from "@/components/ui/Error";
 
 import AppLayout from "@/components/layout/AppLayout";
 
@@ -20,7 +21,7 @@ const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
-    errorElement: <p>Something Wrong</p>,
+    errorElement: <Error />,
     children: [
       { path: "/", element: <Home /> },
       { path: "/contact", element: <Contact /> },
@@ -45,12 +46,12 @@ const queryClient = new QueryClient({
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <Provider store={store}>
-        <ReactQueryDevtools initialIsOpen={false} />
+    <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
-      </Provider>
-    </QueryClientProvider>
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
+    </Provider>
   );
 }
 
