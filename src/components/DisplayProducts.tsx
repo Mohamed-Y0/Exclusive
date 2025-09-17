@@ -29,9 +29,6 @@ function DisplayProducts({ data }: { data: ProductTypes[] }) {
               {/* <button className="cursor-pointer">
                 <IoMdHeartEmpty className="size-7 rounded-full bg-neutral-50 p-1 lg:size-10" />
               </button> */}
-              <button className="cursor-pointer">
-                <IoEyeOutline className="size-7 rounded-full bg-neutral-50 p-1 lg:size-10" />
-              </button>
             </div>
 
             <div className="relative overflow-hidden rounded-lg">
