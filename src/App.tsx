@@ -2,18 +2,20 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Provider } from "react-redux";
+import { store } from "@/store/store";
+import { lazy } from "react";
 
 import AppLayout from "@/components/layout/AppLayout";
-import PageNotFound from "@/components/ui/PageNotFound";
-import About from "@/pages/About";
-import CategoryProducts from "@/pages/CategoryProducts";
-import Contact from "@/pages/Contact";
-import Home from "@/pages/Home";
-import SignInPage from "@/pages/SignInPage";
-import SignUpPage from "@/pages/SignUpPage";
-import ProductDetails from "@/pages/ProductDetails";
-import Cart from "@/pages/Cart";
-import { store } from "@/store/store";
+
+const Home = lazy(() => import("./pages/Home"));
+const Contact = lazy(() => import("./pages/Contact"));
+const About = lazy(() => import("./pages/About"));
+const SignUpPage = lazy(() => import("./pages/SignUpPage"));
+const SignInPage = lazy(() => import("./pages/SignInPage"));
+const CategoryProducts = lazy(() => import("./pages/CategoryProducts"));
+const ProductDetails = lazy(() => import("./pages/ProductDetails"));
+const Cart = lazy(() => import("./pages/Cart"));
+const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 
 const router = createBrowserRouter([
   {

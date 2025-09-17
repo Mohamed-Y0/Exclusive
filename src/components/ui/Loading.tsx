@@ -1,8 +1,12 @@
 import { PulseLoader } from "react-spinners";
 
-function Loading() {
+type Props = {
+  fallback?: boolean;
+};
+
+function Loading({ fallback }: Props) {
   return (
-    <div className="h-full w-full text-center">
+    <div className="flex h-dvh w-full items-center justify-center text-center">
       <PulseLoader
         color="#b71f3b "
         margin={5}
