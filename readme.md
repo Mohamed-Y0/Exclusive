@@ -1,4 +1,4 @@
-# 🛍️ Exclusive - Modern E-Commerce Platform
+# 🛍️ Exclusive Modern E-Commerce Platform
 
 A high-performance, fully responsive E-Commerce web application built with cutting-edge frontend technologies to deliver a seamless and engaging shopping experience. **Exclusive** combines state-of-the-art UI design with efficient state management, optimized API handling, and modern development practices.
 
@@ -10,29 +10,29 @@ A high-performance, fully responsive E-Commerce web application built with cutti
 
 ### 🛒 **E-Commerce Core**
 
-- **Product Catalog**: Browse through diverse product categories (Men's, Women's, Beauty, Electronics, Home, Sports, Motors)
-- **Product Details**: Comprehensive product information with image galleries, reviews, and specifications
-- **Shopping Cart**: Add, remove, and update product quantities with persistent storage
-- **Category Navigation**: Dynamic routing with organized product categories
-- **Search & Filter**: Advanced product filtering and sorting capabilities
+**Product Catalog**: Browse through diverse product categories (Men's, Women's, Beauty, Electronics, Home, Sports, Motors)
+**Product Details**: Comprehensive product information with image galleries, reviews, and specifications
+**Shopping Cart**: Add, remove, and update product quantities with persistent storage
+**Category Navigation**: Dynamic routing with organized product categories
+**Search & Filter**: Advanced product filtering and sorting capabilities
 
 ### 🎨 **User Experience**
 
-- **Responsive Design**: Fully optimized for desktop, tablet, and mobile devices
-- **Modern UI**: Clean, intuitive interface with smooth animations and transitions
-- **Flash Sales**: Time-limited offers and promotional sections
-- **Best Sellers**: Curated product recommendations
-- **New Arrivals**: Latest product showcases
-- **Store Benefits**: Clear value propositions and service highlights
+**Responsive Design**: Fully optimized for desktop, tablet, and mobile devices
+**Modern UI**: Clean, intuitive interface with smooth animations and transitions
+**Flash Sales**: Time-limited offers and promotional sections
+**Best Sellers**: Curated product recommendations
+**New Arrivals**: Latest product showcases
+**Store Benefits**: Clear value propositions and service highlights
 
 ### 🔧 **Technical Features**
 
-- **Type Safety**: Full TypeScript implementation for robust development
-- **State Management**: Redux Toolkit for predictable state updates
-- **Data Caching**: TanStack Query for efficient API data management
-- **Code Quality**: ESLint + Prettier for consistent code formatting
-- **Performance**: Optimized builds with Vite and lazy loading
-- **Accessibility**: WCAG compliant components and navigation
+**Type Safety**: Full TypeScript implementation for robust development
+**State Management**: Redux Toolkit for predictable state updates
+**Data Caching**: TanStack Query for efficient API data management
+**Code Quality**: ESLint + Prettier for consistent code formatting
+**Performance**: Optimized builds with Vite and lazy loading
+**Accessibility**: WCAG compliant components and navigation
 
 ---
 
@@ -40,34 +40,34 @@ A high-performance, fully responsive E-Commerce web application built with cutti
 
 ### **Frontend Framework**
 
-- **React 19.1.1** - Latest React with concurrent features
-- **TypeScript 5.8.3** - Type-safe JavaScript development
-- **Vite 7.1.0** - Lightning-fast build tool and dev server
+**React 19.1.1** Latest React with concurrent features
+**TypeScript 5.8.3** Type-safe JavaScript development
+**Vite 7.1.0** Lightning-fast build tool and dev server
 
 ### **State Management & Data**
 
-- **Redux Toolkit 2.9.0** - Modern Redux with simplified API
-- **React Redux 9.2.0** - Official React bindings for Redux
-- **TanStack Query 5.85.9** - Powerful data synchronization for React
-- **Axios 1.11.0** - Promise-based HTTP client
+**Redux Toolkit 2.9.0** Modern Redux with simplified API
+**React Redux 9.2.0** Official React bindings for Redux
+**TanStack Query 5.85.9** Powerful data synchronization for React
+**Axios 1.11.0** Promise-based HTTP client
 
 ### **Styling & UI**
 
-- **TailwindCSS 4.1.11** - Utility-first CSS framework
-- **React Icons 5.5.0** - Popular icon library
-- **Slick Carousel 1.8.1** - Responsive carousel component
-- **React Spinners 0.17.0** - Loading indicators
+**TailwindCSS 4.1.11** Utility-first CSS framework
+**React Icons 5.5.0** Popular icon library
+**Slick Carousel 1.8.1** Responsive carousel component
+**React Spinners 0.17.0** Loading indicators
 
 ### **Routing & Navigation**
 
-- **React Router DOM 7.8.0** - Declarative routing for React
-- **React Intersection Observer 9.16.0** - Viewport intersection detection
+**React Router DOM 7.8.0** Declarative routing for React
+**React Intersection Observer 9.16.0** Viewport intersection detection
 
 ### **Development Tools**
 
-- **ESLint 9.32.0** - JavaScript/TypeScript linting
-- **Prettier 3.6.2** - Code formatting
-- **TypeScript ESLint 8.39.0** - TypeScript-specific linting rules
+**ESLint 9.32.0** JavaScript/TypeScript linting
+**Prettier 3.6.2** Code formatting
+**TypeScript ESLint 8.39.0** TypeScript-specific linting rules
 
 ---
 
@@ -152,8 +152,8 @@ exclusive/
 
 ### Prerequisites
 
-- **Node.js** (v18 or higher)
-- **npm** or **yarn** package manager
+**Node.js** (v18 or higher)
+**npm** or **yarn** package manager
 
 ### Installation
 
@@ -194,19 +194,19 @@ npm run lint     # Run ESLint
 
 The application integrates with **DummyJSON API** for product data:
 
-- **Base URL**: `https://dummyjson.com`
-- **Endpoints**: Products, Categories, Product Details
-- **Features**: Pagination, Sorting, Category Filtering
+**Base URL**: `https://dummyjson.com`
+**Endpoints**: Products, Categories, Product Details
+**Features**: Pagination, Sorting, Category Filtering
 
 ### Supported Categories
 
-- **Men's**: Shirts, Shoes, Watches, Sunglasses
-- **Women's**: Dresses, Bags, Shoes, Watches, Jewellery, Tops
-- **Beauty**: Beauty Products, Skin Care, Fragrances
-- **Electronics**: Smartphones, Laptops, Tablets, Mobile Accessories
-- **Home**: Furniture, Home Decoration, Kitchen Accessories, Groceries
-- **Sports**: Sports Accessories
-- **Motors**: Motorcycles, Vehicles
+**Men's**: Shirts, Shoes, Watches, Sunglasses
+**Women's**: Dresses, Bags, Shoes, Watches, Jewellery, Tops
+**Beauty**: Beauty Products, Skin Care, Fragrances
+**Electronics**: Smartphones, Laptops, Tablets, Mobile Accessories
+**Home**: Furniture, Home Decoration, Kitchen Accessories, Groceries
+**Sports**: Sports Accessories
+**Motors**: Motorcycles, Vehicles
 
 ---
 
@@ -214,27 +214,26 @@ The application integrates with **DummyJSON API** for product data:
 
 ### ✅ Completed Features
 
-- [x] Product catalog with categories
-- [x] Shopping cart functionality
-- [x] Responsive design implementation
-- [x] Product detail pages
-- [x] Category-based navigation
-- [x] Lazy Loading
+[x] Product catalog with categories
+[x] Shopping cart functionality
+[x] Responsive design implementation
+[x] Product detail pages
+[x] Category-based navigation
+[x] Lazy Loading
+[x] React Suspense
 
 ### 🔮 Future Enhancements
 
-- [ ] Fake user authentication system
-- [ ] Wishlist functionality
-- [ ] Product reviews and ratings
-- [ ] Admin dashboard
-- [ ] Lazy Loading
-- [ ] React Suspense
+[ ] Fake user authentication system
+[ ] Wishlist functionality
+[ ] Product reviews and ratings
+[ ] Admin dashboard
 
 ---
 
 ## 👨‍💻 Author
 
-**Mohamed Y** - _Front-end Developer_
+**Mohamed Y** _Front-end Developer_
 
 ---
 
