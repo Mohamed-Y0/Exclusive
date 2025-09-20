@@ -40,9 +40,9 @@ function HeaderNav() {
             className={({ isActive }) =>
               isActive ? "border-b border-neutral-400" : ""
             }
-            to="/sign-up"
+            to="/sign-in"
           >
-            Sign Up
+            Sign In
           </NavLink>
         </li>
       </ul>

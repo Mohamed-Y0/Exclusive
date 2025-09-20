@@ -11,7 +11,6 @@ import AppLayout from "@/components/layout/AppLayout";
 const Home = lazy(() => import("./pages/Home"));
 const Contact = lazy(() => import("./pages/Contact"));
 const About = lazy(() => import("./pages/About"));
-const SignUpPage = lazy(() => import("./pages/SignUpPage"));
 const SignInPage = lazy(() => import("./pages/SignInPage"));
 const CategoryProducts = lazy(() => import("./pages/CategoryProducts"));
 const ProductDetails = lazy(() => import("./pages/ProductDetails"));
@@ -26,7 +25,6 @@ const router = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/contact", element: <Contact /> },
       { path: "/about", element: <About /> },
-      { path: "/sign-up", element: <SignUpPage /> },
       { path: "/sign-in", element: <SignInPage /> },
       { path: "/:category", element: <CategoryProducts /> },
       { path: "/:category/:id", element: <ProductDetails /> },
