@@ -2,7 +2,7 @@ import axios from "axios";
 import type { ProductApiResponse, ProductTypes } from "@/types/products";
 
 const axiosClient = axios.create({
-  baseURL: "https://dummyjson.com",
+  baseURL: "https://dummyjson.com/products",
 });
 
 export const getProducts = async function (
@@ -14,7 +14,7 @@ export const getProducts = async function (
   if (limit !== undefined) params.limit = limit;
   if (skip !== undefined) params.skip = skip;
 
-  const res = await axiosClient.get("/products", { params });
+  const res = await axiosClient.get("/", { params });
 
   return res.data;
 };
@@ -22,7 +22,7 @@ export const getProducts = async function (
 export const getProductById = async function (
   id: number,
 ): Promise<ProductTypes> {
-  const res = await axiosClient.get(`/products/${id}`);
+  const res = await axiosClient.get(`/${id}`);
 
   return res.data;
 };
@@ -40,7 +40,7 @@ export const getCategoryProducts = async function (
           ? `?sortBy=${encodeURIComponent(sortBy)}&order=${encodeURIComponent(order)}`
           : "";
 
-      return axiosClient.get(`products/category/${url}${query}`);
+      return axiosClient.get(`/category/${url}${query}`);
     }),
   );
 
