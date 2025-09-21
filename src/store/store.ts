@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartReducer from "@/components/cart/cartSlice";
+import loginReducer from "@/components/signIn/loginSlice";
 
 export const store = configureStore({
   reducer: {
     // Wee Add All Reducers Here..
     cart: cartReducer,
+    login: loginReducer,
   },
 });
 

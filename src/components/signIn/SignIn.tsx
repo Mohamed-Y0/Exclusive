@@ -1,6 +1,5 @@
 import SignPoaster from "@/components/ui/SignPoster";
 import { useLogin } from "@/hooks/useLogin";
-// import { login } from "@/services/authApi";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
@@ -13,7 +12,6 @@ function SignIn() {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     login({ username, password });
-    console.log(username, password);
   }
 
   return (
