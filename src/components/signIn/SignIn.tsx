@@ -1,8 +1,21 @@
-import InputForm from "@/components/ui/InputForm";
 import SignPoaster from "@/components/ui/SignPoster";
+import { useLogin } from "@/hooks/useLogin";
+// import { login } from "@/services/authApi";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 function SignIn() {
+  const [username, setUsername] = useState("emilys");
+  const [password, setPassword] = useState("emilyspass");
+
+  const { mutate: login, isPending, error } = useLogin();
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    login({ username, password });
+    console.log(username, password);
+  }
+
   return (
     <section className="py-16">
       <div className="flex flex-col justify-between gap-10 lg:flex-row">
@@ -12,30 +25,47 @@ function SignIn() {
             <h1 className="text-3xl md:text-5xl">Log in to Exclusive</h1>
             <p className="font-light">Enter your details below</p>
           </div>
-          <form action="">
+          <form onSubmit={(e) => handleSubmit(e)}>
             <div className="flex flex-col gap-10 text-neutral-500">
-              <InputForm
+              <input
                 type="text"
-                id="signup-email"
-                placeholder="Email or Phone Number"
+                id="signin-email"
+                autoComplete="username"
+                placeholder="Username"
+                className="rounded-sm border-b border-neutral-200 bg-none px-2.5 py-4 focus:outline-neutral-200"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                disabled={isPending}
               />
-              <InputForm
+              <input
                 type="password"
-                id="signup-password"
+                id="signin-password"
+                autoComplete="current-password"
                 placeholder="Password"
+                className="rounded-sm border-b border-neutral-200 bg-none px-2.5 py-4 focus:outline-neutral-200"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                disabled={isPending}
               />
             </div>
-            <div className="w-full py-12 text-center text-neutral-50">
+            <div className="py-5">
+              {error && (
+                <p className="text-red-500">{(error as Error).message}</p>
+              )}
+            </div>
+
+            <div className="w-full py-5 text-center text-neutral-50">
               <button
-                className="w-full cursor-pointer rounded-sm bg-red-500 py-5"
+                className={`${isPending ? "bg-red-300" : "bg-red-500"} w-full cursor-pointer rounded-sm py-5`}
                 type="submit"
+                disabled={isPending}
               >
                 Log In
               </button>
             </div>
           </form>
           <div className="text-center font-light">
-            <NavLink to="" className="text-red-500">
+            <NavLink to="" className="text-neutral-500">
               Forget Your Password?
             </NavLink>
           </div>
