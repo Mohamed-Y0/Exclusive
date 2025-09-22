@@ -1,4 +1,5 @@
 import Categories from "@/components/layout/Header/Categories";
+import { useAppSelector } from "@/store/hooks";
 import { IoClose } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 
@@ -7,6 +8,8 @@ type Props = {
 };
 
 function HeaderPhone({ handleMenuToggle }: Props) {
+  const isAuth = useAppSelector((state) => state.login.isAuthenticatied);
+
   const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.currentTarget === e.target) {
       handleMenuToggle();
@@ -57,17 +60,19 @@ function HeaderPhone({ handleMenuToggle }: Props) {
               About
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? "border-b border-neutral-400" : ""
-              }
-              to="/sign-up"
-              onClick={handleMenuToggle}
-            >
-              Sign Up
-            </NavLink>
-          </li>
+          {!isAuth && (
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "border-b border-neutral-400" : ""
+                }
+                to="/sign-in"
+                onClick={handleMenuToggle}
+              >
+                Sign In
+              </NavLink>
+            </li>
+          )}
         </ul>
 
         <p className="py-5 text-lg text-neutral-400">Browse By Categories:</p>

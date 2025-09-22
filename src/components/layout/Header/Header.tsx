@@ -1,6 +1,7 @@
 import CartIcon from "@/components/layout/Header/CartIcon";
 import HeaderNav from "@/components/layout/Header/HeaderNav";
 import HeaderPhone from "@/components/layout/Header/HeaderPhone";
+import UserIcon from "@/components/layout/Header/UserIcon";
 import Logo from "@/components/ui/Logo";
 import { useState } from "react";
 import { IoMdMenu } from "react-icons/io";
@@ -38,6 +39,7 @@ function Header() {
             {/* <Link to="" aria-label="Go To Your Wishlist" role="link">
               <IoMdHeartEmpty className="size-6 lg:size-8" />
             </Link> */}
+            <UserIcon />
             <CartIcon />
           </div>
         </div>
