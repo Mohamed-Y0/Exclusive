@@ -1,11 +1,19 @@
 import SignPoaster from "@/components/ui/SignPoster";
 import { useLogin } from "@/hooks/useLogin";
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useAppSelector } from "@/store/hooks";
+import { useEffect, useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function SignIn() {
   const [username, setUsername] = useState("emilys");
   const [password, setPassword] = useState("emilyspass");
+  const navigate = useNavigate();
+
+  const isAuth = useAppSelector((state) => state.login.isAuthenticatied);
+
+  useEffect(() => {
+    if (isAuth) navigate("/", { replace: true });
+  }, [isAuth, navigate]);
 
   const { mutate: login, isPending, error } = useLogin();
 

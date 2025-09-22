@@ -7,6 +7,8 @@ import { lazy } from "react";
 import Error from "@/components/ui/Error";
 
 import AppLayout from "@/components/layout/AppLayout";
+import Profile from "@/pages/Profile";
+import PrivateRoute from "@/components/PrivateRoute";
 
 const Home = lazy(() => import("./pages/Home"));
 const Contact = lazy(() => import("./pages/Contact"));
@@ -29,6 +31,14 @@ const router = createBrowserRouter([
       { path: "/:category", element: <CategoryProducts /> },
       { path: "/:category/:id", element: <ProductDetails /> },
       { path: "/cart", element: <Cart /> },
+      {
+        path: "/profile",
+        element: (
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        ),
+      },
       { path: "*", element: <PageNotFound /> },
     ],
   },

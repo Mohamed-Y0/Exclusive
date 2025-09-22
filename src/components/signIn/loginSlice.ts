@@ -2,12 +2,12 @@ import type { User } from "@/types/users";
 import { createSlice } from "@reduxjs/toolkit";
 
 type InitialState = {
-  user: User[];
+  user: User | null;
   isAuthenticatied: boolean;
 };
 
 const initialState: InitialState = {
-  user: [],
+  user: null,
   isAuthenticatied: false,
 };
 
@@ -17,7 +17,7 @@ const loginSlice = createSlice({
 
   reducers: {
     loggedUser(state, action) {
-      state.user = action.payload.data;
+      state.user = action.payload;
       state.isAuthenticatied = true;
     },
   },
