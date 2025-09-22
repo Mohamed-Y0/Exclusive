@@ -4,16 +4,18 @@ type LogoProps = {
 
 function Logo({ color }: LogoProps) {
   return (
-    <p
-      className={`text-lg font-bold tracking-wider text-${color} flex items-center gap-2.5 lg:text-2xl`}
-    >
+    <div className="flex items-center gap-2.5">
       <img
         src={`/imgs/logo-${color}-70.webp`}
         className="h-full w-full"
         alt=""
       />
-      Exclusive
-    </p>
+      <p
+        className={`text-lg font-bold tracking-wider text-${color} hidden gap-2.5 sm:block lg:text-2xl`}
+      >
+        Exclusive
+      </p>
+    </div>
   );
 }
 
