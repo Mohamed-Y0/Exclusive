@@ -1,7 +1,9 @@
+import PageLocation from "@/components/ui/PageLocation";
+
 function Profile() {
   return (
     <div className={`container m-auto px-5 2xl:p-0`}>
-      <div>Hello Nigga</div>;
+      <PageLocation />
     </div>
   );
 }

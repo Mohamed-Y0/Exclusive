@@ -7,7 +7,6 @@ import { lazy } from "react";
 import Error from "@/components/ui/Error";
 
 import AppLayout from "@/components/layout/AppLayout";
-import Profile from "@/pages/Profile";
 import PrivateRoute from "@/components/PrivateRoute";
 
 const Home = lazy(() => import("./pages/Home"));
@@ -18,6 +17,8 @@ const CategoryProducts = lazy(() => import("./pages/CategoryProducts"));
 const ProductDetails = lazy(() => import("./pages/ProductDetails"));
 const Cart = lazy(() => import("./pages/Cart"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
+const Profile = lazy(() => import("@/pages/Profile"));
+const Dashboard = lazy(() => import("@/pages/Dashboard"));
 
 const router = createBrowserRouter([
   {
@@ -28,9 +29,15 @@ const router = createBrowserRouter([
       { path: "/contact", element: <Contact /> },
       { path: "/about", element: <About /> },
       { path: "/sign-in", element: <SignInPage /> },
-      { path: "/:category", element: <CategoryProducts /> },
-      { path: "/:category/:id", element: <ProductDetails /> },
-      { path: "/cart", element: <Cart /> },
+
+      {
+        path: "/dashboard",
+        element: (
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        ),
+      },
       {
         path: "/profile",
         element: (
@@ -39,6 +46,10 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      { path: "/cart", element: <Cart /> },
+
+      { path: "/:category/:id", element: <ProductDetails /> },
+      { path: "/:category", element: <CategoryProducts /> },
       { path: "*", element: <PageNotFound /> },
     ],
   },

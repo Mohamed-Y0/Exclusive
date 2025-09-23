@@ -1,7 +1,7 @@
-import CartIcon from "@/components/layout/Header/CartIcon";
+import CartIcon from "@/components/ui/CartIcon";
 import HeaderNav from "@/components/layout/Header/HeaderNav";
 import HeaderPhone from "@/components/layout/Header/HeaderPhone";
-import UserIcon from "@/components/layout/Header/UserIcon";
+import UserIcon from "@/components/ui/UserIcon";
 import Logo from "@/components/ui/Logo";
 import { useState } from "react";
 import { IoMdMenu } from "react-icons/io";
@@ -30,15 +30,11 @@ function Header() {
         )}
 
         <div className="sm:hidden md:block">
-          <div className="flex flex-row-reverse items-center gap-5 sm:flex-row">
+          <div className="flex flex-row-reverse items-center gap-5">
             <IoMdMenu
-              className="size-6 cursor-pointer sm:hidden"
+              className="size-8 cursor-pointer sm:hidden"
               onClick={handleMenuToggle}
             />
-
-            {/* <Link to="" aria-label="Go To Your Wishlist" role="link">
-              <IoMdHeartEmpty className="size-6 lg:size-8" />
-            </Link> */}
             <UserIcon />
             <CartIcon />
           </div>
