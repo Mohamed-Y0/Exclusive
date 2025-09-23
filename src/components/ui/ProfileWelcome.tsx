@@ -6,7 +6,10 @@ function ProfileWelcome() {
   return (
     <div className="pt-16 pb-5 capitalize">
       <p>
-        Welcome, <span className="text-red-500">{userName}</span>
+        Welcome,{" "}
+        <span className="font-semibold tracking-wide text-red-500">
+          {userName}
+        </span>
       </p>
     </div>
   );

@@ -1,3 +1,5 @@
+import EditMyInfo from "@/components/profile/EditMyInfo";
+import LeftMenu from "@/components/profile/LeftMenu";
 import PageLocation from "@/components/ui/PageLocation";
 import ProfileWelcome from "@/components/ui/ProfileWelcome";
 
@@ -8,6 +10,10 @@ function Profile() {
         <PageLocation />
         <ProfileWelcome />
       </div>
+      <section className="flex gap-10 py-16">
+        <LeftMenu />
+        <EditMyInfo />
+      </section>
     </div>
   );
 }
