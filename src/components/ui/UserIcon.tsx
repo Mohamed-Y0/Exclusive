@@ -15,18 +15,24 @@ function UserIcon() {
       <button className="cursor-pointer" onClick={() => setShowMenu((v) => !v)}>
         <FaRegUserCircle className={`relative z-50 size-8`} />
       </button>
-      <ul
-        className={`${showMenu ? "block" : "hidden"} absolute -right-full mt-5 flex flex-col gap-5 rounded-b-md bg-neutral-200 p-5 backdrop-blur-3xl`}
-      >
-        <li className="w-30">
-          <Link to="/profile">My Account</Link>
-        </li>
-        {role === "admin" && (
+      {showMenu && (
+        <ul
+          className={`absolute -right-full mt-5 flex flex-col gap-5 rounded-b-md bg-neutral-200 p-5 backdrop-blur-3xl`}
+        >
           <li className="w-30">
-            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/profile" onClick={() => setShowMenu((v) => !v)}>
+              My Account
+            </Link>
           </li>
-        )}
-      </ul>
+          {role === "admin" && (
+            <li className="w-30">
+              <Link to="/dashboard" onClick={() => setShowMenu((v) => !v)}>
+                Dashboard
+              </Link>
+            </li>
+          )}
+        </ul>
+      )}
     </div>
   );
 }
