@@ -1,6 +1,8 @@
 import { useAppSelector } from "@/store/hooks";
 import { useState } from "react";
 import { FaRegUserCircle } from "react-icons/fa";
+import { MdDashboardCustomize, MdManageAccounts } from "react-icons/md";
+import { RiLogoutBoxLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
 function UserIcon() {
@@ -10,27 +12,51 @@ function UserIcon() {
 
   if (!isAuth) return null;
 
+  function handleMenu() {
+    setShowMenu((v) => !v);
+  }
+
   return (
     <div className="relative">
-      <button className="cursor-pointer" onClick={() => setShowMenu((v) => !v)}>
-        <FaRegUserCircle className={`relative z-50 size-8`} />
+      <button className="cursor-pointer" onClick={handleMenu}>
+        <FaRegUserCircle className={`z-50 size-8`} />
       </button>
       {showMenu && (
         <ul
-          className={`absolute -right-full mt-5 flex flex-col gap-5 rounded-b-md bg-neutral-200 p-5 backdrop-blur-3xl`}
+          className={`absolute -right-full mt-5 flex min-w-50 flex-col gap-5 rounded-b-md bg-neutral-200 p-5 backdrop-blur-3xl`}
         >
-          <li className="w-30">
-            <Link to="/profile" onClick={() => setShowMenu((v) => !v)}>
+          <li className="duration-200 hover:text-red-500">
+            <Link
+              className="flex items-center gap-2.5"
+              to="/profile"
+              onClick={handleMenu}
+            >
+              <MdManageAccounts size={25} />
               My Account
             </Link>
           </li>
           {role === "admin" && (
-            <li className="w-30">
-              <Link to="/dashboard" onClick={() => setShowMenu((v) => !v)}>
+            <li className="duration-200 hover:text-red-500">
+              <Link
+                className="flex items-center gap-2.5"
+                to="/dashboard"
+                onClick={handleMenu}
+              >
+                <MdDashboardCustomize size={25} />
                 Dashboard
               </Link>
             </li>
           )}
+          <li className="border-t">
+            <Link
+              className="flex items-center gap-2.5 pt-2.5 text-red-500"
+              to="/profile"
+              onClick={handleMenu}
+            >
+              <RiLogoutBoxLine size={25} />
+              Log out
+            </Link>
+          </li>
         </ul>
       )}
     </div>
