@@ -265,4 +265,3 @@ The application integrates with **DummyJSON API** for product data:
 <div align="center">
   <p>Made with ❤️ and modern web technologies</p>
 </div>
-````
