@@ -221,6 +221,29 @@ The application integrates with **DummyJSON API** for product data:
 - [x] Category-based navigation
 - [x] Lazy Loading
 - [x] React Suspense
+- [x] Authentication (DummyJSON): Login flow using React Query + Redux
+- [x] Protected routes and admin guard
+- [x] Profile page and navigation
+- [x] Product filtering by sub-category and price sorting synced to URL params
+- [x] Home sections: Flash Sales, Best Sellers, Explore Products, New Arrival, Store Benefits
+- [x] Product details: image gallery, info, and reviews
+- [x] 404 page for unknown routes
+- [x] Mobile-friendly header with hamburger menu and icons
+- [x] Cart: add/update/remove items, totals calculation, and localStorage persistence
+
+---
+
+### 🗺️ Planned Features
+
+- [ ] User registration (Sign Up)
+- [ ] Wishlist / Favorites with persistence
+- [ ] Order history and details in user profile
+- [ ] Search across products with debounced input in header
+- [ ] Pagination/infinite scroll for product lists
+- [ ] Admin dashboard for product/category management
+- [ ] Profile editing.
+- [ ] Dark mode and theme customization
+- [ ] Unit and integration tests (components, hooks, and store)
 
 ---
 
