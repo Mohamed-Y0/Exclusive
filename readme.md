@@ -51,17 +51,24 @@ A high-performance, fully responsive E-Commerce web application built with cutti
 **TanStack Query 5.85.9** Powerful data synchronization for React
 **Axios 1.11.0** Promise-based HTTP client
 
+### **Forms & Validation**
+
+**React Hook Form 7.63.0** Performant, type-safe form management
+
 ### **Styling & UI**
 
 **TailwindCSS 4.1.11** Utility-first CSS framework
 **React Icons 5.5.0** Popular icon library
-**Slick Carousel 1.8.1** Responsive carousel component
 **React Spinners 0.17.0** Loading indicators
 
 ### **Routing & Navigation**
 
 **React Router DOM 7.8.0** Declarative routing for React
 **React Intersection Observer 9.16.0** Viewport intersection detection
+
+### **SEO & Head Management**
+
+**React Helmet** Document head and meta management (planned)
 
 ### **Development Tools**
 
@@ -80,8 +87,14 @@ exclusive/
 │   └── 📁 imgs/            # Static images and assets
 │
 ├── 📁 src/
-│   ├── 📁 assets/          # Application assets (logos, icons)
+│   ├── 📁 assets/          # Application assets (logos, hero images)
+│   │   ├── hero-img.webp
+│   │   └── logo.png
 │   ├── 📁 components/      # Reusable UI components
+│   │   ├── DisplayCustomData.tsx
+│   │   ├── DisplayProducts.tsx
+│   │   ├── PrivateRoute.tsx
+│   │   ├── ScrollToTop.tsx
 │   │   ├── 📁 about/       # About page components
 │   │   ├── 📁 cart/        # Shopping cart components
 │   │   ├── 📁 category/    # Category page components
@@ -91,6 +104,7 @@ exclusive/
 │   │   │   ├── ExploreProducts.tsx
 │   │   │   ├── FlashSales.tsx
 │   │   │   ├── HeroSection.tsx
+│   │   │   ├── LimitedOffer.tsx
 │   │   │   ├── NewArrival.tsx
 │   │   │   └── StoreBenefits.tsx
 │   │   ├── 📁 layout/      # Layout components
@@ -99,12 +113,14 @@ exclusive/
 │   │   │   ├── TopHeader.tsx
 │   │   │   └── 📁 Header/  # Header components & navigation
 │   │   ├── 📁 productDetails/ # Product detail components
+│   │   ├── 📁 profile/     # Profile page components
 │   │   ├── 📁 signIn/      # Authentication components
 │   │   ├── 📁 signUp/      # Registration components
 │   │   └── 📁 ui/          # Reusable UI primitives
 │   │
 │   ├── 📁 hooks/           # Custom React hooks
 │   │   ├── useCategories.ts
+│   │   ├── useLogin.ts
 │   │   ├── useProductById.tsx
 │   │   └── useProducts.tsx
 │   │
@@ -113,47 +129,47 @@ exclusive/
 │   │   ├── Cart.tsx
 │   │   ├── CategoryProducts.tsx
 │   │   ├── Contact.tsx
+│   │   ├── Dashboard.tsx
 │   │   ├── Home.tsx
+│   │   ├── PageNotFound.tsx
 │   │   ├── ProductDetails.tsx
-│   │   ├── SignInPage.tsx
-│   │   └── SignUpPage.tsx
+│   │   ├── Profile.tsx
+│   │   └── SignInPage.tsx
 │   │
-│   ├── 📁 services/        # API integration
-│   │   └── productsApi.ts  # DummyJSON API integration
+│   ├── 📁 services/        # API integrations
+│   │   ├── authApi.ts            # Auth (DummyJSON) integration
+│   │   └── productsApi.ts        # Products API integration
 │   │
 │   ├── 📁 store/           # Redux store configuration
-│   │   ├── hooks.ts        # Typed Redux hooks
-│   │   └── store.ts        # Store setup
+│   │   ├── hooks.ts              # Typed Redux hooks
+│   │   └── store.ts              # Store setup
 │   │
 │   ├── 📁 types/           # TypeScript definitions
-│   │   ├── functions.ts    # Utility function types
-│   │   └── products.ts     # Product & API types
+│   │   ├── functions.ts          # Utility function types
+│   │   ├── products.ts           # Product & API types
+│   │   └── users.ts              # User & auth types
 │   │
 │   ├── 📁 utils/           # Helper functions
-│   ├── App.css             # Global styles
-│   ├── App.tsx             # Root application component
-│   └── main.tsx            # Application entry point
+│   │   └── helpers.ts
+│   ├── App.css                   # Global styles
+│   ├── App.tsx                   # Root application component
+│   ├── main.tsx                  # Application entry point
+│   └── vite-env.d.ts
 │
 ├── 📄 Configuration Files
-├── .eslintrc.config.js     # ESLint configuration
-├── .prettierrc             # Prettier configuration
-├── .gitignore              # Git ignore rules
-├── netlify.toml            # Netlify deployment config
-├── package.json            # Dependencies and scripts
-├── tsconfig.json           # TypeScript configuration
-├── tsconfig.app.json       # App-specific TS config
-├── tsconfig.node.json      # Node-specific TS config
-└── vite.config.ts          # Vite build configuration
+├── .gitignore                    # Git ignore rules
+├── .prettierrc                   # Prettier configuration
+├── eslint.config.js             # ESLint configuration
+├── index.html                    # HTML entry (Vite)
+├── netlify.toml                  # Netlify deployment config
+├── package.json                  # Dependencies and scripts
+├── package-lock.json             # Lockfile
+├── tsconfig.json                 # TypeScript configuration
+├── tsconfig.app.json             # App-specific TS config
+├── tsconfig.node.json            # Node-specific TS config
+├── vite.config.ts                # Vite build configuration
+└── readme.md
 ```
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-**Node.js** (v18 or higher)
-**npm** or **yarn** package manager
 
 ### Installation
 
@@ -161,6 +177,9 @@ exclusive/
 
    ```bash
    git clone https://github.com/Mohamed-Y0/Exclusive
+   ```
+
+   ```bash
    cd exclusive
    ```
 
@@ -197,16 +216,6 @@ The application integrates with **DummyJSON API** for product data:
 **Base URL**: `https://dummyjson.com`
 **Endpoints**: Products, Categories, Product Details
 **Features**: Pagination, Sorting, Category Filtering
-
-### Supported Categories
-
-**Men's**: Shirts, Shoes, Watches, Sunglasses
-**Women's**: Dresses, Bags, Shoes, Watches, Jewellery, Tops
-**Beauty**: Beauty Products, Skin Care, Fragrances
-**Electronics**: Smartphones, Laptops, Tablets, Mobile Accessories
-**Home**: Furniture, Home Decoration, Kitchen Accessories, Groceries
-**Sports**: Sports Accessories
-**Motors**: Motorcycles, Vehicles
 
 ---
 
@@ -256,3 +265,4 @@ The application integrates with **DummyJSON API** for product data:
 <div align="center">
   <p>Made with ❤️ and modern web technologies</p>
 </div>
+````
