@@ -48,8 +48,8 @@ const router = createBrowserRouter([
       },
       { path: "/cart", element: <Cart /> },
 
-      { path: "/:category/:id", element: <ProductDetails /> },
-      { path: "/:category", element: <CategoryProducts /> },
+      { path: "/products/:category/:id", element: <ProductDetails /> },
+      { path: "/products/:category", element: <CategoryProducts /> },
       { path: "*", element: <PageNotFound /> },
     ],
   },
