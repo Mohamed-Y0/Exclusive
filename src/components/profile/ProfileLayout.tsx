@@ -1,4 +1,3 @@
-import EditMyInfo from "@/components/profile/MyInfo";
 import LeftMenu from "@/components/profile/LeftMenu";
 import PageLocation from "@/components/ui/PageLocation";
 import ProfileWelcome from "@/components/ui/ProfileWelcome";

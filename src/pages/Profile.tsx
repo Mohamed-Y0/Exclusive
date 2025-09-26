@@ -1,20 +1,8 @@
-import EditMyInfo from "@/components/profile/MyInfo";
-import LeftMenu from "@/components/profile/LeftMenu";
 import ProfileLayout from "@/components/profile/ProfileLayout";
-import PageLocation from "@/components/ui/PageLocation";
-import ProfileWelcome from "@/components/ui/ProfileWelcome";
 
 function Profile() {
   return (
     <>
-      {/* <div className="flex items-center justify-between">
-        <PageLocation />
-        <ProfileWelcome />
-      </div>
-      <section className="flex flex-col gap-10 py-16 lg:flex-row">
-        <LeftMenu />
-        <EditMyInfo />
-      </section> */}
       <ProfileLayout />
     </>
   );
