@@ -4,21 +4,23 @@ import { useState } from "react";
 import { FaRegUserCircle } from "react-icons/fa";
 import { MdDashboardCustomize, MdManageAccounts } from "react-icons/md";
 import { RiLogoutBoxLine } from "react-icons/ri";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function UserIcon() {
   const [showMenu, setShowMenu] = useState(false);
   const isAuth = useAppSelector((state) => state.login.isAuthenticatied);
   const role = useAppSelector((state) => state.login.user?.role);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
-  if (!isAuth) return <Navigate to="/sign-in" replace />;
+  if (!isAuth) return null;
 
   function handleMenu() {
     setShowMenu((v) => !v);
   }
 
   function handleLogout() {
+    navigate("/sign-in", { replace: true });
     dispatch(logoutUser());
   }
 
