@@ -39,13 +39,15 @@ function EditMyInfo() {
   return (
     <div className="flex-1 rounded-lg px-14 py-7 capitalize shadow-md">
       <div className="flex flex-col gap-10">
-        <p className="text-2xl text-red-500">edit your profile</p>
+        <p className="text-[20px] text-red-500 sm:text-2xl">
+          edit your profile
+        </p>
 
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col gap-8 font-light"
         >
-          <div className="flex justify-between gap-5">
+          <div className="flex flex-wrap justify-between gap-5 md:flex-nowrap">
             <div className="flex w-full flex-col gap-2.5">
               <label htmlFor="first-name">first name</label>
               <input
@@ -76,7 +78,7 @@ function EditMyInfo() {
             </div>
           </div>
 
-          <div className="flex justify-between gap-5">
+          <div className="flex flex-wrap justify-between gap-5 md:flex-nowrap">
             <div className="flex w-full flex-col gap-2.5">
               <label htmlFor="email">email</label>
               <input
