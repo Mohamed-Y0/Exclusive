@@ -20,6 +20,11 @@ const loginSlice = createSlice({
       state.user = action.payload;
       state.isAuthenticatied = true;
     },
+
+    logoutUser(state) {
+      state.user = null;
+      state.isAuthenticatied = false;
+    },
   },
 });
 
