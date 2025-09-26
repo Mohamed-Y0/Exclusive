@@ -9,6 +9,8 @@ import Error from "@/components/ui/Error";
 import AppLayout from "@/components/layout/AppLayout";
 import PrivateAdminRoutes from "@/components/PrivateAdminRoutes";
 import PrivateUserRoutes from "@/components/PrivateUserRoutes";
+import ChangePassword from "@/components/profile/ChangePassword";
+import MyInfo from "@/components/profile/MyInfo";
 
 const Home = lazy(() => import("./pages/Home"));
 const Contact = lazy(() => import("./pages/Contact"));
@@ -20,6 +22,7 @@ const Cart = lazy(() => import("./pages/Cart"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 const Profile = lazy(() => import("@/pages/Profile"));
 const Dashboard = lazy(() => import("@/pages/Dashboard"));
+// const ChangePassword = lazy(()=>import(''))
 
 const router = createBrowserRouter([
   {
@@ -46,7 +49,22 @@ const router = createBrowserRouter([
             <Profile />
           </PrivateUserRoutes>
         ),
+        children: [
+          {
+            index: true,
+            element: <MyInfo />,
+          },
+          {
+            path: "change-password",
+            element: (
+              <PrivateUserRoutes>
+                <ChangePassword />
+              </PrivateUserRoutes>
+            ),
+          },
+        ],
       },
+
       { path: "/cart", element: <Cart /> },
 
       { path: "/products/:category/:id", element: <ProductDetails /> },

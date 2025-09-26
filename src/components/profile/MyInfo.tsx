@@ -9,7 +9,7 @@ type EditProfileForm = User & {
   confirmPassword?: string;
 };
 
-function EditMyInfo() {
+function MyInfo() {
   const user = useAppSelector((user) => user.login.user);
   const {
     register,
@@ -165,4 +165,4 @@ function EditMyInfo() {
   );
 }
 
-export default EditMyInfo;
+export default MyInfo;
