@@ -10,7 +10,7 @@ function Profile() {
         <PageLocation />
         <ProfileWelcome />
       </div>
-      <section className="flex gap-10 py-16">
+      <section className="flex flex-col gap-10 py-16 lg:flex-row">
         <LeftMenu />
         <EditMyInfo />
       </section>
