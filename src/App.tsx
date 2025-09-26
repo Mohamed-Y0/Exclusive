@@ -7,7 +7,8 @@ import { lazy } from "react";
 import Error from "@/components/ui/Error";
 
 import AppLayout from "@/components/layout/AppLayout";
-import PrivateRoute from "@/components/PrivateRoute";
+import PrivateAdminRoutes from "@/components/PrivateAdminRoutes";
+import PrivateUserRoutes from "@/components/PrivateUserRoutes";
 
 const Home = lazy(() => import("./pages/Home"));
 const Contact = lazy(() => import("./pages/Contact"));
@@ -33,17 +34,17 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: (
-          <PrivateRoute>
+          <PrivateAdminRoutes>
             <Dashboard />
-          </PrivateRoute>
+          </PrivateAdminRoutes>
         ),
       },
       {
         path: "/profile",
         element: (
-          <PrivateRoute>
+          <PrivateUserRoutes>
             <Profile />
-          </PrivateRoute>
+          </PrivateUserRoutes>
         ),
       },
       { path: "/cart", element: <Cart /> },
