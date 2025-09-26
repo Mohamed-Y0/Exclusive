@@ -1,19 +1,25 @@
-import { useAppSelector } from "@/store/hooks";
+import { logoutUser } from "@/components/signIn/loginSlice";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { useState } from "react";
 import { FaRegUserCircle } from "react-icons/fa";
 import { MdDashboardCustomize, MdManageAccounts } from "react-icons/md";
 import { RiLogoutBoxLine } from "react-icons/ri";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 function UserIcon() {
   const [showMenu, setShowMenu] = useState(false);
   const isAuth = useAppSelector((state) => state.login.isAuthenticatied);
   const role = useAppSelector((state) => state.login.user?.role);
+  const dispatch = useAppDispatch();
 
-  if (!isAuth) return null;
+  if (!isAuth) return <Navigate to="/sign-in" replace />;
 
   function handleMenu() {
     setShowMenu((v) => !v);
+  }
+
+  function handleLogout() {
+    dispatch(logoutUser());
   }
 
   return (
@@ -47,7 +53,7 @@ function UserIcon() {
               </Link>
             </li>
           )}
-          <li className="border-t">
+          <li className="border-t" onClick={handleLogout}>
             <Link
               className="flex items-center gap-2.5 pt-2.5 text-red-500"
               to="/profile"
