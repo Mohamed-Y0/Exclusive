@@ -8,6 +8,7 @@ function LeftMenu() {
         <ul className="flex flex-col gap-2 pl-10 font-light text-neutral-500">
           <li>
             <NavLink
+              end
               className={({ isActive }) =>
                 `${isActive && "text-red-500"} duration-200 hover:text-red-500`
               }

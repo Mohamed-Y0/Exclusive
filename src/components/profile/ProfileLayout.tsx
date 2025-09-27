@@ -12,7 +12,9 @@ function ProfileLayout() {
       </div>
       <section className="flex flex-col gap-10 py-16 lg:flex-row">
         <LeftMenu />
-        <Outlet />
+        <div className="flex-1 rounded-lg px-14 py-7 capitalize shadow-md">
+          <Outlet />
+        </div>
       </section>
     </div>
   );
