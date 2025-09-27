@@ -31,7 +31,7 @@ function UserIcon() {
       </button>
       {showMenu && (
         <ul
-          className={`absolute -right-full mt-5 flex min-w-50 flex-col gap-5 rounded-b-md bg-neutral-200 p-5 backdrop-blur-3xl`}
+          className={`absolute -right-full mt-[21px] flex min-w-50 flex-col gap-5 rounded-b-md border border-t-0 border-neutral-200 p-5 backdrop-blur-sm`}
         >
           <li className="duration-200 hover:text-red-500">
             <Link
@@ -55,11 +55,11 @@ function UserIcon() {
               </Link>
             </li>
           )}
-          <li className="border-t" onClick={handleLogout}>
+          <li className="border-t">
             <Link
               className="flex items-center gap-2.5 pt-2.5 text-red-500"
               to="/profile"
-              onClick={handleMenu}
+              onClick={handleLogout}
             >
               <RiLogoutBoxLine size={25} />
               Log out
