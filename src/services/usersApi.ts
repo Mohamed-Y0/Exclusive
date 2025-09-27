@@ -5,9 +5,9 @@ const axiosClient = axios.create({
   baseURL: "https://dummyjson.com/users",
 });
 
-export const updateUser = async function (newData: User) {
+export const updateUser = async function (newData: Partial<User>, id?: number) {
   try {
-    const res = await axiosClient.patch(`/${newData.id}`);
+    const res = await axiosClient.patch(`/${id}`, newData);
 
     return res.data;
   } catch (error) {

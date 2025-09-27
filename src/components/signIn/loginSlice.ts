@@ -19,6 +19,7 @@ const loginSlice = createSlice({
     loggedUser(state, action) {
       state.user = action.payload;
       state.isAuthenticatied = true;
+      console.log(state.user);
     },
 
     logoutUser(state) {

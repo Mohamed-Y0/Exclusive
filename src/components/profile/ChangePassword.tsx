@@ -1,5 +1,7 @@
+import { useUpdateUser } from "@/hooks/useUpdateUser";
 import { useAppSelector } from "@/store/hooks";
 import type { User } from "@/types/users";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
 type EditProfileForm = User & {
@@ -14,21 +16,26 @@ function ChangePassword() {
     register,
     handleSubmit,
     getValues,
-
-    formState: { errors, isSubmitting },
+    reset,
+    formState: { errors },
   } = useForm<EditProfileForm>({
     defaultValues: user ?? undefined,
   });
+  const { mutate: update, isPending } = useUpdateUser();
+
+  useEffect(() => {
+    if (user) reset(user);
+  }, [user, reset]);
 
   function onSubmit(data: EditProfileForm) {
     const { newPassword, ...newData } = data;
 
     const payload = {
       ...newData,
-      password: newPassword,
+      password: newPassword!,
     };
-
-    console.log(`New Password:`, payload);
+    update(payload);
+    reset();
   }
 
   return (
@@ -46,7 +53,7 @@ function ChangePassword() {
             type="text"
             name="username"
             autoComplete="username"
-            value={user?.email ?? ""}
+            value={user?.username ?? ""}
             hidden
             readOnly
           />
@@ -98,9 +105,9 @@ function ChangePassword() {
         </div>
         <button
           type="submit"
-          className={`${isSubmitting ? "bg-red-400" : "bg-red-500"} text-neutral w-fit cursor-pointer self-end rounded-lg px-5 py-2.5`}
+          className={`${isPending ? "bg-red-400" : "bg-red-500"} text-neutral w-fit cursor-pointer self-end rounded-lg px-5 py-2.5`}
         >
-          {isSubmitting ? "Loadding..." : "Change"}
+          {isPending ? "Loadding..." : "Change"}
         </button>
       </form>
     </div>
