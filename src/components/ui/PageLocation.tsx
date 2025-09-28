@@ -17,7 +17,7 @@ function PageLocation() {
       {pagesNames.map((c, idx) => (
         <span key={idx}>
           {" / "}
-          <NavLink to={c.href}>{c.name}</NavLink>
+          {c.name}
         </span>
       ))}
     </nav>
