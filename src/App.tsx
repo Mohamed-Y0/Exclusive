@@ -9,7 +9,6 @@ import Error from "@/components/ui/Error";
 import AppLayout from "@/components/layout/AppLayout";
 import PrivateAdminRoutes from "@/components/PrivateAdminRoutes";
 import PrivateUserRoutes from "@/components/PrivateUserRoutes";
-import PaymentSettings from "@/components/profile/PaymentSettings";
 
 const Home = lazy(() => import("./pages/Home"));
 const Contact = lazy(() => import("./pages/Contact"));
@@ -59,10 +58,6 @@ const router = createBrowserRouter([
           {
             path: "change-password",
             element: <ChangePassword />,
-          },
-          {
-            path: "PaymentSettings",
-            element: <PaymentSettings />,
           },
         ],
       },

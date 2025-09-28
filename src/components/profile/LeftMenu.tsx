@@ -27,16 +27,6 @@ function LeftMenu() {
               change password
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                `${isActive && "text-red-500"} duration-200 hover:text-red-500`
-              }
-              to="PaymentSettings"
-            >
-              My Payment Settings
-            </NavLink>
-          </li>
         </ul>
       </nav>
     </div>
