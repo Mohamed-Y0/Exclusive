@@ -239,18 +239,16 @@ The application integrates with **DummyJSON API** for product data:
 - [x] 404 page for unknown routes
 - [x] Mobile-friendly header with hamburger menu and icons
 - [x] Cart: add/update/remove items, totals calculation, and localStorage persistence
+- [x] Profile editing.
 
 ---
 
 ### 🗺️ Planned Features
 
-- [ ] User registration (Sign Up)
-- [ ] Wishlist / Favorites with persistence
 - [ ] Order history and details in user profile
 - [ ] Search across products with debounced input in header
 - [ ] Pagination/infinite scroll for product lists
 - [ ] Admin dashboard for product/category management
-- [ ] Profile editing.
 - [ ] Dark mode and theme customization
 - [ ] Unit and integration tests (components, hooks, and store)
 
