@@ -239,7 +239,7 @@ The application integrates with **DummyJSON API** for product data:
 - [x] 404 page for unknown routes
 - [x] Mobile-friendly header with hamburger menu and icons
 - [x] Cart: add/update/remove items, totals calculation, and localStorage persistence
-- [x] Profile editing.
+- [x] Profile editing & Password Changing.
 
 ---
 
