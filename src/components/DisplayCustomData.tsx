@@ -2,7 +2,6 @@ import DisplayProducts from "@/components/DisplayProducts";
 import Error from "@/components/ui/Error";
 import Loading from "@/components/ui/Loading";
 import useProducts from "@/hooks/useProducts";
-import { getWindowSize } from "@/utils/helpers";
 import { useInView } from "react-intersection-observer";
 
 type Props = {
@@ -11,11 +10,9 @@ type Props = {
 };
 
 function DisplayData({ limit, skip }: Props) {
-  const windowSize = getWindowSize();
-
   const { data, isLoading, error } = useProducts(limit, skip);
   const { ref, inView } = useInView({
-    threshold: windowSize >= 400 ? 0.2 : 0,
+    threshold: 0,
     triggerOnce: true,
   });
 

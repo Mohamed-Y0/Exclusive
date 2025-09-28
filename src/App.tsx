@@ -9,6 +9,7 @@ import Error from "@/components/ui/Error";
 import AppLayout from "@/components/layout/AppLayout";
 import PrivateAdminRoutes from "@/components/PrivateAdminRoutes";
 import PrivateUserRoutes from "@/components/PrivateUserRoutes";
+import Products from "@/pages/Products";
 
 const Home = lazy(() => import("./pages/Home"));
 const Contact = lazy(() => import("./pages/Contact"));
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       { path: "/", element: <Home /> },
+      { path: "/products", element: <Products /> },
       { path: "/contact", element: <Contact /> },
       { path: "/about", element: <About /> },
       { path: "/sign-in", element: <SignInPage /> },
