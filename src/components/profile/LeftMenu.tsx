@@ -32,9 +32,9 @@ function LeftMenu() {
               className={({ isActive }) =>
                 `${isActive && "text-red-500"} duration-200 hover:text-red-500`
               }
-              to="/nigga"
+              to="PaymentSettings"
             >
-              My Payment Options
+              My Payment Settings
             </NavLink>
           </li>
         </ul>
