@@ -9,7 +9,7 @@ export const useUpdateUser = function () {
   const oldUserData = useAppSelector((s) => s.login.user);
   const id = useAppSelector((s) => s.login.user?.id);
   return useMutation({
-    mutationKey: ["update"],
+    mutationKey: ["updateUser"],
     mutationFn: (newData: User) => updateUser(newData, id),
     onError: (error) => {
       console.error("Update Failed", error);
