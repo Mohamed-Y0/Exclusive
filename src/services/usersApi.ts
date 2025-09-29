@@ -8,9 +8,8 @@ const axiosClient = axios.create({
 export const getUsers = async function () {
   try {
     const res = await axiosClient.get("");
-    console.log(res);
 
-    return res.data;
+    return res.data.users;
   } catch (error) {
     console.error("Error While Fetching Users:", error);
     throw error;
