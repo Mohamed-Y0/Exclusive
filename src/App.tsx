@@ -24,6 +24,10 @@ const MyInfo = lazy(() => import("@/components/profile/MyInfo"));
 const ChangePassword = lazy(
   () => import("@/components/profile/ChangePassword"),
 );
+const ManageProducts = lazy(
+  () => import("@/components/dashboard/ManageProducts"),
+);
+const ManageUsers = lazy(() => import("@/components/dashboard/ManageUsers"));
 
 const router = createBrowserRouter([
   {
@@ -40,6 +44,22 @@ const router = createBrowserRouter([
         element: (
           <PrivateAdminRoutes>
             <Dashboard />
+          </PrivateAdminRoutes>
+        ),
+      },
+      {
+        path: "/dashboard/manage-products",
+        element: (
+          <PrivateAdminRoutes>
+            <ManageProducts />
+          </PrivateAdminRoutes>
+        ),
+      },
+      {
+        path: "/dashboard/manage-users",
+        element: (
+          <PrivateAdminRoutes>
+            <ManageUsers />
           </PrivateAdminRoutes>
         ),
       },
