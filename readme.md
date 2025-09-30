@@ -198,15 +198,6 @@ exclusive/
 4. **Open your browser**
    Navigate to `http://localhost:5173`
 
-### Available Scripts
-
-```bash
-npm run dev      # Start development server
-npm run build    # Build for production
-npm run preview  # Preview production build
-npm run lint     # Run ESLint
-```
-
 ---
 
 ## 🌐 API Integration
