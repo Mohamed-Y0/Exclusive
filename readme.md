@@ -243,13 +243,6 @@ The application integrates with **DummyJSON API** for product data:
 
 ---
 
-### 🗺️ Planned Features
-
-- [ ] Order history and details in user profile
-- [ ] Admin dashboard for product/category management
-
----
-
 ## 👨‍💻 Author
 
 **Mohamed Y** _Front-end Developer_

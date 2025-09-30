@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
 function SignIn() {
-  const [username, setUsername] = useState("emilys");
-  const [password, setPassword] = useState("emilyspass");
+  const [username, setUsername] = useState("harpere");
+  const [password, setPassword] = useState("harperepass");
   const navigate = useNavigate();
 
   const isAuth = useAppSelector((state) => state.login.isAuthenticatied);

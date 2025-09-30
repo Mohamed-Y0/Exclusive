@@ -2,14 +2,13 @@ import { logoutUser } from "@/components/signIn/loginSlice";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { useState } from "react";
 import { FaRegUserCircle } from "react-icons/fa";
-import { MdDashboardCustomize, MdManageAccounts } from "react-icons/md";
+import { MdManageAccounts } from "react-icons/md";
 import { RiLogoutBoxLine } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
 
 function UserIcon() {
   const [showMenu, setShowMenu] = useState(false);
   const isAuth = useAppSelector((state) => state.login.isAuthenticatied);
-  const role = useAppSelector((state) => state.login.user?.role);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -43,18 +42,6 @@ function UserIcon() {
               My Account
             </Link>
           </li>
-          {role === "admin" && (
-            <li className="duration-200 hover:text-red-500">
-              <Link
-                className="flex items-center gap-2.5"
-                to="/dashboard"
-                onClick={handleMenu}
-              >
-                <MdDashboardCustomize size={25} />
-                Dashboard
-              </Link>
-            </li>
-          )}
           <li className="border-t">
             <Link
               className="flex items-center gap-2.5 pt-2.5 text-red-500"

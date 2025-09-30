@@ -7,7 +7,6 @@ import { lazy } from "react";
 import Error from "@/components/ui/Error";
 
 import AppLayout from "@/components/layout/AppLayout";
-import PrivateAdminRoutes from "@/components/PrivateAdminRoutes";
 import PrivateUserRoutes from "@/components/PrivateUserRoutes";
 
 const Home = lazy(() => import("./pages/Home"));
@@ -19,15 +18,10 @@ const ProductDetails = lazy(() => import("./pages/ProductDetails"));
 const Cart = lazy(() => import("./pages/Cart"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 const Profile = lazy(() => import("@/pages/Profile"));
-const Dashboard = lazy(() => import("@/pages/Dashboard"));
 const MyInfo = lazy(() => import("@/components/profile/MyInfo"));
 const ChangePassword = lazy(
   () => import("@/components/profile/ChangePassword"),
 );
-const ManageProducts = lazy(
-  () => import("@/components/dashboard/ManageProducts"),
-);
-const ManageUsers = lazy(() => import("@/components/dashboard/ManageUsers"));
 
 const router = createBrowserRouter([
   {
@@ -39,30 +33,6 @@ const router = createBrowserRouter([
       { path: "/about", element: <About /> },
       { path: "/sign-in", element: <SignInPage /> },
 
-      {
-        path: "/dashboard",
-        element: (
-          <PrivateAdminRoutes>
-            <Dashboard />
-          </PrivateAdminRoutes>
-        ),
-      },
-      {
-        path: "/dashboard/manage-products",
-        element: (
-          <PrivateAdminRoutes>
-            <ManageProducts />
-          </PrivateAdminRoutes>
-        ),
-      },
-      {
-        path: "/dashboard/manage-users",
-        element: (
-          <PrivateAdminRoutes>
-            <ManageUsers />
-          </PrivateAdminRoutes>
-        ),
-      },
       {
         path: "/profile",
         element: (
